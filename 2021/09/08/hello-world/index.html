@@ -6,15 +6,15 @@
   <meta name="keywords" content="">
   <meta name="description" content="Hello World | 前端学习笔记">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="关于个人简介吴家秀（AuroraVee），目前是上海大学的专硕。由于后面的学业项目涉及到web端的开发，从2020年12月开始逐步学习前端编程。当然，在这之前，我也是有编程经验的，本科的时候主要用过C++&#x2F;C&#x2F;Python&#x2F;Java做过一些课程项目，但是呢都学得不是很深。进入研究生后，对于以后从事的岗位迷茫过，不知道该找哪门语言的工作。刚好，企业导师给我安排的项目是前端方向的，意味着整个研究生的时">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://example.com/about/index.html">
+<meta name="description" content="本博客记录我在学习前端的过程中从书本上、实践中以及其他博主的文章中学习到的觉得很重要的知识点，其中包括javascript&#x2F;css&#x2F;html&#x2F;node&#x2F;webpack等。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基础知识">
+<meta property="og:url" content="http://example.com/2021/09/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html">
 <meta property="og:site_name" content="前端学习笔记">
-<meta property="og:description" content="关于个人简介吴家秀（AuroraVee），目前是上海大学的专硕。由于后面的学业项目涉及到web端的开发，从2020年12月开始逐步学习前端编程。当然，在这之前，我也是有编程经验的，本科的时候主要用过C++&#x2F;C&#x2F;Python&#x2F;Java做过一些课程项目，但是呢都学得不是很深。进入研究生后，对于以后从事的岗位迷茫过，不知道该找哪门语言的工作。刚好，企业导师给我安排的项目是前端方向的，意味着整个研究生的时">
+<meta property="og:description" content="本博客记录我在学习前端的过程中从书本上、实践中以及其他博主的文章中学习到的觉得很重要的知识点，其中包括javascript&#x2F;css&#x2F;html&#x2F;node&#x2F;webpack等。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-09-12T06:01:01.000Z">
-<meta property="article:modified_time" content="2021-09-12T06:17:37.098Z">
+<meta property="article:published_time" content="2021-09-12T07:14:33.000Z">
+<meta property="article:modified_time" content="2021-09-12T07:15:53.027Z">
 <meta property="article:author" content="AuroraVee">
 <meta property="article:tag" content="javascript&#x2F;CSS&#x2F;HTML&#x2F;Node&#x2F;Webpack">
 <meta name="twitter:card" content="summary">
@@ -143,10 +143,45 @@
     <li>
         <div class="all active" data-rel="全部文章">全部文章
             
-                <small>(2)</small>
+                <small>(3)</small>
             
         </div>
     </li>
+    
+        
+            
+                <li>
+                    <div data-rel="前端">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        前端
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="前端<--->javascript">
+                                        
+                                        javascript
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
     
 </ul>
 <div class="left-bottom">
@@ -168,7 +203,7 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="2">
+<input type="hidden" id="yelog_site_posts_number" value="3">
 <input type="hidden" id="yelog_site_word_count" value="80">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -220,6 +255,14 @@
 
     
     <nav id="title-list-nav">
+        
+        <a  class="全部文章 前端 javascript "
+           href="/2021/09/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="基础知识">基础知识</span>
+            <span class="post-date" title="2021-09-12 15:14:33">2021/09/12</span>
+        </a>
         
         <a  class="全部文章 "
            href="/2021/09/08/My-New-Post/"
@@ -353,7 +396,7 @@
         var gitalk = new Gitalk({
             clientID: '2b05872c7f2970e09a54',
             clientSecret: '9e8086be844e62a86bd2ec792e6aab5f51201742',
-            repo: 'AuroraVee.github.io',
+            repo: 'https://github.com/AuroraVee/BlogGitalk.git',
             owner: 'AuroraVee',
             admin: ['AuroraVee'],
             id: decodeURI(location.pathname),

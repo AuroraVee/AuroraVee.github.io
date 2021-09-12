@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>about | 前端学习笔记</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="about | 前端学习笔记">
+  <title>基础知识（一） | 前端学习笔记</title>
+  <meta name="keywords" content=" 类数组对象 , 数据存储 , 行为委托 , iterator ">
+  <meta name="description" content="基础知识（一） | 前端学习笔记">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于个人简介吴家秀（AuroraVee），目前是上海大学的专硕。由于后面的学业项目涉及到web端的开发，从2020年12月开始逐步学习前端编程。当然，在这之前，我也是有编程经验的，本科的时候主要用过C++&#x2F;C&#x2F;Python&#x2F;Java做过一些课程项目，但是呢都学得不是很深。进入研究生后，对于以后从事的岗位迷茫过，不知道该找哪门语言的工作。刚好，企业导师给我安排的项目是前端方向的，意味着整个研究生的时">
 <meta property="og:type" content="website">
@@ -298,24 +298,47 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-基础知识（一）" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">about</h1>
+        <h1 class="article-title">基础知识（一）</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="前端">前端</a> > 
+            
+            <a  data-rel="前端&lt;---&gt;javascript">javascript</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color1">类数组对象</a>
+            
+            <a class="color5">数据存储</a>
+            
+            <a class="color5">行为委托</a>
+            
+            <a class="color4">iterator</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-09-12 14:17:37'>2021-09-12 14:01</time>
+            发布时间 : <time class="date" title='最后更新: 2021-09-12 19:09:58'>2021-09-12 15:14</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:330</span>
+        <span>字数:1.8k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -345,7 +368,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E"><span class="toc-text">关于</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B"><span class="toc-text">个人简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="toc-text">联系方式</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%B8%8D%E6%94%AF%E6%8C%81%E5%86%92%E6%B3%A1%E7%9A%84%E4%BA%8B%E4%BB%B6"><span class="toc-text">1.不支持冒泡的事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%85%A8%E5%B1%80%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95"><span class="toc-text">2.全局属性和方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%E5%87%BD%E6%95%B0"><span class="toc-text">3.进制转换函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%8E%9F%E7%94%9F%E5%85%B7%E6%9C%89iterator%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-text">4.原生具有iterator的数据结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E7%B1%BB%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1"><span class="toc-text">5.类数组对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E7%B1%BB%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1"><span class="toc-text">5.1 类数组对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E5%8C%96%E4%B8%BA%E6%95%B0%E7%BB%84"><span class="toc-text">转化为数组</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8"><span class="toc-text">6.数据存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-JavaScript%E6%A8%A1%E5%9D%97%E5%8C%96"><span class="toc-text">7.JavaScript模块化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-iframe%E7%9A%84%E5%B1%80%E9%99%90"><span class="toc-text">8. iframe的局限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-text">9.页面的性能指标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E5%8A%A8%E6%80%81%E8%AF%AD%E8%A8%80%E4%B8%8E%E9%9D%99%E6%80%81%E8%AF%AD%E8%A8%80"><span class="toc-text">10.动态语言与静态语言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-%E8%A1%8C%E4%B8%BA%E5%A7%94%E6%89%98-%E9%9D%A2%E5%90%91%E5%A7%94%E6%89%98%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="toc-text">11.行为委托(面向委托的设计模式)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-1-%E5%AF%B9%E8%B1%A1%E5%85%B3%E8%81%94%E5%A7%94%E6%89%98%E5%AE%9E%E7%8E%B0"><span class="toc-text">11.1 对象关联委托实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-2-%E5%86%85%E7%9C%81"><span class="toc-text">11.2 内省</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -361,8 +384,233 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h1><h3 id="个人简介"><a href="#个人简介" class="headerlink" title="个人简介"></a>个人简介</h3><p><strong>吴家秀（AuroraVee）</strong>，目前是上海大学的专硕。由于后面的学业项目涉及到web端的开发，从2020年12月开始逐步学习前端编程。<br>当然，在这之前，我也是有编程经验的，本科的时候主要用过C++/C/Python/Java做过一些课程项目，但是呢都学得不是很深。进入研究生后，对于以后从事的岗位迷茫过，不知道该找哪门语言的工作。刚好，企业导师给我安排的项目是前端方向的，意味着整个研究生的时间都将是做这个类型的项目，那我可以在这个过程中把前端的知识学透，同时也有相关的项目经验。所以从去年的12月开始我就开始了整个学习之旅，在这个学习过程中我看了基本经典的书，自己也跟着写过一些代码。知识总是会随着学习的深入淡忘掉，所以我想用博客的方式把一些难点和实际操作中遇到的问题记录下来，这样以后可以随时复习巩固。   </p>
-<h3 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h3><p> QQ：2374628298<br> 邮箱：<a href="mailto:&#x31;&#56;&#x38;&#x30;&#48;&#x33;&#x37;&#57;&#x32;&#56;&#50;&#64;&#x31;&#x36;&#x33;&#x2e;&#99;&#x6f;&#x6d;">&#x31;&#56;&#x38;&#x30;&#48;&#x33;&#x37;&#57;&#x32;&#56;&#50;&#64;&#x31;&#x36;&#x33;&#x2e;&#99;&#x6f;&#x6d;</a></p>
+        <h2 id="1-不支持冒泡的事件"><a href="#1-不支持冒泡的事件" class="headerlink" title="1.不支持冒泡的事件"></a>1.不支持冒泡的事件</h2><p>abort、blur、error、focus、load、mouseenter、mouseleave、resize、unload、pagetransition</p>
+<p>DOMNodeInsertedIntoDocument、DOMNodeRemovedFromDocument、media相关事件都不冒泡</p>
+<h2 id="2-全局属性和方法"><a href="#2-全局属性和方法" class="headerlink" title="2.全局属性和方法"></a>2.全局属性和方法</h2><ul>
+<li><p>全局属性：Infinity、NAN、undefined</p>
+</li>
+<li><p>全局方法：decodeURI()、decodeURIcomponent()、encodeURI、encodeURIcomponent()、escape()、eval()、isFinite()、isNAN()、Number()、parseFloat()、parseInt()、String()、unescape()</p>
+<h2 id="3-进制转换函数"><a href="#3-进制转换函数" class="headerlink" title="3.进制转换函数"></a>3.进制转换函数</h2><p>parseInt()、toString()</p>
+<h2 id="4-原生具有iterator的数据结构"><a href="#4-原生具有iterator的数据结构" class="headerlink" title="4.原生具有iterator的数据结构"></a>4.原生具有iterator的数据结构</h2><p>ES6规定，默认的<code>Iterator</code>接口部署在数据结构的<code>Symbol.iterator</code>属性，或者说，一个数据结构只要具有<code>Symbol.iterator</code>属性，就可以认为是“可遍历的”(iterable) 。其中满足条件的数据结构有：</p>
+</li>
+<li><p>Array </p>
+</li>
+<li><p>Map</p>
+</li>
+<li><p>Set</p>
+</li>
+<li><p>String</p>
+</li>
+<li><p>TypedArray：Int8Array、Uint8Array、Uint8ClampedArray、Int16Array、Uint16Array、Int32Array、Uint32Array、Float32Array、Float64Array</p>
+</li>
+<li><p>Generator 函数返回的对象</p>
+</li>
+<li><p>函数的 arguments 对象</p>
+</li>
+<li><p>NodeList 对象</p>
+<h2 id="5-类数组对象"><a href="#5-类数组对象" class="headerlink" title="5.类数组对象"></a>5.类数组对象</h2><h3 id="5-1-类数组对象"><a href="#5-1-类数组对象" class="headerlink" title="5.1 类数组对象"></a>5.1 类数组对象</h3></li>
+</ul>
+<ol>
+<li>DOM 操作返回的<code>NodeList</code> 集合</li>
+<li>函数内部的<code>arguments</code>对象</li>
+<li>具有length属性的对象，且以数字作为属性名，有效的属性范围[0,length-1]</li>
+</ol>
+<p><strong><u>其中第三种本来是没有iterator接口，但是可以用Array.from或者扩展运算符转化为数组后，进行遍历</u></strong></p>
+<h3 id="转化为数组"><a href="#转化为数组" class="headerlink" title="转化为数组"></a>转化为数组</h3><p><u>将类数组对象转为数组的方法有：</u></p>
+<pre><code class="javascript">Array.from(arr);//将类似数组的对象（array-like object）和可遍历（iterable）的对象转为数组
+Array.prototype.slice.call(arrayLike);
+Array.prototype.splice.call(arrayLike, 0);
+Array.prototype.concat.apply([], arrayLike)
+[...arr];//arr 具有iterator接口的对象
+</code></pre>
+<pre><code class="javascript">//举例说明
+obj=&#123;length:2,0:&quot;w&quot;,2:&quot;e&quot;&#125;;
+Array.from(obj);// [&quot;w&quot;, undefined]
+Array.from(&#123; length: 3 &#125;);// [ undefined, undefined, undefined ]
+
+//将传入的参数转成数组：
+Array.of() //总是返回参数值组成的数组
+0 in [, , ,] // false 表示求数组的0号位是否有值
+</code></pre>
+<h2 id="6-数据存储"><a href="#6-数据存储" class="headerlink" title="6.数据存储"></a>6.数据存储</h2><p><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2018/07/indexeddb.html">indexDB的出现</a> 、<a target="_blank" rel="noopener" href="http://dev-test.nemikor.com/web-storage/support-test/">web-storage的限制参照</a></p>
+<table>
+<thead>
+<tr>
+<th align="left">特性</th>
+<th align="left">Cookie</th>
+<th>storage</th>
+<th align="left">localStorage</th>
+<th align="left">sessionStorage</th>
+<th></th>
+<th>globalstorage</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">数据的生命期</td>
+<td align="left">一般由服务器生成，可设置失效时间。如果在浏览器端生成Cookie，默认是关闭浏览器后失效</td>
+<td></td>
+<td align="left">除非被清除，否则永久保存（取代globalstorage）</td>
+<td align="left">仅在当前会话下有效，关闭页面或浏览器后被清除</td>
+<td></td>
+<td>如果用户未清除浏览器的缓存，数据将一直存储在磁盘上</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">存放数据大小</td>
+<td align="left">4095B左右</td>
+<td>提供最大的存储空间</td>
+<td align="left">一般为5MB</td>
+<td align="left">针对会话的小段数据存储</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">与服务器端通信</td>
+<td align="left">每次都会携带在HTTP头中，如果使用cookie保存过多数据会带来性能问题</td>
+<td>不需要将数据发回服务器</td>
+<td align="left">仅在客户端（即浏览器）中保存，不参与和服务器的通信</td>
+<td align="left">不需要将数据发回服务器</td>
+<td></td>
+<td>不需要将数据发回服务器</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">易用性</td>
+<td align="left">需要程序员自己封装，源生的Cookie接口不友好</td>
+<td></td>
+<td align="left">源生接口可以接受，亦可再次封装来对Object和Array有更好的支持</td>
+<td align="left">不能跨会话存储数据</td>
+<td></td>
+<td>跨适合客户端存储文档或者长期保存用户偏好设置</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="7-JavaScript模块化"><a href="#7-JavaScript模块化" class="headerlink" title="7.JavaScript模块化"></a>7.JavaScript模块化</h2><ul>
+<li><strong>浏览器端</strong>：</li>
+</ul>
+<ol>
+<li>AMD：异步模块规范，依赖前置，由<code>require.js</code>实现。允许指定回调函数</li>
+<li>CMD：通用模块规范，依赖就近，由<code>sea.js</code>实现</li>
+</ol>
+<ul>
+<li><strong>服务器端</strong>：CommonJS，由NodeJs实现（node为JavaScript执行提供了运行环境，不需要借助浏览器即可运行，V8引擎将JavaScript转成了二进制）。同步的，只有加载完成，才能执行后面的操作</li>
+</ul>
+<p>浏览器不兼容CommonJS的根本原因，在于缺少四个Node.js环境的变量。</p>
+<blockquote>
+<ul>
+<li>module</li>
+<li>exports</li>
+<li>require</li>
+<li>global</li>
+</ul>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2015/05/commonjs-in-browser.html">浏览器加载 CommonJS</a>，需要进行格式转换，工具<a target="_blank" rel="noopener" href="http://browserify.org/">Browserify</a> 、Tiny Browser Require</p>
+<h2 id="8-iframe的局限"><a href="#8-iframe的局限" class="headerlink" title="8. iframe的局限"></a>8. <a target="_blank" rel="noopener" href="https://www.cnblogs.com/Leophen/p/11403800.html">iframe的局限</a></h2><ol>
+<li>创建比一般的 DOM 元素慢了 1-2 个数量级</li>
+<li>阻塞页面加载</li>
+<li>唯一的连接池</li>
+<li>不利于 SEO(搜索引擎优化)</li>
+</ol>
+<h2 id="9-页面的性能指标"><a href="#9-页面的性能指标" class="headerlink" title="9.页面的性能指标"></a>9.<a target="_blank" rel="noopener" href="https://blog.csdn.net/chenzhi5174/article/details/100718999">页面的性能指标</a></h2><ul>
+<li><strong>白屏时间</strong></li>
+</ul>
+<blockquote>
+<p>指浏览器发起请求到开始显示第一个页面元素的时间。现代浏览器不会等待CSS树（所有CSS文件下载和解析完成）和DOM树（整个body标签解析完成）构建完成才开始绘制，而是马上开始显示中间结果。所以经常在低网速的环境中，观察到页面由上至下缓慢显示完，或者先显示文本内容后再重绘成带有格式的页面内容。</p>
+</blockquote>
+<ul>
+<li>首屏时间</li>
+</ul>
+<blockquote>
+<p>首屏时间（FirstScreen Time），是指用户看到第一屏，即整个网页顶部大小为当前窗口的区域，显示完整的时间。常用的方法有，页面标签标记法、图像相似度比较法和首屏高度内图片加载法。</p>
+</blockquote>
+<ul>
+<li><strong>可交互时间</strong></li>
+</ul>
+<blockquote>
+<p>用户可以进行正常的点击、输入等操作，默认可以统计DOMContentLoaded事件发生的时间。</p>
+</blockquote>
+<ul>
+<li><strong>整页时间</strong></li>
+</ul>
+<blockquote>
+<p>整页时间（Page Load Time），页面所有资源都加载完成并呈现出来所花的时间，这个就是load事件发生的时间。</p>
+</blockquote>
+<h2 id="10-动态语言与静态语言"><a href="#10-动态语言与静态语言" class="headerlink" title="10.动态语言与静态语言"></a>10.动态语言与静态语言</h2><ul>
+<li>动态语言（弱类型语言）</li>
+</ul>
+<blockquote>
+<p>在运行时确定数据类型的语言，变量使用之前不需要类型声明。如PHP/ASP/RUBY/PYTHON/JavaScript</p>
+</blockquote>
+<ul>
+<li>静态语言（强类型语言）</li>
+</ul>
+<blockquote>
+<p>在编译时变量的类型即可确定的语言，要求在使用之前必须声明数据类型。如C++/Java/C#</p>
+</blockquote>
+<h2 id="11-行为委托-面向委托的设计模式"><a href="#11-行为委托-面向委托的设计模式" class="headerlink" title="11.行为委托(面向委托的设计模式)"></a>11.<strong><u>行为委托(面向委托的设计模式)</u></strong></h2><h3 id="11-1-对象关联委托实现"><a href="#11-1-对象关联委托实现" class="headerlink" title="11.1 对象关联委托实现"></a>11.1 对象关联委托实现</h3><p><strong>和其他语言的类设计模式不一样</strong></p>
+<pre><code class="javascript">//对象关联风格
+
+Task = &#123; 
+ setID: function(ID) &#123; this.id = ID; &#125;, 
+ outputID: function() &#123; console.log( this.id ); &#125; 
+&#125;; 
+
+// XYZ 委托了Task对象 
+XYZ = Object.create( Task ); //对象关联
+//Object.setPrototypeOf( XYZ, Task ); 这种方式也可以
+
+XYZ.prepareTask = function(ID,Label) &#123; 
+    //直接通过this调用委托对象的函数
+ this.setID( ID ); 
+ this.label = Label; 
+&#125;; 
+XYZ.outputTaskDetails = function() &#123; 
+ this.outputID(); 
+ console.log( this.label ); 
+&#125;; 
+// ABC = Object.create( Task );
+// ABC ... = ...
+</code></pre>
+<p>XYZ对象通过行为委托[[prototype]]和Task对象关联起来。委托行为意味着某些对象在找不到属性或方法时会把这个请求委托给另一个对象。</p>
+<p>与类设计模式不一样的是，这种直接通过对象的方式委托，不再需要<code>new（构造函数）</code>的方式创建实例来调用，而且子类调用父类的时候只需要简单的<code>this调用</code>即可，不再需要通过显示的<code>prototype</code>、<code>call</code>、<code>bind</code>等复杂的写法。代码和逻辑都更加简单</p>
+<pre><code class="javascript">//简写的对象关联，可以不写function，但是这种方法在函数自我引用时不方便，还是应该采用具名函数表达式
+Task = &#123; 
+ setID(ID) &#123; this.id = ID; &#125;, 
+ outputID() &#123; console.log( this.id ); &#125; 
+&#125;; 
+
+XYZ = Object.create( Task ); //对象关联
+
+XYZ.prepareTask = function(ID,Label) &#123; 
+    //直接通过this调用委托对象的函数
+ this.setID( ID ); 
+ this.label = Label; 
+&#125;; 
+XYZ.outputTaskDetails = function() &#123; 
+ this.outputID(); 
+ console.log( this.label ); 
+&#125;; 
+</code></pre>
+<h3 id="11-2-内省"><a href="#11-2-内省" class="headerlink" title="11.2 内省"></a>11.2 内省</h3><p><strong>内省就是检查实例的类型</strong>，通过创建方式来判断对象的结构和功能</p>
+<p>委托里使用**[[Prototype]]<strong>来进行内省，可以知道这个对象</strong>是否可以调用委托对象的某个方法**</p>
+<pre><code class="javascript">var Foo = &#123; /* .. */ &#125;; 
+var Bar = Object.create( Foo ); 
+Bar... 
+var b1 = Object.create( Bar );
+
+//内省
+// FOO和BAR相互关联
+Foo.isPrototypeOf( Bar ); // true 
+Object.getPrototypeOf( Bar ) === Foo; // true 
+
+// 让b1关联到Bar和Foo
+Foo.isPrototypeOf( b1 ); // true 
+Bar.isPrototypeOf( b1 ); // true 
+Object.getPrototypeOf( b1 ) === Bar; // true
+Object.getPrototypeOf(b1)===Foo //false
+</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 18800379282@163.com </span>

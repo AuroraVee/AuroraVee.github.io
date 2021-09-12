@@ -5350,7 +5350,7 @@ object-assign
                     rerender: rerender,
                     options: options
                 }
-                if (true) module.exports = preact; else self.preact = preact
+                if (true) module.exports = preact; else { }
             }()
             //# sourceMappingURL=preact.js.map
 
@@ -6910,7 +6910,7 @@ Useful for tooling.
                         pagerDirection: 'last', // last or first
                         createIssueManually: false,
                         distractionFreeMode: false,
-                        proxy: 'https://netnr-proxy.cloudno.de/https://github.com/login/oauth/access_token',
+                        proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token',
                         flipMoveOptions: {
                             staggerDelayBy: 150,
                             appearAnimation: 'accordionVertical',
@@ -10438,15 +10438,7 @@ Useful for tooling.
                         __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
                             (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
                         __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__))
-                } else if (typeof exports !== 'undefined' && typeof module !== 'undefined') {
-                    factory(exports, module)
-                } else {
-                    var mod = {
-                        exports: {}
-                    }
-                    factory(mod.exports, mod)
-                    global.autosize = mod.exports
-                }
+                } else { }
             })(this, function (exports, module) {
                 'use strict'
 
@@ -10816,11 +10808,7 @@ Useful for tooling.
                         return factory(root)
                     }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
                         __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__))
-                } else if (typeof exports === 'object') {
-                    module.exports = factory(root)
-                } else {
-                    root.Polyglot = factory(root)
-                }
+                } else { }
             }(this, function (root) {
                 'use strict'
 

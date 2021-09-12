@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>vue | 前端学习笔记</title>
+  <meta name="keywords" content=" vue ">
+  <meta name="description" content="vue | 前端学习笔记">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="关于个人简介吴家秀（AuroraVee），目前是上海大学的专硕。由于后面的学业项目涉及到web端的开发，从2020年12月开始逐步学习前端编程。当然，在这之前，我也是有编程经验的，本科的时候主要用过C++&#x2F;C&#x2F;Python&#x2F;Java做过一些课程项目，但是呢都学得不是很深。进入研究生后，对于以后从事的岗位迷茫过，不知道该找哪门语言的工作。刚好，企业导师给我安排的项目是前端方向的，意味着整个研究生的时">
+<meta property="og:type" content="website">
+<meta property="og:title" content="about">
+<meta property="og:url" content="http://example.com/about/index.html">
+<meta property="og:site_name" content="前端学习笔记">
+<meta property="og:description" content="关于个人简介吴家秀（AuroraVee），目前是上海大学的专硕。由于后面的学业项目涉及到web端的开发，从2020年12月开始逐步学习前端编程。当然，在这之前，我也是有编程经验的，本科的时候主要用过C++&#x2F;C&#x2F;Python&#x2F;Java做过一些课程项目，但是呢都学得不是很深。进入研究生后，对于以后从事的岗位迷茫过，不知道该找哪门语言的工作。刚好，企业导师给我安排的项目是前端方向的，意味着整个研究生的时">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-09-12T06:01:01.000Z">
+<meta property="article:modified_time" content="2021-09-12T06:17:37.098Z">
+<meta property="article:author" content="AuroraVee">
+<meta property="article:tag" content="javascript&#x2F;CSS&#x2F;HTML&#x2F;Node&#x2F;Webpack">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/wulala.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-dark.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/wulala.jpg"/>
+</a>
+<div class="author">
+    <span>AuroraVee</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+            <a title="github"
+               href="https://github.com/AuroraVee"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:18800379282@163.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=2374628298&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(15)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="前端">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        前端
+                        <small>(15)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="前端<--->javascript">
+                                        <i class="fold iconfont icon-right"></i>
+                                        
+                                        javascript
+                                        
+                                            <small>(15
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                        <ul class="sub hide">
+                                            
+                                                <li>
+                                                    <div data-rel="前端<--->javascript基础知识">
+                                                        
+                                                        基础知识
+                                                        
+                                                            <small>(5)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="前端<--->javascript开发工具">
+                                                        
+                                                        开发工具
+                                                        
+                                                            <small>(6)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="前端<--->javascript实战经验">
+                                                        
+                                                        实战经验
+                                                        
+                                                            <small>(4)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="15">
+<input type="hidden" id="yelog_site_word_count" value="35.2k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://github.com/AuroraVee">乌拉拉</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>闭包</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>单线程</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>对象</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>惰性函数</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>防抖</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>负载均衡</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>函数调用</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>函数声明</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>节流</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>柯里化</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>跨域</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>类数组对象</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>偏函数</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>事件轮询</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>数据存储</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>数组</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>同步</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>行为委托</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>异步</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>原型链</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>canvas</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>cookie</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>DOM</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Fetch</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>File协议</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Git</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>HTTP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>iterator</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Mock</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Node测试</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>nodeJS</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>this</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>vue</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>web worker</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>webpack</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="全部文章 前端 javascript 开发工具 "
+           href="/2021/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7-%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/"
+           data-tag="HTTP,cookie,负载均衡"
+           data-author="" >
+            <span class="post-title" title="网站建设">网站建设</span>
+            <span class="post-date" title="2021-09-12 20:54:57">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 开发工具 "
+           href="/2021/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7-nodeTest/"
+           data-tag="Node测试"
+           data-author="" >
+            <span class="post-title" title="nodeTest">nodeTest</span>
+            <span class="post-date" title="2021-09-12 20:53:21">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 开发工具 "
+           href="/2021/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7-git/"
+           data-tag="Git"
+           data-author="" >
+            <span class="post-title" title="git">git</span>
+            <span class="post-date" title="2021-09-12 20:48:52">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 开发工具 "
+           href="/2021/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7-vue/"
+           data-tag="vue"
+           data-author="" >
+            <span class="post-title" title="vue">vue</span>
+            <span class="post-date" title="2021-09-12 20:48:28">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 开发工具 "
+           href="/2021/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7-webpack/"
+           data-tag="webpack"
+           data-author="" >
+            <span class="post-title" title="webpack">webpack</span>
+            <span class="post-date" title="2021-09-12 20:48:19">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 开发工具 "
+           href="/2021/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7-%E6%80%BB%E8%BF%B0/"
+           data-tag="webpack,nodeJS,Mock,vue"
+           data-author="" >
+            <span class="post-title" title="开发工具总述">开发工具总述</span>
+            <span class="post-date" title="2021-09-12 20:44:58">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 基础知识 "
+           href="/2021/09/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%88%E4%BA%94%EF%BC%89/"
+           data-tag="canvas"
+           data-author="" >
+            <span class="post-title" title="基础知识（五）">基础知识（五）</span>
+            <span class="post-date" title="2021-09-12 20:42:29">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 实战经验 "
+           href="/2021/09/12/%E5%AE%9E%E6%88%98%E7%BB%8F%E9%AA%8C%EF%BC%88%E5%9B%9B%EF%BC%89/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="实战经验（四）">实战经验（四）</span>
+            <span class="post-date" title="2021-09-12 20:20:15">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 实战经验 "
+           href="/2021/09/12/%E5%AE%9E%E6%88%98%E7%BB%8F%E9%AA%8C%EF%BC%88%E4%B8%89%EF%BC%89/"
+           data-tag="数组,对象"
+           data-author="" >
+            <span class="post-title" title="实战经验（三）">实战经验（三）</span>
+            <span class="post-date" title="2021-09-12 20:19:57">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 实战经验 "
+           href="/2021/09/12/%E5%AE%9E%E6%88%98%E7%BB%8F%E9%AA%8C%EF%BC%88%E4%BA%8C%EF%BC%89/"
+           data-tag="跨域,Fetch,web worker,File协议"
+           data-author="" >
+            <span class="post-title" title="实战经验（二）">实战经验（二）</span>
+            <span class="post-date" title="2021-09-12 20:09:09">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 实战经验 "
+           href="/2021/09/12/%E5%AE%9E%E6%88%98%E7%BB%8F%E9%AA%8C%EF%BC%88%E4%B8%80%EF%BC%89/"
+           data-tag="canvas,防抖,节流,DOM"
+           data-author="" >
+            <span class="post-title" title="实战经验（一）">实战经验（一）</span>
+            <span class="post-date" title="2021-09-12 20:03:35">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 基础知识 "
+           href="/2021/09/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%88%E5%9B%9B%EF%BC%89/"
+           data-tag="this,柯里化,偏函数,惰性函数"
+           data-author="" >
+            <span class="post-title" title="基础知识（四）">基础知识（四）</span>
+            <span class="post-date" title="2021-09-12 19:58:30">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 基础知识 "
+           href="/2021/09/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%88%E4%B8%89%EF%BC%89/"
+           data-tag="函数声明,原型链,闭包,函数调用"
+           data-author="" >
+            <span class="post-title" title="基础知识（三）">基础知识（三）</span>
+            <span class="post-date" title="2021-09-12 19:48:58">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 基础知识 "
+           href="/2021/09/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%88%E4%BA%8C%EF%BC%89/"
+           data-tag="同步,异步,事件轮询,单线程"
+           data-author="" >
+            <span class="post-title" title="基础知识（二）">基础知识（二）</span>
+            <span class="post-date" title="2021-09-12 19:23:23">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 基础知识 "
+           href="/2021/09/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%88%E4%B8%80%EF%BC%89/"
+           data-tag="类数组对象,数据存储,行为委托,iterator"
+           data-author="" >
+            <span class="post-title" title="基础知识（一）">基础知识（一）</span>
+            <span class="post-date" title="2021-09-12 15:14:33">2021/09/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-开发工具-vue" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">vue</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="前端">前端</a> > 
+            
+            <a  data-rel="前端&lt;---&gt;javascript">javascript</a> > 
+            
+            <a  data-rel="前端&lt;---&gt;javascript&lt;---&gt;开发工具">开发工具</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color4">vue</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2021-09-12 21:09:30'>2021-09-12 20:48</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:5.8k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue"><span class="toc-text">Vue</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AE%98%E7%BD%91%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-text">一、官网学习知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%B7%B7%E5%85%A5"><span class="toc-text">1.混入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-VNodes%E3%80%81%E8%99%9A%E6%8B%9FDOM%E3%80%81%E6%B8%B2%E6%9F%93%E5%87%BD%E6%95%B0render"><span class="toc-text">2.VNodes、虚拟DOM、渲染函数render</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%93%8D%E5%BA%94%E6%97%B6%E5%8E%9F%E7%90%86"><span class="toc-text">3.响应时原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4"><span class="toc-text">4.自定义指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%8F%92%E6%A7%BD"><span class="toc-text">5.插槽</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-JSX%EF%BC%88%E7%9C%8B%E5%AE%8C%E5%8D%95%E6%96%87%E4%BB%B6%E7%BB%84%E4%BB%B6%E5%9B%9E%E6%9D%A5%E5%86%8D%E7%9C%8B%EF%BC%89"><span class="toc-text">6.JSX（看完单文件组件回来再看）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="toc-text">7.过滤器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%BD%91%E6%98%93%E5%AD%A6%E4%B9%A0Vue3"><span class="toc-text">二、网易学习Vue3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1ref"><span class="toc-text">2.1ref</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-v-if%E5%92%8Cv-show%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">2.2 v-if和v-show的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-methods%E5%92%8Ccomputed%E9%87%8C%E9%9D%A2%E6%94%BE%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">2.3 methods和computed里面放方法调用的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-v-for"><span class="toc-text">2.4 v-for</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-vue-cli"><span class="toc-text">2.5 vue-cli</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-1%E4%BD%BF%E7%94%A8"><span class="toc-text">2.5.1使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-2%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE"><span class="toc-text">2.5.2组件之间传递数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-text">2.6 生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7%E8%B7%AF%E7%94%B1"><span class="toc-text">2.7路由</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-7-1-%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1"><span class="toc-text">2.7.1 动态路由</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-7-2-path-to-regexp"><span class="toc-text">2.7.2 path-to-regexp</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-7-3-%E5%B5%8C%E5%A5%97%E8%B7%AF%E7%94%B1"><span class="toc-text">2.7.3 嵌套路由</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-7-4-named-view"><span class="toc-text">2.7.4 named view</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-7-5-%E9%87%8D%E5%AE%9A%E5%90%91%E5%92%8CAlias"><span class="toc-text">2.7.5 重定向和Alias</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-7-6-%E5%B0%86%E8%B7%AF%E7%94%B1%E7%9A%84%E5%8F%82%E6%95%B0%E4%BD%9C%E4%B8%BA%E7%BB%84%E4%BB%B6%E7%9A%84props"><span class="toc-text">2.7.6 将路由的参数作为组件的props</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-7-7-%E8%B7%AF%E7%94%B1%E7%9A%84history-mode%E5%92%8Chash-mode%E5%8C%BA%E5%88%AB"><span class="toc-text">2.7.7 路由的history mode和hash mode区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-7-8-%E5%AF%BC%E8%88%AA%E5%AE%88%E5%8D%AB"><span class="toc-text">2.7.8 导航守卫</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-7-9-%E8%B7%AF%E7%94%B1%E7%9A%84meta%E5%AD%97%E6%AE%B5"><span class="toc-text">2.7.9 路由的meta字段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-7-10-%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="toc-text">2.7.10 获取数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-7-11-%E6%BB%9A%E5%8A%A8"><span class="toc-text">2.7.11 滚动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-7-12-%E8%B7%AF%E7%94%B1%E6%87%92%E5%8A%A0%E8%BD%BD"><span class="toc-text">2.7.12 路由懒加载</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8Vue-%E7%9A%84MVVM"><span class="toc-text">2.8Vue 的MVVM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-9Vuex"><span class="toc-text">2.9Vuex</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-9-1-%E5%B0%86state%E5%AE%9E%E4%BE%8B%E7%9A%84state%E5%AF%B9%E8%B1%A1%E6%98%A0%E5%B0%84%E5%88%B0%E7%BB%84%E4%BB%B6%E7%9A%84computed"><span class="toc-text">2.9.1 将state实例的state对象映射到组件的computed</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-9-2-%E5%B0%86state%E5%AE%9E%E4%BE%8B%E7%9A%84getters%E5%AF%B9%E8%B1%A1%E6%98%A0%E5%B0%84%E5%88%B0%E7%BB%84%E4%BB%B6%E7%9A%84computed"><span class="toc-text">2.9.2 将state实例的getters对象映射到组件的computed</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-9-3-%E7%8A%B6%E6%80%81%E4%BF%AE%E6%94%B9-mutations%E5%90%8C%E6%AD%A5"><span class="toc-text">2.9.3 状态修改 mutations同步</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-9-4-actions-%E5%BC%82%E6%AD%A5-%E6%8F%90%E4%BA%A4"><span class="toc-text">2.9.4 actions 异步 提交</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-9-5modules"><span class="toc-text">2.9. 5modules</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91"><span class="toc-text">3.模块化开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-SVG"><span class="toc-text">4.SVG</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-keep-alive"><span class="toc-text">5.keep-alive</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-this-router%E5%92%8Cthis-route%E5%8C%BA%E5%88%AB"><span class="toc-text">6.this.$router和this.$route区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-deep-selector"><span class="toc-text">7.deep selector</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81vue%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB"><span class="toc-text">三、vue源码解读</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-text">1.生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%80%9F%E5%8A%A9Flow%E8%BF%9B%E8%A1%8C%E9%9D%99%E6%80%81%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%9F%A5"><span class="toc-text">2.借助Flow进行静态类型检查</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%80%9F%E5%8A%A9rollup%E8%BF%9B%E8%A1%8C%E6%9E%84%E5%BB%BA%E6%89%93%E5%8C%85"><span class="toc-text">3.借助rollup进行构建打包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Vue-js%E7%9A%84%E5%85%A5%E5%8F%A3%E6%96%87%E4%BB%B6"><span class="toc-text">4.Vue.js的入口文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#initGlobalAPI"><span class="toc-text">initGlobalAPI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%95%B0%E6%8D%AE%E9%A9%B1%E5%8A%A8%E5%92%8C%E5%AE%9E%E4%BE%8B%E6%8C%82%E8%BD%BD"><span class="toc-text">5.数据驱动和实例挂载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86"><span class="toc-text">6.响应式原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1prop%E5%B1%9E%E6%80%A7%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E5%A4%84%E7%90%86"><span class="toc-text">6.1prop属性的响应式处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-data%E5%B1%9E%E6%80%A7%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E5%A4%84%E7%90%86"><span class="toc-text">6.2 data属性的响应式处理</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><h2 id="一、官网学习知识点"><a href="#一、官网学习知识点" class="headerlink" title="一、官网学习知识点"></a>一、官网学习知识点</h2><h3 id="1-混入"><a href="#1-混入" class="headerlink" title="1.混入"></a>1.混入</h3><ul>
+<li>Vue定好的选项进行合并</li>
+</ul>
+<ol>
+<li>先做数据对象合并，值为对象的选项合并为一个对象，<strong>冲突时优先取组件的</strong>；</li>
+<li>同名钩子函数合并在一个数组，<strong>混入对象的钩子函数在组件之前</strong>执行；</li>
+</ol>
+<p>分为全局混入和单组件混入</p>
+<pre><code class="js">Vue.mixin()//全局混入，后影响后面所有的Vue实例
+Vue.components()//全局注册，后面的Vue实例都可以使用
+</code></pre>
+<ul>
+<li>为Vue实例自定义选项后进行合并</li>
+</ul>
+<p>可以设置自定义选项的合并策略，编写对应的函数</p>
+<pre><code class="js">this.$options.myOption;//访问自定义选项
+var strategies = Vue.config.optionMergeStrategies
+strategies.myOption = function(toVal, fromVal)&#123;
+//没测试成功，不知道toVal和fromVal是谁的参数
+&#125;
+</code></pre>
+<h3 id="2-VNodes、虚拟DOM、渲染函数render"><a href="#2-VNodes、虚拟DOM、渲染函数render" class="headerlink" title="2.VNodes、虚拟DOM、渲染函数render"></a>2.VNodes、虚拟DOM、渲染函数render</h3><p>render函数通过<code>createElement</code>返回虚拟节点（VNode），虚拟节点形成的树即为虚拟DOM。这些虚拟节点会告诉Vue页面需要创建什么样的真实DOM节点，以及节点的描述信息</p>
+<pre><code class="js">render:function(createElement)&#123;
+createElement(para1,para2,para3)
+&#125;
+//para1:html标签、组件名、能够返回HTML标签或者组件名的函数
+//para2:数据对象，没有时可以不传
+//para3:数组
+</code></pre>
+<p>render中使用作用域插槽</p>
+<pre><code class="js">Vue.component(&#39;child&#39;, &#123;
+      data: function () &#123;
+        return &#123; text: &#39;hu&#39; &#125;
+      &#125;,
+      template: &quot;&lt;div&gt;&lt;slot v-bind:text=&#39;text&#39;&gt;&lt;/slot&gt;&lt;/div&gt;&quot;,
+    &#125;)
+
+Vue.component(&#39;test-two&#39;, &#123;
+      render: function (createElement) &#123;
+        return createElement(&#39;div&#39;, [
+          createElement(&#39;child&#39;, &#123;
+            scopedSlots: &#123;
+              default: function (props) &#123;//props就是child组件中作用域插槽的prop形成的对象
+                return createElement(&#39;span&#39;, props.text)//用span代替了slot
+              &#125;,
+            &#125;,
+          &#125;),
+        ])
+      &#125;,
+    &#125;)
+</code></pre>
+<h3 id="3-响应时原理"><a href="#3-响应时原理" class="headerlink" title="3.响应时原理"></a>3.响应时原理</h3><h3 id="4-自定义指令"><a href="#4-自定义指令" class="headerlink" title="4.自定义指令"></a>4.自定义指令</h3><p>钩子函数bind在inserted之前，动态参数放在[]里面，参数变量放在Vue实例的data里</p>
+<h3 id="5-插槽"><a href="#5-插槽" class="headerlink" title="5.插槽"></a>5.插槽</h3><p>默认插槽只能有一个</p>
+<pre><code class="html"> &lt;!--只能写一个这个的，如果有多个，后面的会覆盖前面的，通过this.$slots.default --&gt;
+&lt;!-- this.$slots.default返回数组，每个元素都是VNode --&gt;
+&lt;template v-slot:default&gt;
+    &lt;p&gt;A paragraph for the main content.&lt;/p&gt;
+    &lt;p&gt;And another one.&lt;/p&gt;
+  &lt;/template&gt;
+</code></pre>
+<p>作用域插槽：为了让父级插槽能够访问组件中的数据值而出现的</p>
+<pre><code class="html">&lt;test-one&gt;
+    &lt;template slots:default=&quot;SlotProps&quot;&gt;
+        &lt;!-- 
+SlotProps就是保存了该插槽所有prop的对象，也可以使用对象的解构赋值
+SlotProps=&#123;user:&#123;firstName:&quot;w&quot;,lastName:&quot;jx&quot;&#125;&#125;
+--&gt;
+        &#123;&#123;SlotProps.user.firstName&#125;&#125; &lt;!-- 这里的user为组件中的数据 --&gt;
+    &lt;/template&gt;
+&lt;/test-one&gt;
+</code></pre>
+<pre><code class="js">Vue.component(&quot;test-one&quot;,&#123;
+    data:function()&#123;
+        return &#123;user:&#123;firstName:&quot;w&quot;,lastName:&quot;jx&quot;&#125;&#125;
+    &#125;,
+    template:
+   &quot;&lt;div&gt;&lt;slot v-bind:user=&quot;user&quot;&gt;&#123;&#123;user.lastName&#125;&#125;&lt;/slot&gt;&lt;/div&gt;&quot;
+    //user为插槽的props，每一个插槽的prop都会存成一个对象，&#123;user:&#123;firstName:&quot;w&quot;,lastName:&quot;jx&quot;&#125;&#125;
+&#125;)
+</code></pre>
+<h3 id="6-JSX（看完单文件组件回来再看）"><a href="#6-JSX（看完单文件组件回来再看）" class="headerlink" title="6.JSX（看完单文件组件回来再看）"></a><del>6.JSX（看完单文件组件回来再看）</del></h3><p>JSX 如何映射到 JavaScript</p>
+<h3 id="7-过滤器"><a href="#7-过滤器" class="headerlink" title="7.过滤器"></a>7.过滤器</h3><p>在双花括号或者v-bind中通过**<u>管道符号|连接</u>**，后面的是一个函数，将前面的参数传进这个函数中处理后返回</p>
+<pre><code class="js">//过滤器函数的第一个参数默认是 管道符号前面的值
+//其他参数可以显示传入
+&#123;&#123; message | filterA('arg1', arg2) &#125;&#125;
+//filterA应该一共是3个参数
+</code></pre>
+<h2 id="二、网易学习Vue3"><a href="#二、网易学习Vue3" class="headerlink" title="二、网易学习Vue3"></a>二、网易学习Vue3</h2><h3 id="2-1ref"><a href="#2-1ref" class="headerlink" title="2.1ref"></a>2.1ref</h3><p>获取HTML body中的某个元素的引用，可以通过<code>this.$refs.[ref]</code>来取得该元素的引用，从而进一步取得元素的相关属性</p>
+<pre><code class="html">&lt;input type=&quot;text&quot; ref=&quot;name&quot; @keyup=&quot;getName&quot; /&gt;
+&lt;!-- this.$refs.name取得input元素的引用 this为Vue实例 --&gt;
+</code></pre>
+<p>父组件访问子组件：<code>$children</code> 或者<code>$refs(</code>更好用)；子组件叫Vue component</p>
+<p>子组件访问父组件：<code>$parent/$root</code>；根组件如果是vue实例，就是Vue</p>
+<h3 id="2-2-v-if和v-show的区别"><a href="#2-2-v-if和v-show的区别" class="headerlink" title="2.2 v-if和v-show的区别"></a>2.2 v-if和v-show的区别</h3><p><code>v-if</code>：当保存变量为true时，绑定的元素会存在；当为false时，<strong>整个元素不在DOM中出现</strong></p>
+<p><code>v-show</code>：不管相关联的变量是什么值，<strong>整个元素都在DOM中存在</strong>。<strong>当为false时，只是将该元素的样式设置为了<code>display:none</code></strong></p>
+<h3 id="2-3-methods和computed里面放方法调用的区别"><a href="#2-3-methods和computed里面放方法调用的区别" class="headerlink" title="2.3 methods和computed里面放方法调用的区别"></a>2.3 methods和computed里面放方法调用的区别</h3><p><code>methods</code>里的方法如果在<strong>双花括号</strong>中使用，需要加（）显示调用；<code>computed</code>里的可以不用加（）</p>
+<p><code>methods</code>里面的方法,<strong>一旦有一个被触发就会执行里面全部的方法</strong>，这样就会耗费性能。把方法写在<code>computed</code>里，<strong>每次只会触发对应的方法</strong>，而且<code>computed</code>是一个属性，在使用时不能当做方法，所以要<strong>去掉括号</strong></p>
+<p><strong>和指令一起使用时都只写方法名</strong>，但是如果事件中需要传参数时要加括号</p>
+<p>只有耗时以及有大量搜索时才会使用计算属性来减少项目支出，从而优化项目</p>
+<h3 id="2-4-v-for"><a href="#2-4-v-for" class="headerlink" title="2.4 v-for"></a>2.4 v-for</h3><p>直接在div上使用<code>v-for</code>会渲染出多个div容器，在template上使用v-for就将里面的标签实现多次渲染</p>
+<pre><code class="html"> &lt;template v-for=&quot;(item,index) in items&quot;&gt;        &lt;p&gt;&#123;&#123;item&#125;&#125;&lt;/p&gt;        &lt;h1&gt;&#123;&#123;index&#125;&#125;&lt;/h1&gt; &lt;/template&gt;&lt;div v-for=&quot;(item,index) in items&quot;&gt;        &lt;p&gt;&#123;&#123;item&#125;&#125;&lt;/p&gt;        &lt;h1&gt;&#123;&#123;index&#125;&#125;&lt;/h1&gt;&lt;/div&gt;&lt;!--遍历数组拿到的是(item,index)遍历数组后再遍历对象 得到(val,key)--&gt;
+</code></pre>
+<h3 id="2-5-vue-cli"><a href="#2-5-vue-cli" class="headerlink" title="2.5 vue-cli"></a>2.5 vue-cli</h3><h4 id="2-5-1使用"><a href="#2-5-1使用" class="headerlink" title="2.5.1使用"></a>2.5.1使用</h4><p>使用这个能够生成一个文件模板（公众号 米修在线里）</p>
+<p><img src="3.Vue.assets/image-20210324202021642.png" alt="image-20210324202021642"></p>
+<p><img src="3.Vue.assets/image-20210324202035708.png" alt="image-20210324202035708"></p>
+<p><img src="3.Vue.assets/image-20210324202055055.png" alt="image-20210324202055055"></p>
+<p><strong>整体流程是index.html-&gt;main.js-&gt;App.vue</strong></p>
+<p>组件注册：</p>
+<ol>
+<li><strong>写好了组件的Vue后，现在main.js中注册，然后就可以在App.vue的template中使用</strong>（全局注册）</li>
+<li>在App.vue中导入然后注册（局部注册）</li>
+</ol>
+<h4 id="2-5-2组件之间传递数据"><a href="#2-5-2组件之间传递数据" class="headerlink" title="2.5.2组件之间传递数据"></a>2.5.2组件之间传递数据</h4><p><strong>1.根组件-》子组件</strong></p>
+<p>从根组件App.vue传递数据给其他组件，通过V-bind绑定子组件的props来实现。传递的数据如果是<strong>引用类型</strong>，某一个子组件修改将会影响其他使用的组件；传递的数据如果是<strong>基本值类型</strong>，则互不影响</p>
+<p>2.子组件-》根组件</p>
+<p>在子组件中用<code>this.$emit</code>触发自定义事件，</p>
+<pre><code class="js">this.$emit(事件名，需要传出去的参数)//这段代码可以写在子组件的methods中
+</code></pre>
+<p>然后在App.vue中用v-on绑定自定义事件，通过$event传递参数给事件处理函数</p>
+<h3 id="2-6-生命周期"><a href="#2-6-生命周期" class="headerlink" title="2.6 生命周期"></a>2.6 生命周期</h3><p><img src="3.Vue.assets/image-20210325092521622.png" alt="image-20210325092521622"></p>
+<h3 id="2-7路由"><a href="#2-7路由" class="headerlink" title="2.7路由"></a>2.7路由</h3><p>实现页面间的跳转，<strong>但不进行服务器请求和页面刷新</strong>，直接跳到相应位置</p>
+<p>路由和组件进行映射时，path随意指定</p>
+<pre><code class="js">[&#123;path:&#39;/hello&#39;,componet:HelloWorld&#125;]
+</code></pre>
+<pre><code class="html">&lt;router-link to=&quot;/hello&quot;&gt; &lt;/router-link&gt; &lt;!-- to和path相对应，router-link被渲染成a标签 --&gt;&lt;!-- 当router-link对应的组件匹配之后，后自动添加上router-link-active的类名 --&gt;&lt;!-- 组件的内容被渲染在router-view中 --&gt;
+</code></pre>
+<pre><code class="js">this.$router.push(&#123; path: &#39;/user&#39;&#125;)//也可以实现router-link的导航功能，本质上router-link也是调用push方法实现的
+</code></pre>
+<p>上面两种方法的路由会添加到<code>window.history</code>中，可以通过浏览器的返回按钮切换</p>
+<h4 id="2-7-1-动态路由"><a href="#2-7-1-动态路由" class="headerlink" title="2.7.1 动态路由"></a>2.7.1 动态路由</h4><p><strong>多个router-link –》同一组件，在同一个router-view中显示</strong></p>
+<p>通过router-link导航时，不同的link映射为同一组件时，<strong>在进行切换时组件会被复用</strong>，即不是销毁后重新建立</p>
+<pre><code class="js">[&#123;path:&#39;/hello/:id&#39;,componet:HelloWorld&#125;]
+</code></pre>
+<pre><code class="html">&lt;router-link to=&quot;/hello/f1&quot;&gt; &lt;/router-link&gt; 
+&lt;!-- id=f1 --&gt;
+&lt;router-link to=&quot;/hello/f2&quot;&gt; &lt;/router-link&gt; 
+&lt;!-- id=f2 --&gt;
+&lt;!-- this.$rout.params发生了变化 --&gt;
+</code></pre>
+<h4 id="2-7-2-path-to-regexp"><a href="#2-7-2-path-to-regexp" class="headerlink" title="2.7.2 path-to-regexp"></a>2.7.2 path-to-regexp</h4><p><a target="_blank" rel="noopener" href="https://github.com/pillarjs/path-to-regexp/tree/v1.7.0">https://github.com/pillarjs/path-to-regexp/tree/v1.7.0</a></p>
+<pre><code class="js">var re = pathToRegexp(&#39;/:foo/:bar&#39;, keys)
+//foo、 bar为参数名
+
+var re = pathToRegexp(&#39;/:foo(\\d+)&#39;, keys)
+//参数foo为1个或多个数字，两个\是为了转义
+
+var re = pathToRegexp(&#39;/:foo+&#39;, keys)
+//参数foo出现1次或者多次
+
+var re = pathToRegexp(&#39;/:foo*&#39;, keys)
+//参数foo出现0次或者多次
+
+var re = pathToRegexp(&#39;/:foo?&#39;, keys)
+//参数foo出现0次或者1次
+
+var re = pathToRegexp(&#39;/:foo/(.*)&#39;, keys)
+//参数foo 匹配组命名的参数name为数字，.表示匹配一个字符
+
+var re = pathToRegexp(&#39;/foo/*&#39;, keys)
+//*表示匹配任意的
+</code></pre>
+<p>当to的路径和多个path匹配上时，<strong>前面定义的path优先级高</strong></p>
+<h4 id="2-7-3-嵌套路由"><a href="#2-7-3-嵌套路由" class="headerlink" title="2.7.3 嵌套路由"></a>2.7.3 嵌套路由</h4><p>当子组件的template中还有router-view时，由children里指定的组件进行渲染</p>
+<h4 id="2-7-4-named-view"><a href="#2-7-4-named-view" class="headerlink" title="2.7.4 named view"></a>2.7.4 named view</h4><p><strong>一个router-link可以匹配多个路由，并渲染出多个不同的router-view，采用named view和components实现</strong></p>
+<pre><code class="js">&#123; path: &#39;/&#39;,      components: &#123;        default: Foo,        a: Bar,        b: Baz      &#125;    &#125;
+</code></pre>
+<pre><code class="html">&lt;router-view class=&quot;view one&quot;&gt;&lt;/router-view&gt;&lt;router-view class=&quot;view two&quot; name=&quot;a&quot;&gt;&lt;/router-view&gt;&lt;router-view class=&quot;view three&quot; name=&quot;b&quot;&gt;&lt;/router-view&gt;
+</code></pre>
+<h4 id="2-7-5-重定向和Alias"><a href="#2-7-5-重定向和Alias" class="headerlink" title="2.7.5 重定向和Alias"></a>2.7.5 重定向和Alias</h4><p>重定向：将用户输入的url替换成其他的url，然后用对应的组件渲染；<strong>浏览器地址栏的路由原路径也随之改变显示为重定向的路径！</strong></p>
+<p>Alias：别名，两个url都可以访问同样的内容，<strong>浏览器地址栏会保留alias的路径不会随之变动</strong></p>
+<h4 id="2-7-6-将路由的参数作为组件的props"><a href="#2-7-6-将路由的参数作为组件的props" class="headerlink" title="2.7.6 将路由的参数作为组件的props"></a>2.7.6 将路由的参数作为组件的props</h4><p>组件本身需要声明props，然后将路由的props值传递给组件</p>
+<ol>
+<li>props为布尔值</li>
+<li>props为对象</li>
+<li>props为函数</li>
+</ol>
+<h4 id="2-7-7-路由的history-mode和hash-mode区别"><a href="#2-7-7-路由的history-mode和hash-mode区别" class="headerlink" title="2.7.7 路由的history mode和hash mode区别"></a>2.7.7 路由的history mode和hash mode区别</h4><p>hash mode：在url中有#号，但是不包含在http请求中，形式不美观；hash值改变会触发hashchange事件，从而实现Url改变</p>
+<p>history mode：利用HTML5的history中的 pushState和replaceState实现，只进行页面替换，<strong>当进行浏览器刷新时会出现404，需要将服务器不存在的路径重定向到入口文件</strong>。不会触发<strong>popstate事件</strong></p>
+<p>history mode需要<strong>服务端</strong>进行相关的配置，见<a target="_blank" rel="noopener" href="https://router.vuejs.org/zh/guide/essentials/history-mode.html#%E5%90%8E%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%BE%8B%E5%AD%90">https://router.vuejs.org/zh/guide/essentials/history-mode.html#%E5%90%8E%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%BE%8B%E5%AD%90</a></p>
+<h4 id="2-7-8-导航守卫"><a href="#2-7-8-导航守卫" class="headerlink" title="2.7.8 导航守卫"></a>2.7.8 导航守卫</h4><p>全局</p>
+<pre><code>beforeEach、afterEach
+</code></pre>
+<p>路由</p>
+<pre><code class="js">beforeEnter
+</code></pre>
+<p>组件内</p>
+<ul>
+<li><code>beforeRouteEnter</code></li>
+<li><code>beforeRouteUpdate</code></li>
+<li><code>beforeRouteLeave</code></li>
+</ul>
+<h4 id="2-7-9-路由的meta字段"><a href="#2-7-9-路由的meta字段" class="headerlink" title="2.7.9 路由的meta字段"></a>2.7.9 路由的meta字段</h4><p>可以在路由配置里面设置，其值为一个对象，<strong>用于配置路由的自定义信息，在导航守卫中使用</strong></p>
+<p>由于路由可以嵌套，匹配时会存在多个route record，$route.match是匹配的多个record</p>
+<h4 id="2-7-10-获取数据"><a href="#2-7-10-获取数据" class="headerlink" title="2.7.10 获取数据"></a>2.7.10 获取数据</h4><p>1.先获取后导航</p>
+<p><code>beforeRouteEnter</code>中获取，然后执行next</p>
+<p>2.先导航后获取</p>
+<p>在created中获取</p>
+<h4 id="2-7-11-滚动"><a href="#2-7-11-滚动" class="headerlink" title="2.7.11 滚动"></a>2.7.11 滚动</h4><h4 id="2-7-12-路由懒加载"><a href="#2-7-12-路由懒加载" class="headerlink" title="2.7.12 路由懒加载"></a><strong>2.7.12 路由懒加载</strong></h4><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/czj1049561601/article/details/114120236">https://blog.csdn.net/czj1049561601/article/details/114120236</a></p>
+<p>原因：</p>
+<p>1：像vue这种单页面应用，如果没有应用懒加载，运用webpack打包后的文件将会异常的大。<br>2：造成进入首页时，需要加载的内容过多，时间过长，会出啊先长时间的白屏，即使做了loading也是不利于用户体验。<br>3：而运用懒加载则可以将页面进行划分，需要的时候加载页面，可以有效的分担首页所承担的加载压力，减少首页加载用时</p>
+<p>懒加载的效果：</p>
+<ol>
+<li>主要作用是将路由对应的组件打包成<strong>一个个的js代码块</strong></li>
+<li>只有在这个路由<strong>被访问到的时候</strong>，才加载对应的组件，否则不加载</li>
+</ol>
+<p><strong>实现方法：</strong></p>
+<p>1.Vue异步加载技术</p>
+<pre><code class="js"> &#123;      path: &#39;/problem&#39;,      name: &#39;problem&#39;,      component: resolve =&gt; require([&#39;../pages/home/problemList&#39;], resolve)    &#125;
+</code></pre>
+<p>2.ES6推荐方式imprort ()</p>
+<pre><code class="js">import Vue from &#39;vue&#39;;import Router from &#39;vue-router&#39;;// 官网可知：下面没有指定webpackChunkName，每个组件打包成一个js文件。const Foo = () =&gt; import(&#39;../components/Foo&#39;)const Aoo = () =&gt; import(&#39;../components/Aoo&#39;)// 下面2行代码，指定了相同的webpackChunkName，会合并打包成一个js文件。// const Foo = () =&gt; import(/* webpackChunkName: &#39;ImportFuncDemo&#39; */ &#39;../components/Foo&#39;)// const Aoo = () =&gt; import(/* webpackChunkName: &#39;ImportFuncDemo&#39; */ &#39;../components/Aoo&#39;)export default new Router(&#123;    routes: [        &#123;            path: &#39;/Foo&#39;,            name: &#39;Foo&#39;,            component: Foo        &#125;,        &#123;            path: &#39;/Aoo&#39;,            name: &#39;Aoo&#39;,            component: Aoo        &#125;    ]&#125;)
+</code></pre>
+<p>3.webpack提供的require.ensure()实现懒加载</p>
+<pre><code class="js">import Vue from &#39;vue&#39;;
+import Router from &#39;vue-router&#39;;
+const HelloWorld=resolve=&gt;&#123;
+        require.ensure([&#39;@/components/HelloWorld&#39;],()=&gt;&#123;
+            resolve(require(&#39;@/components/HelloWorld&#39;))
+        &#125;)
+    &#125;
+Vue.use(&#39;Router&#39;)
+export default new Router(&#123;
+    routes:[&#123;
+    &#123;path:&#39;./&#39;,
+    name:&#39;HelloWorld&#39;,
+    component:HelloWorld
+    &#125;
+    &#125;]
+&#125;)
+</code></pre>
+<h3 id="2-8Vue-的MVVM"><a href="#2-8Vue-的MVVM" class="headerlink" title="2.8Vue 的MVVM"></a>2.8Vue 的MVVM</h3><p><img src="3.Vue.assets/image-20210327175745907.png" alt="image-20210327175745907"></p>
+<h3 id="2-9Vuex"><a href="#2-9Vuex" class="headerlink" title="2.9Vuex"></a>2.9Vuex</h3><p>单一状态树，一个应用只能有一个store实例</p>
+<p>在根组件注入store实例，<strong>每个子组件使用this.$store访问</strong></p>
+<p><strong>通过属性访问：</strong>store中的getter的返回值会根据它的依赖被缓存，且只有当依赖值发生改变时才会被重新计算</p>
+<p><strong>通过方法访问</strong>：每次都会去进行调用，而不会缓存结果</p>
+<h4 id="2-9-1-将state实例的state对象映射到组件的computed"><a href="#2-9-1-将state实例的state对象映射到组件的computed" class="headerlink" title="2.9.1 将state实例的state对象映射到组件的computed"></a>2.9.1 将state实例的state对象映射到组件的computed</h4><pre><code class="js">//main.js
+const store = new Vuex.Store(&#123;
+  state: &#123;
+    count: 0,
+    todos: [&#123; id: 1, text: &#39;...&#39;, done: true &#125;,
+    &#123; id: 2, text: &#39;...&#39;, done: false &#125;]
+  &#125;&#125;
+ //App.vue
+ import &#123; mapState &#125; from &#39;vuex&#39;
+computed:&#123;
+    ...mapState([&#39;count&#39;,&#39;todos&#39;])
+&#125;//count和todos可以直接在template中使用
+</code></pre>
+<h4 id="2-9-2-将state实例的getters对象映射到组件的computed"><a href="#2-9-2-将state实例的getters对象映射到组件的computed" class="headerlink" title="2.9.2 将state实例的getters对象映射到组件的computed"></a>2.9.2 将state实例的getters对象映射到组件的computed</h4><p><strong>getters中的函数只是对state中的数据进行了一系列的过滤处理然后返回新的数据，并没有直接修改原始的state数据</strong></p>
+<pre><code class="js">//main.js
+const store = new Vuex.Store(&#123;
+getters: &#123;
+    doneTodos: state =&gt; &#123;
+      return state.todos.filter(todo =&gt; todo.done)
+    &#125;,
+    getNum: state =&gt; state.todos.length
+  &#125;//getters类似于计算属性
+&#125;
+
+//App.vue
+computed: &#123;
+    ...mapGetters([&#39;doneTodos&#39;, &#39;getNum&#39;]),
+  &#125;
+</code></pre>
+<h4 id="2-9-3-状态修改-mutations同步"><a href="#2-9-3-状态修改-mutations同步" class="headerlink" title="2.9.3 状态修改 mutations同步"></a>2.9.3 状态修改 mutations同步</h4><p><strong>只能通过mutations来直接修改state中的数据</strong></p>
+<p>提交mutations改变状态，子组件通过this.$store.commit(“”)或者mapMutations，<u><strong>只能处理同步</strong></u></p>
+<h4 id="2-9-4-actions-异步-提交"><a href="#2-9-4-actions-异步-提交" class="headerlink" title="2.9.4 actions 异步 提交"></a>2.9.4 actions 异步 提交</h4><p>actions 函数可以<strong>异步的提交mutation</strong>，接收一个和 store 实例具有相同方法和属性的 <strong>context 对象</strong></p>
+<h4 id="2-9-5modules"><a href="#2-9-5modules" class="headerlink" title="2.9. 5modules"></a>2.9. 5modules</h4><p>模块的状态使用<strong>函数返回</strong>，避免多个实例共用同一个状态对象</p>
+<pre><code class="js">const MyReusableModule = &#123;
+  state: () =&gt; (&#123;
+    foo: &#39;bar&#39;//函数
+  &#125;),
+  // mutation, action 和 getter 等等...
+&#125;
+</code></pre>
+<h3 id="3-模块化开发"><a href="#3-模块化开发" class="headerlink" title="3.模块化开发"></a>3.模块化开发</h3><p>常见的模块化规范：<br>CommonJS、AMD、CMD，也有ES6的Modules</p>
+<h3 id="4-SVG"><a href="#4-SVG" class="headerlink" title="4.SVG"></a>4.SVG</h3><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lhjfly/p/10756650.html">https://www.cnblogs.com/lhjfly/p/10756650.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://panjiachen.github.io/vue-element-admin-site/feature/component/svg-icon.html#usage">https://panjiachen.github.io/vue-element-admin-site/feature/component/svg-icon.html#usage</a></p>
+<pre><code class="html">&lt;!--使用svg-icon组件, --&gt;
+&lt;svg-icon :icon-class=&quot;&quot;&gt;
+&lt;/svg-icon&gt;
+</code></pre>
+<h3 id="5-keep-alive"><a href="#5-keep-alive" class="headerlink" title="5.keep-alive"></a>5.keep-alive</h3><p>放在这个标签里面的页面信息会被保存在内存中</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/sysuhanyf/p/7454530.html">https://www.cnblogs.com/sysuhanyf/p/7454530.html</a></p>
+<h3 id="6-this-router和this-route区别"><a href="#6-this-router和this-route区别" class="headerlink" title="6.this.$router和this.$route区别"></a>6.this.$router和this.$route区别</h3><p>this.$router 相当于一个<strong>全局的路由器对象</strong>，包含了很多属性和对象（比如 history 对象），任何页面都可以调用其 <strong>push(), replace(), go()</strong> 等方法。</p>
+<p>this.$route 表示当前路由对象，每一个路由都会有一个 route 对象，是<strong>一个局部的对象</strong>，可以获取对应的 <strong>name, path, params, query</strong> 等属性。</p>
+<h3 id="7-deep-selector"><a href="#7-deep-selector" class="headerlink" title="7.deep selector"></a>7.deep selector</h3><p><a target="_blank" rel="noopener" href="https://vue-loader.vuejs.org/guide/scoped-css.html#mixing-local-and-global-styles">https://vue-loader.vuejs.org/guide/scoped-css.html#mixing-local-and-global-styles</a></p>
+<p>为了避免不同组件的样式污染，可以使用scoped作用于当前组件，而deep selector可以让父组件的样式影响子组件</p>
+<pre><code class="html">&lt;style scoped&gt;
+.a &gt;&gt;&gt; .b &#123; /* ... */ &#125;
+&lt;/style&gt;
+
+&lt;style scoped&gt;
+.a::v-deep .b &#123; /* ... */ &#125;
+&lt;/style&gt;
+
+&lt;style scoped&gt;
+.a /deep/ .b &#123; /* ... */ &#125;
+&lt;/style&gt;
+</code></pre>
+<h2 id="三、vue源码解读"><a href="#三、vue源码解读" class="headerlink" title="三、vue源码解读"></a>三、vue源码解读</h2><p>视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1d4411v7UX/?p=4&amp;spm_id_from=pageDriver">https://www.bilibili.com/video/BV1d4411v7UX/?p=4&amp;spm_id_from=pageDriver</a></p>
+<p>笔记：</p>
+<p>【1】<a target="_blank" rel="noopener" href="https://vue-course-doc.vercel.app/#_2-%E5%93%8D%E5%BA%94%E6%80%A7">https://vue-course-doc.vercel.app/#_2-%E5%93%8D%E5%BA%94%E6%80%A7</a></p>
+<p>【2】<a target="_blank" rel="noopener" href="https://ustbhuangyi.github.io/vue-analysis/v2/prepare/flow.html#%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%A8-flow">https://ustbhuangyi.github.io/vue-analysis/v2/prepare/flow.html#%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%A8-flow</a></p>
+<p><u>思路：先有期望的效果，再去写代码的实现</u></p>
+<h3 id="1-生命周期"><a href="#1-生命周期" class="headerlink" title="1.生命周期"></a>1.生命周期</h3><p><img src="3.Vue.assets/lifecycle.png" alt="Vue 实例生命周期"></p>
+<pre><code class="json">/node_modules/vue/src/core/instance/index.js:vue的构造函数
+vue是一个普通的函数对象，Vue.prototype._init
+</code></pre>
+<h3 id="2-借助Flow进行静态类型检查"><a href="#2-借助Flow进行静态类型检查" class="headerlink" title="2.借助Flow进行静态类型检查"></a>2.借助<strong>Flow</strong>进行静态类型检查</h3><p>两种检查方式</p>
+<ul>
+<li>类型推断：不需要修改代码</li>
+<li>类型注释：需要注明参数的类型</li>
+</ul>
+<p><strong>TypeScript</strong>也可以实现静态类型检查，原本JavaScript是动态语言，但是可以借助这两个工具<strong>在代码里声明预期的参数类型</strong>，然后进行检查，减少代码隐藏的bug。</p>
+<h3 id="3-借助rollup进行构建打包"><a href="#3-借助rollup进行构建打包" class="headerlink" title="3.借助rollup进行构建打包"></a>3.借助rollup进行构建打包</h3><p>配置不同的参数，进行不同的代码打包</p>
+<h3 id="4-Vue-js的入口文件"><a href="#4-Vue-js的入口文件" class="headerlink" title="4.Vue.js的入口文件"></a>4.Vue.js的入口文件</h3><img src="3.Vue.assets/image-20210630113714890.png" alt="image-20210630113714890" style="zoom:80%;" />
+
+<p>当使用<code>import Vue from &#39;vue&#39;</code>时会从这个文件进入，执行代码来初始化 Vue</p>
+<ol>
+<li>Vue的定义</li>
+</ol>
+<pre><code class="javascript">import &#123; initMixin &#125; from &#39;./init&#39;
+import &#123; stateMixin &#125; from &#39;./state&#39;
+import &#123; renderMixin &#125; from &#39;./render&#39;
+import &#123; eventsMixin &#125; from &#39;./events&#39;
+import &#123; lifecycleMixin &#125; from &#39;./lifecycle&#39;
+import &#123; warn &#125; from &#39;../util/index&#39;
+
+//Vue是一个用函数实现的类，只能用`new Vue`来实例化
+function Vue (options) &#123;
+  if (process.env.NODE_ENV !== &#39;production&#39; &amp;&amp;
+    !(this instanceof Vue)
+  ) &#123;
+    warn(&#39;Vue is a constructor and should be called with the `new` keyword&#39;)
+  &#125;
+  this._init(options)
+    // 构造函数中只调用了init函数，即生命周期图的init函数
+&#125;
+
+//把 Vue当参数传入，它们的功能都是给 Vue 的 prototype 上扩展一些方法
+//Vue 按功能把这些扩展分散到多个模块中去实现
+initMixin(Vue)
+stateMixin(Vue)
+eventsMixin(Vue)
+lifecycleMixin(Vue)
+renderMixin(Vue)
+
+export default Vue
+</code></pre>
+<ol start="2">
+<li><h3 id="initGlobalAPI"><a href="#initGlobalAPI" class="headerlink" title="initGlobalAPI"></a><code>initGlobalAPI</code></h3></li>
+</ol>
+<p>Vue.js 在整个初始化过程中，除了给它的原型 prototype 上扩展方法，还会<strong>给 <code>Vue</code> 这个对象本身扩展全局的静态方法</strong></p>
+<pre><code class="javascript">//在 Vue 上扩展的一些全局方法的定义
+export function initGlobalAPI (Vue: GlobalAPI) &#123;
+  // config
+  const configDef = &#123;&#125;
+  configDef.get = () =&gt; config
+  if (process.env.NODE_ENV !== &#39;production&#39;) &#123;
+    configDef.set = () =&gt; &#123;
+      warn(
+        &#39;Do not replace the Vue.config object, set individual fields instead.&#39;
+      )
+    &#125;
+  &#125;
+  Object.defineProperty(Vue, &#39;config&#39;, configDef)
+
+  // exposed util methods.
+  // NOTE: these are not considered part of the public API - avoid relying on
+  // them unless you are aware of the risk.
+  Vue.util = &#123;
+    warn,
+    extend,
+    mergeOptions,
+    defineReactive
+  &#125;
+
+  Vue.set = set
+  Vue.delete = del
+  Vue.nextTick = nextTick
+
+  Vue.options = Object.create(null)
+  ASSET_TYPES.forEach(type =&gt; &#123;
+    Vue.options[type + &#39;s&#39;] = Object.create(null)
+  &#125;)
+
+  // this is used to identify the &quot;base&quot; constructor to extend all plain-object
+  // components with in Weex&#39;s multi-instance scenarios.
+  Vue.options._base = Vue
+
+  extend(Vue.options.components, builtInComponents)
+
+  initUse(Vue)
+  initMixin(Vue)
+  initExtend(Vue)
+  initAssetRegisters(Vue)
+&#125;
+</code></pre>
+<h3 id="5-数据驱动和实例挂载"><a href="#5-数据驱动和实例挂载" class="headerlink" title="5.数据驱动和实例挂载"></a>5.数据驱动和实例挂载</h3><p>在<code>Vue.prototype._init</code>函数的最后，检测到如果有 el 属性，则调用 vm.$mount 方法挂载 vm，挂载的目标就是把模板渲染成最终的 DOM。</p>
+<p>对于runtime-only，有一个公用的挂载方法<code>Vue.prototype.$mount</code>；runtime-compiler，又重写了<code>Vue.prototype.$mount</code>，需要<u>将<code>template</code>和<code>el</code>都转成<code>render</code>函数</u>（Vue的编译过程），然后重新调用公用的<code>$mount</code></p>
+<p>公用的<code>$mount</code>的核心函数是<code>mountComponent</code>函数，它实例化了watcher类，并在它的回调函数中会调用 <code>updateComponent</code> 方法，在此方法中调用 <code>vm._render</code> 方法先生成虚拟 Node，最终调用 <code>vm._update</code> 更新 DOM。</p>
+<p><code>Watcher</code> 在这里起到两个作用：一个是<strong>初始化的时候会执行回调函数</strong>，另一个是当 vm 实例中的<strong>监测的数据发生变化的时候执行回调函数</strong></p>
+<ol>
+<li><strong>vm._render：</strong></li>
+</ol>
+<p>把实例渲染成一个虚拟 Node，通过执行 <code>createElement</code> 方法并返回的是 <code>vnode</code>。Virtual DOM 是用 <code>VNode</code> 这么一个 Class 去描述，它是定义在 <code>src/core/vdom/vnode.js</code> 中的，是一个原生的JS对象。</p>
+<p>Virtual DOM 除了它的数据结构的定义，<strong>映射到真实的 DOM 实际上要经历 VNode 的 create（createElement方法）、diff、patch 等过程。</strong></p>
+<p>createElement方法：它内层还是调用真正创建 VNode 的函数 <code>_createElement</code>，会根据normalizationType的不同进行规范children参数，然后创建VNode。</p>
+<ol start="2">
+<li><strong>vm._update:</strong></li>
+</ol>
+<p>把这个 VNode 渲染成一个真实的 DOM 并渲染出来，<code>_update</code> 的核心就是调用 <code>Vue.prototype.__patch__</code> 方法，这个方法实际上在不同的平台有不同的定义，在 web 平台中它的定义在 <code>src/platforms/web/runtime/index.js</code> 中</p>
+<h3 id="6-响应式原理"><a href="#6-响应式原理" class="headerlink" title="6.响应式原理"></a>6.响应式原理</h3><h4 id="6-1prop属性的响应式处理"><a href="#6-1prop属性的响应式处理" class="headerlink" title="6.1prop属性的响应式处理"></a>6.1<code>prop</code>属性的响应式处理</h4><ol>
+<li><code>defineReactive</code></li>
+</ol>
+<p> 给当前vm的<code>_props</code>对象添加响应式属性（也就是我们传递的属性值），把传进来的Vue实例属性挂到<code>vm._props</code>上，可以通过<code>vm._props.xxx</code>访问</p>
+<pre><code class="javascript">export function defineReactive (
+  obj: Object,
+  key: string,
+  val: any,
+  customSetter?: ?Function,
+  shallow?: boolean
+) &#123;
+  const dep = new Dep() //Dep实例
+
+  const property = Object.getOwnPropertyDescriptor(obj, key) //获取对象描述符
+  if (property &amp;&amp; property.configurable === false) &#123;
+    return
+  &#125;
+
+  // cater for pre-defined getter/setters
+  const getter = property &amp;&amp; property.get
+  const setter = property &amp;&amp; property.set
+  if ((!getter || setter) &amp;&amp; arguments.length === 2) &#123;
+    val = obj[key]
+  &#125;
+
+  let childOb = !shallow &amp;&amp; observe(val) 
+  //对于待观察对象内部所有的对象类属性都进行观察，这样可以保证嵌套的属性改变时也能观察到
+  Object.defineProperty(obj, key, &#123;
+    enumerable: true,
+    configurable: true,
+    get: function reactiveGetter () &#123;
+      const value = getter ? getter.call(obj) : val
+      if (Dep.target) &#123;
+        dep.depend() //依赖收集
+        if (childOb) &#123;
+          childOb.dep.depend() // observe实例对象有一个dep属性
+          if (Array.isArray(value)) &#123;
+            dependArray(value) //对数组中的每个元素收集依赖
+          &#125;
+        &#125;
+      &#125;
+      return value
+    &#125;,
+    set: function reactiveSetter (newVal) &#123;
+      const value = getter ? getter.call(obj) : val
+      /* eslint-disable no-self-compare */
+      //没有变化不调用set
+      if (newVal === value || (newVal !== newVal &amp;&amp; value !== value)) &#123;
+        return
+      &#125;
+      /* eslint-enable no-self-compare */
+      if (process.env.NODE_ENV !== &#39;production&#39; &amp;&amp; customSetter) &#123;
+        customSetter()
+      &#125;
+      // #7981: for accessor properties without setter
+      if (getter &amp;&amp; !setter) return
+      if (setter) &#123;
+        setter.call(obj, newVal) //用之前预定义的setter
+      &#125; else &#123;
+        val = newVal
+      &#125;
+      childOb = !shallow &amp;&amp; observe(newVal)
+      dep.notify() //派发更新
+    &#125;
+  &#125;)
+&#125;
+</code></pre>
+<p><code>getter</code>和<code>setter</code>的核心是<code>Dep</code>类的实现，<code>Dep</code>类的核心是<code>Watcher</code>的实现</p>
+<ol start="2">
+<li><code>proxy</code></li>
+</ol>
+<p>通过 <code>proxy</code>函数 把 <code>vm._props.xxx</code> 的访问代理到 <code>vm.xxx</code></p>
+<pre><code class="javascript">const sharedPropertyDefinition = &#123;
+  enumerable: true,
+  configurable: true,
+  get: noop,
+  set: noop
+&#125;
+
+export function proxy (target: Object, sourceKey: string, key: string) &#123;
+  sharedPropertyDefinition.get = function proxyGetter () &#123;
+    return this[sourceKey][key]
+  &#125;
+  sharedPropertyDefinition.set = function proxySetter (val) &#123;
+    this[sourceKey][key] = val
+  &#125;
+  Object.defineProperty(target, key, sharedPropertyDefinition)
+&#125;
+</code></pre>
+<h4 id="6-2-data属性的响应式处理"><a href="#6-2-data属性的响应式处理" class="headerlink" title="6.2 data属性的响应式处理"></a>6.2 <code>data</code>属性的响应式处理</h4><ol>
+<li><code>proxy</code></li>
+</ol>
+<p>通过 <code>proxy</code> 把每一个值 <code>vm._data.xxx</code> 都代理到 <code>vm.xxx</code> 上</p>
+<ol start="2">
+<li><code>observe</code></li>
+</ol>
+<p>调用 <code>observe</code> 方法观测整个 <code>data</code> 的变化，把 <code>data</code> 也变成响应式，可以通过 <code>vm._data.xxx</code> 访问到定义 <code>data</code> <strong>返回函数</strong>中对应的属性</p>
+<p><code>observe</code> 方法的作用就是给非 VNode 的<strong>对象类型数据</strong>添加一个 <code>Observer</code>实例。如果已经添加过则<strong>直接返回</strong>，否则在满足一定条件下去实例化一个 <code>Observer</code> 对象实例</p>
+<p>其本质最终仍然是通过<code>defineReactive</code>函数，通过修改<code>getter</code>和<code>setter</code>来构造响应式对象</p>
+<pre><code class="javascript">export class Observer &#123;
+  value: any //待观察的对象
+  dep: Dep //依赖收集与发放的类实例
+  vmCount: number // number of vms that have this object as root $data
+
+  constructor(value: any) &#123;
+    this.value = value
+    this.dep = new Dep()
+    this.vmCount = 0
+    def(value, &#39;__ob__&#39;, this) //为待观察的对象添加属性__ob__,值为Observer实例对象
+    if (Array.isArray(value)) &#123;
+      if (hasProto) &#123;
+        protoAugment(value, arrayMethods)
+      &#125; else &#123;
+        copyAugment(value, arrayMethods, arrayKeys)
+      &#125;
+      this.observeArray(value)
+    &#125; else &#123;
+      this.walk(value)
+    &#125;
+  &#125;
+
+  /**
+   * Walk through all properties and convert them into
+   * getter/setters. This method should only be called when
+   * value type is Object.
+   * 对一个对象的每个属性进行观察，设置get和set函数
+   */
+  walk (obj: Object) &#123;
+    const keys = Object.keys(obj)
+    for (let i = 0; i &lt; keys.length; i++) &#123;
+      defineReactive(obj, keys[i])
+    &#125;
+  &#125;
+
+  /**
+   * Observe a list of Array items.
+   *对数组中的每个对象单独观察
+   */
+  observeArray (items: Array&lt;any&gt;) &#123;
+    for (let i = 0, l = items.length; i &lt; l; i++) &#123;
+      observe(items[i])
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 18800379282@163.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '03a6ca2b5a66493eb1f9',
+            clientSecret: '1a0ff8296171ad77c3312782e8ca5bfd346d1ede',
+            repo: 'AuroraVee.github.io',
+            owner: 'AuroraVee',
+            admin: ['AuroraVee'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2021-至今 AuroraVee
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().trim().split('\n').length, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

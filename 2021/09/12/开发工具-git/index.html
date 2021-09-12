@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>about | 前端学习笔记</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="about | 前端学习笔记">
+  <title>git | 前端学习笔记</title>
+  <meta name="keywords" content=" Git ">
+  <meta name="description" content="git | 前端学习笔记">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于个人简介吴家秀（AuroraVee），目前是上海大学的专硕。由于后面的学业项目涉及到web端的开发，从2020年12月开始逐步学习前端编程。当然，在这之前，我也是有编程经验的，本科的时候主要用过C++&#x2F;C&#x2F;Python&#x2F;Java做过一些课程项目，但是呢都学得不是很深。进入研究生后，对于以后从事的岗位迷茫过，不知道该找哪门语言的工作。刚好，企业导师给我安排的项目是前端方向的，意味着整个研究生的时">
 <meta property="og:type" content="website">
@@ -581,24 +581,43 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-开发工具-git" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">about</h1>
+        <h1 class="article-title">git</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="前端">前端</a> > 
+            
+            <a  data-rel="前端&lt;---&gt;javascript">javascript</a> > 
+            
+            <a  data-rel="前端&lt;---&gt;javascript&lt;---&gt;开发工具">开发工具</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color4">Git</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-09-12 14:17:37'>2021-09-12 14:01</time>
+            发布时间 : <time class="date" title='最后更新: 2021-09-12 20:52:44'>2021-09-12 20:48</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:330</span>
+        <span>字数:2.8k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -628,7 +647,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E"><span class="toc-text">关于</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B"><span class="toc-text">个人简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="toc-text">联系方式</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git"><span class="toc-text">Git</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9FVCS"><span class="toc-text">1.版本控制系统VCS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Git%E4%BD%BF%E7%94%A8"><span class="toc-text">2.Git使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Git%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-text">3.Git的配置文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%8A%8A%E6%96%87%E4%BB%B6%E5%AD%98%E8%BF%9B%E6%96%87%E6%A1%A3%E5%BA%93"><span class="toc-text">4.把文件存进文档库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-Git%E8%BF%BD%E8%B8%AA%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-text">4.1 Git追踪文件的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E6%8E%A7%E5%88%B6commit%E8%8A%82%E7%82%B9"><span class="toc-text">4.2 控制commit节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E5%88%A0%E9%99%A4%E6%9F%90%E4%B8%AA%E5%B7%B2%E8%BF%BD%E8%B8%AA%E7%9A%84%E6%96%87%E4%BB%B6"><span class="toc-text">4.3 删除某个已追踪的文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-%E4%BB%8E%E6%96%87%E6%A1%A3%E5%BA%93%E4%B8%AD%E5%8F%96%E6%96%87%E4%BB%B6"><span class="toc-text">4.4 从文档库中取文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E5%A4%B9-%E6%96%87%E4%BB%B6%E7%9A%84%E5%90%8D%E5%AD%97%E5%B9%B6%E6%9B%B4%E6%96%B0%E5%88%B0%E6%96%87%E6%A1%A3%E5%BA%93"><span class="toc-text">4.5 修改文件夹&#x2F;文件的名字并更新到文档库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-%E6%9A%82%E5%AD%98%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E6%96%87%E4%BB%B6%E7%8A%B6%E6%80%81"><span class="toc-text">4.5 暂存文件夹的文件状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-6%E6%81%A2%E5%A4%8D%E5%88%B0%E6%9F%90%E4%B8%AA%E7%89%88%E6%9C%AC"><span class="toc-text">4.6恢复到某个版本</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%BB%BA%E7%AB%8B%E5%88%86%E6%94%AF%E3%80%81%E5%90%88%E5%B9%B6%E5%92%8C%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3"><span class="toc-text">5.建立分支、合并和冲突解决</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E5%BB%BA%E7%AB%8B%E5%88%86%E6%94%AF%E3%80%81%E6%9F%A5%E7%9C%8B%E5%88%86%E6%94%AF%E3%80%81%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF"><span class="toc-text">5.1 建立分支、查看分支、切换分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AF"><span class="toc-text">5.2 删除分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-%E6%9B%B4%E6%94%B9%E5%88%86%E6%94%AF%E7%9A%84%E5%90%8D%E7%A7%B0"><span class="toc-text">5.3 更改分支的名称</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF%E3%80%81%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81"><span class="toc-text">5.4 合并分支、解决冲突</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-1-%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF%E6%B5%81%E7%A8%8B"><span class="toc-text">5.4.1 合并分支流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-2-%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-text">5.4.2 合并分支的两种方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-3-%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3"><span class="toc-text">5.4.3 冲突解决</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E4%BD%BF%E7%94%A8Rebase%E6%8C%87%E4%BB%A4%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF%EF%BC%8C%E7%AE%80%E5%8C%96commit%E5%9B%BE%EF%BC%88%E6%9C%89%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E6%97%B6%EF%BC%8C%E4%B8%8D%E8%83%BD%E4%BD%BF%E7%94%A8%EF%BC%89"><span class="toc-text">6.使用Rebase指令合并分支，简化commit图（有远程仓库时，不能使用）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-text">7.远程仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-%E4%BB%8E%E8%BF%9C%E7%A8%8B%E6%96%87%E6%A1%A3%E5%BA%93%E5%A4%8D%E5%88%B6%E5%87%BA%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93"><span class="toc-text">7.1 从远程文档库复制出本地仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-%E6%9C%AC%E5%9C%B0%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B"><span class="toc-text">7.2 本地推送到远程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-fork%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-text">8.fork远程仓库</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -644,8 +663,179 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h1><h3 id="个人简介"><a href="#个人简介" class="headerlink" title="个人简介"></a>个人简介</h3><p><strong>吴家秀（AuroraVee）</strong>，目前是上海大学的专硕。由于后面的学业项目涉及到web端的开发，从2020年12月开始逐步学习前端编程。<br>当然，在这之前，我也是有编程经验的，本科的时候主要用过C++/C/Python/Java做过一些课程项目，但是呢都学得不是很深。进入研究生后，对于以后从事的岗位迷茫过，不知道该找哪门语言的工作。刚好，企业导师给我安排的项目是前端方向的，意味着整个研究生的时间都将是做这个类型的项目，那我可以在这个过程中把前端的知识学透，同时也有相关的项目经验。所以从去年的12月开始我就开始了整个学习之旅，在这个学习过程中我看了基本经典的书，自己也跟着写过一些代码。知识总是会随着学习的深入淡忘掉，所以我想用博客的方式把一些难点和实际操作中遇到的问题记录下来，这样以后可以随时复习巩固。   </p>
-<h3 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h3><p> QQ：2374628298<br> 邮箱：<a href="mailto:&#x31;&#56;&#56;&#x30;&#48;&#51;&#55;&#57;&#x32;&#56;&#x32;&#x40;&#x31;&#54;&#51;&#46;&#x63;&#111;&#109;">&#x31;&#56;&#56;&#x30;&#48;&#51;&#55;&#57;&#x32;&#56;&#x32;&#x40;&#x31;&#54;&#51;&#46;&#x63;&#111;&#109;</a></p>
+        <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p>参考资料：完全学会GIT GITHUB GIT SERVER的24堂课</p>
+<h2 id="1-版本控制系统VCS"><a href="#1-版本控制系统VCS" class="headerlink" title="1.版本控制系统VCS"></a>1.版本控制系统VCS</h2><p>VCS一开始是采用<strong>集中控制和管理的方式</strong>控制文档版本，但是这种方法需要锁定文档，等修改完了其他人才能继续修改。</p>
+<p>后来变成<strong>分布式控制</strong>，大家可以都获取文件下来进行修改，然后送回VCS进行合并，<strong>Git就是采用的分布式控制技术</strong></p>
+<p>VCS主要有两套：</p>
+<ul>
+<li>SubVersion（SVN）</li>
+<li>Git     <ul>
+<li>Git Server主要有Github和Gitlab</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-Git使用"><a href="#2-Git使用" class="headerlink" title="2.Git使用"></a>2.Git使用</h2><ol>
+<li>新建文件夹，右键打开<code>git bash</code></li>
+<li>输入<code> git init</code>，初始化仓库；会生成<code>.git</code>的子文件夹</li>
+</ol>
+<p><code>git add filename/文件夹名/.</code>：新增文件、把当前文件夹下的所有内容<strong>加入Git系统的索引</strong></p>
+<p><code>git status</code>：查看文件状态</p>
+<p><code>git commit -m &quot;描述&quot;</code>：提交到本地仓库，或者说是<strong>把索引中的文件内容加入文档库</strong></p>
+<p><code>gitk</code>：打开图形查看模式                      <code>gitk --all</code>：可以查看所有分支</p>
+<blockquote>
+<p>里面有patch和tree两种模式查看不同的<code>commit</code>节点情况</p>
+<p>patch：点击不同的<code>commit</code>节点并且选中想要查看的文件，看到的是当前节点和前一个节点的不同；</p>
+<p>tree：点击不同的<code>commit</code>节点并且选中想要查看的文件，看到的是文件完整的内容</p>
+</blockquote>
+<p>注：<code>git add 选项</code>的不同含义</p>
+<blockquote>
+<p><code>git add .</code>：把新增的和被修改的文件加入Git索引</p>
+<p><code>git add -u</code>：把被修改和被删除的文件加入Git索引</p>
+<p><code>git add -A</code>：把新增的、被修改的、被删除的文件加入Git索引</p>
+</blockquote>
+<h2 id="3-Git的配置文件"><a href="#3-Git的配置文件" class="headerlink" title="3.Git的配置文件"></a>3.Git的配置文件</h2><p>优先级<strong>从高到低</strong>为：</p>
+<ol>
+<li>文档库<code>.git</code>文件夹下的配置文件，<code>git config user.name/user.email</code></li>
+<li><code>home directory</code>文件夹下的<code>.gitconfig</code>文件，<code>git config --global user.name/user.email</code></li>
+<li>安装文件夹下<code>etc/gitconfig</code>配置文件,<code>git config --system user.name/user.eamil</code></li>
+</ol>
+<p>查看文档库的配置为：<code>git config -l</code></p>
+<p>删除某个配置文件中的配置项：<code>git config --unset (--global/--system) user.name</code></p>
+<p><code>git diff</code>可以查看<strong>当前文件夹下的文件</strong>和<strong>文档库中最新版本</strong>的差异</p>
+<h2 id="4-把文件存进文档库"><a href="#4-把文件存进文档库" class="headerlink" title="4.把文件存进文档库"></a>4.把文件存进文档库</h2><h3 id="4-1-Git追踪文件的方式"><a href="#4-1-Git追踪文件的方式" class="headerlink" title="4.1 Git追踪文件的方式"></a>4.1 Git追踪文件的方式</h3><ul>
+<li>tracked：已经加入文档库</li>
+<li>ignored：被忽略的，不需要跟踪，需要创建<code>.gitignore</code>文件</li>
+<li>untracked：没被追踪的，可以通过<code>git status</code>查看没被追踪的文件</li>
+</ul>
+<p><code>.gitignore</code>文件：</p>
+<blockquote>
+<p>创建方法<code>touch .gitignore</code>。</p>
+<p><code>.gitignore</code>文件只负责<strong>管理它所在文件夹以及子文件夹下</strong>的东西，每个文件夹里都可以创建。</p>
+<p>文件里每一个忽略项各自占一行，可以使用<code>.</code>通配符，<code>#</code>表示注释，<code>!</code>表示不包括</p>
+</blockquote>
+<h3 id="4-2-控制commit节点"><a href="#4-2-控制commit节点" class="headerlink" title="4.2 控制commit节点"></a>4.2 控制<code>commit</code>节点</h3><p>查看<code>commit</code>提交状态：</p>
+<ul>
+<li><code>gitk</code></li>
+<li><code>git log (--graph --oneline)</code></li>
+</ul>
+<p>每一 个<code>commit</code>节点都有<strong>节点标识</strong>（很长的16进制数字，一般使用前4位），也可以设置<strong>节点标签</strong>。其中<code>HEAD</code>标签（简写为<code>@</code>）始终代表最新的一次<code>commit</code>，可以通过<code>git show HEAD</code>查看</p>
+<p>自己设置节点标签：<code>git tag tagName commit的节点标识符/标签</code>；删除节点标签：<code>git tag -d commit的节点标签</code></p>
+<img src="git.assets/image-20210717175952003.png" alt="image-20210717175952003" style="zoom:67%;" />
+
+<h3 id="4-3-删除某个已追踪的文件"><a href="#4-3-删除某个已追踪的文件" class="headerlink" title="4.3 删除某个已追踪的文件"></a>4.3 删除某个已追踪的文件</h3><ol>
+<li>先直接从文件夹下删除</li>
+<li>执行<code>git add -A .</code>：会检查文件夹中是否有文件被删除</li>
+<li>执行<code>git commit -m &quot;描述&quot;</code></li>
+</ol>
+<p>当前<code>commit</code>节点里这个文件被删除，但是历史版本里还是存在</p>
+<h3 id="4-4-从文档库中取文件"><a href="#4-4-从文档库中取文件" class="headerlink" title="4.4 从文档库中取文件"></a>4.4 从文档库中取文件</h3><p><code>git checkout commit节点标识符/节点标签 文件1 文件2</code>：取出的文件会把当前文件夹里的文件<strong>覆盖</strong>掉，不会修改HEAD节点</p>
+<p><u>注：<code>git checkout commit节点</code>：</u>也能让文件夹里的文件恢复到指定状态，但是会进入<strong>detachedHEAD状态，此时HEAD会指向该节点</strong>。如果此时进行了<code>git add</code>和<code>git commit</code>，会<strong>从当前节点长出无名的分支</strong>。可以通过把这个<strong>无名分支删除或者合并到原来的分支</strong>解决这种情况。</p>
+<img src="git.assets/image-20210718161934700.png" alt="image-20210718161934700" style="zoom:67%;" />
+
+<p><code>git grep (-i/-c) -e 要查找的字符串1 -e 要查找的字符串2 commit节点</code>：找出包含某一字符串的节点</p>
+<h3 id="4-5-修改文件夹-文件的名字并更新到文档库"><a href="#4-5-修改文件夹-文件的名字并更新到文档库" class="headerlink" title="4.5 修改文件夹/文件的名字并更新到文档库"></a>4.5 修改文件夹/文件的名字并更新到文档库</h3><ol>
+<li><code>git mv 旧名字 新名字</code></li>
+<li><code>git commit -m &quot;备注&quot;</code></li>
+</ol>
+<h3 id="4-5-暂存文件夹的文件状态"><a href="#4-5-暂存文件夹的文件状态" class="headerlink" title="4.5 暂存文件夹的文件状态"></a>4.5 暂存文件夹的文件状态</h3><p><u>当文件改到一半，临时需要做其他事情时，可以把文件夹的内容先暂存起来，等处理结束后再恢复</u></p>
+<ol>
+<li><code>git stash save</code>：<strong>存储</strong>当前文件状态与<strong>最新</strong><code>commit</code>节点的<strong>差异</strong>，并把文件状态<strong>恢复为最新</strong><code>commit</code>节点的数据</li>
+<li><code>git stash list</code>：可以查看文件暂存状态，以及用来对比的<code>commit</code>节点A、描述内容</li>
+<li>执行其他任务，并把<strong>修改的内容提交到文档库</strong></li>
+<li><code>git checkout commit节点A .</code>：从之前的对比<code>commit</code>节点中取出文件</li>
+<li><code>git stash pop</code>：取出<strong>暂存的文件并合并</strong>到当前文件夹中的文件，操作成功后暂存的文件状态就被清除</li>
+</ol>
+<h3 id="4-6恢复到某个版本"><a href="#4-6恢复到某个版本" class="headerlink" title="4.6恢复到某个版本"></a>4.6恢复到某个版本</h3><ol>
+<li><p><code>git reset 选项 commit的节点标识符/标签</code>：回到<strong>指定的commit节点</strong>，<strong>不会</strong>产生新的commit节点</p>
+<blockquote>
+<p><code>--soft</code>：只有<strong>文档库</strong>中的数据会改变，可以直接执行<code>git commit -m &quot;&quot;</code></p>
+<p><code>--mixed</code>：<strong>文档库和git索引</strong>都会恢复到指定节点状态，<strong>默认值</strong>，可以直接执行<code>git add  文件</code></p>
+<p><code>--hard</code>：<strong>文档库、git索引、文件夹</strong>中的文件都会恢复到指定状态</p>
+<p><strong><u>注：恢复之后，<code>commit</code>的历史提交记录都没了</u></strong></p>
+</blockquote>
+</li>
+<li><p><code>git checkout commit节点 .</code>：不会导致冲突</p>
+</li>
+<li><p><code>git revert commit节点</code>：回到指定commit节点的<strong>前一个状态</strong>，并且<strong>会创建新</strong>的commit节点。可以在恢复过程中使用<code>git revert --abort</code>取消。这种恢复<strong>会导致冲突</strong></p>
+</li>
+</ol>
+<h2 id="5-建立分支、合并和冲突解决"><a href="#5-建立分支、合并和冲突解决" class="headerlink" title="5.建立分支、合并和冲突解决"></a>5.建立分支、合并和冲突解决</h2><h3 id="5-1-建立分支、查看分支、切换分支"><a href="#5-1-建立分支、查看分支、切换分支" class="headerlink" title="5.1 建立分支、查看分支、切换分支"></a>5.1 建立分支、查看分支、切换分支</h3><p><code>git branch</code>：<strong>查看</strong>当前所有的开发分支</p>
+<p>方法一：</p>
+<ol>
+<li><p><code>git branch 分支名称 commit节点</code>：<strong>从指定的commit节点长出分支</strong>，如果没写节点则从最新的<code>commit</code>节点长出分支</p>
+</li>
+<li><p><code>git checkout 分支名称</code>：切换分支</p>
+</li>
+</ol>
+<p>方法二：</p>
+<p><code>git checkout -b 新分支名称 commit节点</code>：创建新分支并自动切换到该分支下</p>
+<p>从当前分支A切换到另一分支B，如果<strong>A经过tracked的文件在B中没有</strong>，说明这些文件是<strong>创建分支B之后加入</strong>文档库的，需要将<strong>这些文件删除</strong>后再切换到B分支；如果<strong>A没有tracked而在B中tracked</strong>了，则切换到B分支时需要从<strong>文档库中取回</strong>这些文件</p>
+<p><strong><u>注：切换分支前，应该把最新的文件内容存入文档库，即执行<code>git commit -m</code></u></strong></p>
+<h3 id="5-2-删除分支"><a href="#5-2-删除分支" class="headerlink" title="5.2 删除分支"></a>5.2 删除分支</h3><ol>
+<li>先切换到另一个分支A</li>
+<li><code>git branch -d 分支B</code>：应该<strong>先合并分支B</strong>，再执行删除</li>
+<li>如果<strong>想不合并直接删除</strong>，可以执行<code>git branch -D 分支B</code></li>
+</ol>
+<h3 id="5-3-更改分支的名称"><a href="#5-3-更改分支的名称" class="headerlink" title="5.3 更改分支的名称"></a>5.3 更改分支的名称</h3><ol>
+<li>先切换到该分支</li>
+<li><code>git branch -m 新分支的名称</code></li>
+</ol>
+<h3 id="5-4-合并分支、解决冲突"><a href="#5-4-合并分支、解决冲突" class="headerlink" title="5.4 合并分支、解决冲突"></a>5.4 合并分支、解决冲突</h3><h4 id="5-4-1-合并分支流程"><a href="#5-4-1-合并分支流程" class="headerlink" title="5.4.1 合并分支流程"></a>5.4.1 合并分支流程</h4><ol>
+<li>假设当前分支为A</li>
+<li>执行<code>git merge B</code>：把分支B合并到分支A，合并后的commit节点是A分支</li>
+<li>合并后，执行<code>git branch -d B</code>将B分支删除</li>
+</ol>
+<p><strong><u>注：如果合并节点后想反悔，可以执行<code>git reset --hard commit节点</code>进行恢复</u></strong></p>
+<h4 id="5-4-2-合并分支的两种方式"><a href="#5-4-2-合并分支的两种方式" class="headerlink" title="5.4.2 合并分支的两种方式"></a>5.4.2 合并分支的两种方式</h4><ol>
+<li>fast-forward merge：创建新的分支B后，B分支也新的commit，但是原来的分支一直没有，此时只能执行<code>git merge B</code>，<strong>合并不会产生新的<code>commit</code>节点</strong>。可以通过<code>git merge --no-ff B</code>，修改合并方式为3-way merge</li>
+</ol>
+<img src="git.assets/image-20210718163747825.png" alt="image-20210718163747825" style="zoom:67%;" />
+
+<ol start="2">
+<li>3-way merge：分支B修改的同时，原来的分支也存在<code>commit</code>，合并之后会<strong>产生新的<code>commit</code>节点</strong></li>
+</ol>
+<img src="git.assets/image-20210718164037360.png" alt="image-20210718164037360" style="zoom:67%;" />
+
+<p><u>如果没有指定合并方式，Git会自动选择</u></p>
+<h4 id="5-4-3-冲突解决"><a href="#5-4-3-冲突解决" class="headerlink" title="5.4.3 冲突解决"></a>5.4.3 冲突解决</h4><p>如果两个分支在同一文件的同一位置进行了不同内容的修改，在合并时会产生冲突</p>
+<ol>
+<li>如果执行<code>git merge 分支</code>后，提示合并冲突，可以通过<code>git merge --abort</code>放弃合并</li>
+<li>也可以进入冲突文件中，查找冲突位置进行修改后，执行<code>git add .</code>、<code>git commit -m &quot;描述&quot;</code>，完成合并</li>
+</ol>
+<h2 id="6-使用Rebase指令合并分支，简化commit图（有远程仓库时，不能使用）"><a href="#6-使用Rebase指令合并分支，简化commit图（有远程仓库时，不能使用）" class="headerlink" title="6.使用Rebase指令合并分支，简化commit图（有远程仓库时，不能使用）"></a>6.使用Rebase指令合并分支，简化commit图（有远程仓库时，不能使用）</h2><p>使用多分支进行开发时，为了<strong>让其他分支和主分支的代码保持同步</strong>，需要<strong>定时将主分支的修改合并到当前分支</strong>。如果采取前面的<code>merge</code>指令，会使得commit图变得很复杂</p>
+<p>使用Rebase指令，也可以将其他分支的代码合并到当前分支，但是可以简化commit图。</p>
+<img src="git.assets/image-20210718191330660.png" alt="image-20210718191330660" style="zoom: 67%;" />
+
+<img src="git.assets/image-20210718191441447.png" alt="image-20210718191441447" style="zoom: 67%;" />
+
+<p>使用方法和<code>merge</code>一样，<code>git rebase 分支</code></p>
+<p><strong>在合并完成之前</strong>，可以通过<code>git rebase --abort</code>来取消合并，回到合并之前的状态。</p>
+<p>如果已经合并，可以通过<code>git reset --hard commit节点</code>来恢复，但是需要知道<strong>合并之前HEAD所在的commit节点</strong>。这个可以通过<code>git reflog HEAD/分支名称</code>查看</p>
+<h2 id="7-远程仓库"><a href="#7-远程仓库" class="headerlink" title="7.远程仓库"></a>7.远程仓库</h2><p>之前对文件的修改都是保存在<code>.git</code>形成的本地文档库中（local repository），为了团队开发需要建立远程仓库（remote repository）</p>
+<p><img src="git.assets/image-20210718194431155.png" alt="image-20210718194431155"></p>
+<p>远程Git文档库是一个Bare类型的Git仓库，执行<code>git init --bare Git仓库的文件夹名称</code>就可以创建</p>
+<h3 id="7-1-从远程文档库复制出本地仓库"><a href="#7-1-从远程文档库复制出本地仓库" class="headerlink" title="7.1 从远程文档库复制出本地仓库"></a>7.1 从远程文档库复制出本地仓库</h3><p><code>git clone 地址</code></p>
+<h3 id="7-2-本地推送到远程"><a href="#7-2-本地推送到远程" class="headerlink" title="7.2 本地推送到远程"></a>7.2 本地推送到远程</h3><p><code>git push origin 分支名称A</code>：把<strong>指定分支的最新状态</strong>推送到远程仓库，<strong>不会在配置文件中记录</strong>本地仓库分支和远程仓库分支之间的对应关系</p>
+<p><code>git push -u origin 分支名称</code>或者<code>git push --set-upstream origin 分支名称</code>：会记录</p>
+<p>如果进行了如下配置：</p>
+<ol>
+<li><p><code>git config --global push.default matching</code> </p>
+<p>执行<code>git push</code>，会把本地文档库中<strong>所有曾经传送</strong>给远程文档库的分支，都一并更新</p>
+</li>
+<li><p><code>git config --all push.default simple</code></p>
+<p>执行<code>git push</code>，检查<strong>当前所在分支</strong>是否在配置文件中记录了它对应的远程仓库分支，有则进行更新</p>
+</li>
+<li><p><code>git push --all</code>：把本地仓库的<strong>所有分支</strong>都传送给远程仓库</p>
+</li>
+</ol>
+<p>如果执行<code>git push</code>时报错，则表明此时远程仓库已被修改，执行<code>git pull</code>，相当于执行<code>git fetch，git merge 当前分支</code>，会**<u>自动拉取远程仓库当前分支的最新状态，并进行合并</u>**。合并可能存在冲突，如果修改后合并成功，再次执行<code>git push</code>就能成功上传。</p>
+<h2 id="8-fork远程仓库"><a href="#8-fork远程仓库" class="headerlink" title="8.fork远程仓库"></a>8.fork远程仓库</h2><img src="git.assets/image-20210718202303484.png" alt="image-20210718202303484" style="zoom:67%;" />
+
+<p>branch是让程序项目分出另一个版本，fork是复制出另一个Git文档库</p>
+<p>clone复制出的文档库不会保留原来的那个文档库，而fork会记录，并且可以重新合并回去</p>
+<p><img src="git.assets/image-20210718202707800.png" alt="image-20210718202707800"></p>
+<p><code>git fetch upstream</code>：从fork过来的原始远程仓库获取新的数据</p>
+<p>合并：<code>git checkout 某个分支</code>，<code>git merge upstream/同样的分支</code></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 18800379282@163.com </span>

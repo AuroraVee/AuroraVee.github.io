@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>实战经验（一） | 前端学习笔记</title>
+  <meta name="keywords" content=" canvas , 防抖 , 节流 , DOM ">
+  <meta name="description" content="实战经验（一） | 前端学习笔记">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="关于个人简介吴家秀（AuroraVee），目前是上海大学的专硕。由于后面的学业项目涉及到web端的开发，从2020年12月开始逐步学习前端编程。当然，在这之前，我也是有编程经验的，本科的时候主要用过C++&#x2F;C&#x2F;Python&#x2F;Java做过一些课程项目，但是呢都学得不是很深。进入研究生后，对于以后从事的岗位迷茫过，不知道该找哪门语言的工作。刚好，企业导师给我安排的项目是前端方向的，意味着整个研究生的时">
+<meta property="og:type" content="website">
+<meta property="og:title" content="about">
+<meta property="og:url" content="http://example.com/about/index.html">
+<meta property="og:site_name" content="前端学习笔记">
+<meta property="og:description" content="关于个人简介吴家秀（AuroraVee），目前是上海大学的专硕。由于后面的学业项目涉及到web端的开发，从2020年12月开始逐步学习前端编程。当然，在这之前，我也是有编程经验的，本科的时候主要用过C++&#x2F;C&#x2F;Python&#x2F;Java做过一些课程项目，但是呢都学得不是很深。进入研究生后，对于以后从事的岗位迷茫过，不知道该找哪门语言的工作。刚好，企业导师给我安排的项目是前端方向的，意味着整个研究生的时">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-09-12T06:01:01.000Z">
+<meta property="article:modified_time" content="2021-09-12T06:17:37.098Z">
+<meta property="article:author" content="AuroraVee">
+<meta property="article:tag" content="javascript&#x2F;CSS&#x2F;HTML&#x2F;Node&#x2F;Webpack">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/wulala.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-dark.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/wulala.jpg"/>
+</a>
+<div class="author">
+    <span>AuroraVee</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+            <a title="github"
+               href="https://github.com/AuroraVee"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:18800379282@163.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=2374628298&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(15)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="前端">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        前端
+                        <small>(15)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="前端<--->javascript">
+                                        <i class="fold iconfont icon-right"></i>
+                                        
+                                        javascript
+                                        
+                                            <small>(15
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                        <ul class="sub hide">
+                                            
+                                                <li>
+                                                    <div data-rel="前端<--->javascript基础知识">
+                                                        
+                                                        基础知识
+                                                        
+                                                            <small>(5)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="前端<--->javascript开发工具">
+                                                        
+                                                        开发工具
+                                                        
+                                                            <small>(6)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="前端<--->javascript实战经验">
+                                                        
+                                                        实战经验
+                                                        
+                                                            <small>(4)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="15">
+<input type="hidden" id="yelog_site_word_count" value="35.2k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://github.com/AuroraVee">乌拉拉</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>闭包</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>单线程</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>对象</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>惰性函数</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>防抖</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>负载均衡</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>函数调用</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>函数声明</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>节流</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>柯里化</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>跨域</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>类数组对象</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>偏函数</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>事件轮询</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>数据存储</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>数组</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>同步</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>行为委托</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>异步</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>原型链</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>canvas</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>cookie</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>DOM</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Fetch</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>File协议</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Git</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>HTTP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>iterator</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Mock</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Node测试</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>nodeJS</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>this</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>vue</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>web worker</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>webpack</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="全部文章 前端 javascript 开发工具 "
+           href="/2021/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7-%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/"
+           data-tag="HTTP,cookie,负载均衡"
+           data-author="" >
+            <span class="post-title" title="网站建设">网站建设</span>
+            <span class="post-date" title="2021-09-12 20:54:57">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 开发工具 "
+           href="/2021/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7-nodeTest/"
+           data-tag="Node测试"
+           data-author="" >
+            <span class="post-title" title="nodeTest">nodeTest</span>
+            <span class="post-date" title="2021-09-12 20:53:21">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 开发工具 "
+           href="/2021/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7-git/"
+           data-tag="Git"
+           data-author="" >
+            <span class="post-title" title="git">git</span>
+            <span class="post-date" title="2021-09-12 20:48:52">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 开发工具 "
+           href="/2021/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7-vue/"
+           data-tag="vue"
+           data-author="" >
+            <span class="post-title" title="vue">vue</span>
+            <span class="post-date" title="2021-09-12 20:48:28">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 开发工具 "
+           href="/2021/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7-webpack/"
+           data-tag="webpack"
+           data-author="" >
+            <span class="post-title" title="webpack">webpack</span>
+            <span class="post-date" title="2021-09-12 20:48:19">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 开发工具 "
+           href="/2021/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7-%E6%80%BB%E8%BF%B0/"
+           data-tag="webpack,nodeJS,Mock,vue"
+           data-author="" >
+            <span class="post-title" title="开发工具总述">开发工具总述</span>
+            <span class="post-date" title="2021-09-12 20:44:58">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 基础知识 "
+           href="/2021/09/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%88%E4%BA%94%EF%BC%89/"
+           data-tag="canvas"
+           data-author="" >
+            <span class="post-title" title="基础知识（五）">基础知识（五）</span>
+            <span class="post-date" title="2021-09-12 20:42:29">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 实战经验 "
+           href="/2021/09/12/%E5%AE%9E%E6%88%98%E7%BB%8F%E9%AA%8C%EF%BC%88%E5%9B%9B%EF%BC%89/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="实战经验（四）">实战经验（四）</span>
+            <span class="post-date" title="2021-09-12 20:20:15">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 实战经验 "
+           href="/2021/09/12/%E5%AE%9E%E6%88%98%E7%BB%8F%E9%AA%8C%EF%BC%88%E4%B8%89%EF%BC%89/"
+           data-tag="数组,对象"
+           data-author="" >
+            <span class="post-title" title="实战经验（三）">实战经验（三）</span>
+            <span class="post-date" title="2021-09-12 20:19:57">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 实战经验 "
+           href="/2021/09/12/%E5%AE%9E%E6%88%98%E7%BB%8F%E9%AA%8C%EF%BC%88%E4%BA%8C%EF%BC%89/"
+           data-tag="跨域,Fetch,web worker,File协议"
+           data-author="" >
+            <span class="post-title" title="实战经验（二）">实战经验（二）</span>
+            <span class="post-date" title="2021-09-12 20:09:09">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 实战经验 "
+           href="/2021/09/12/%E5%AE%9E%E6%88%98%E7%BB%8F%E9%AA%8C%EF%BC%88%E4%B8%80%EF%BC%89/"
+           data-tag="canvas,防抖,节流,DOM"
+           data-author="" >
+            <span class="post-title" title="实战经验（一）">实战经验（一）</span>
+            <span class="post-date" title="2021-09-12 20:03:35">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 基础知识 "
+           href="/2021/09/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%88%E5%9B%9B%EF%BC%89/"
+           data-tag="this,柯里化,偏函数,惰性函数"
+           data-author="" >
+            <span class="post-title" title="基础知识（四）">基础知识（四）</span>
+            <span class="post-date" title="2021-09-12 19:58:30">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 基础知识 "
+           href="/2021/09/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%88%E4%B8%89%EF%BC%89/"
+           data-tag="函数声明,原型链,闭包,函数调用"
+           data-author="" >
+            <span class="post-title" title="基础知识（三）">基础知识（三）</span>
+            <span class="post-date" title="2021-09-12 19:48:58">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 基础知识 "
+           href="/2021/09/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%88%E4%BA%8C%EF%BC%89/"
+           data-tag="同步,异步,事件轮询,单线程"
+           data-author="" >
+            <span class="post-title" title="基础知识（二）">基础知识（二）</span>
+            <span class="post-date" title="2021-09-12 19:23:23">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 基础知识 "
+           href="/2021/09/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%88%E4%B8%80%EF%BC%89/"
+           data-tag="类数组对象,数据存储,行为委托,iterator"
+           data-author="" >
+            <span class="post-title" title="基础知识（一）">基础知识（一）</span>
+            <span class="post-date" title="2021-09-12 15:14:33">2021/09/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-实战经验（一）" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">实战经验（一）</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="前端">前端</a> > 
+            
+            <a  data-rel="前端&lt;---&gt;javascript">javascript</a> > 
+            
+            <a  data-rel="前端&lt;---&gt;javascript&lt;---&gt;实战经验">实战经验</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color2">canvas</a>
+            
+            <a class="color3">防抖</a>
+            
+            <a class="color3">节流</a>
+            
+            <a class="color4">DOM</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2021-09-12 20:40:53'>2021-09-12 20:03</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:3.7k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E6%88%98%E7%BB%8F%E9%AA%8C%E7%AF%87%E4%B8%80"><span class="toc-text">实战经验篇一</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%A6%81%E6%AD%A2%E9%A1%B5%E9%9D%A2%E5%89%8D%E8%BF%9B%E5%92%8C%E5%90%8E%E9%80%80"><span class="toc-text">1.禁止页面前进和后退</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%96%B9%E6%B3%95%E7%9A%84%E9%95%BF%E5%BA%A6"><span class="toc-text">2.方法的长度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%AD%A3%E7%A1%AE%E6%B1%82%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E9%95%BF%E5%BA%A6%EF%BC%88%E8%B6%85%E8%BF%87-uFFFF%E7%9A%84%E5%AD%97%E7%AC%A6%EF%BC%89"><span class="toc-text">3.正确求字符串的长度（超过\uFFFF的字符）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Math-round-%E6%96%B9%E6%B3%95"><span class="toc-text">4.Math.round()方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-e-target%E5%92%8Ce-currenttarget"><span class="toc-text">5.e.target和e.currenttarget</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%87%BD%E6%95%B0%E5%89%8D%E5%8A%A0%EF%BC%81%E5%92%8C"><span class="toc-text">6. 函数前加！和;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E8%8E%B7%E5%8F%96CSS%E9%A2%84%E5%AE%9A%E4%B9%89%E7%9A%84%E6%A0%B7%E5%BC%8F%E5%B1%9E%E6%80%A7"><span class="toc-text">7.获取CSS预定义的样式属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-typeof%E5%92%8Cinstanceof"><span class="toc-text">8.typeof和instanceof</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E8%8E%B7%E5%8F%96%E6%96%87%E6%A1%A3%E7%9A%84%E6%A0%B9%E5%85%83%E7%B4%A0"><span class="toc-text">9.获取文档的根元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-DOM%E7%9A%84%E5%8E%9F%E5%9E%8B%E9%93%BE"><span class="toc-text">10.DOM的原型链</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-%E6%A3%80%E6%B5%8BDOM%E6%9B%B4%E6%96%B0"><span class="toc-text">11.检测DOM更新</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E7%BC%96%E8%AF%91%E9%98%B6%E6%AE%B5%E5%92%8C%E6%89%A7%E8%A1%8C%E9%98%B6%E6%AE%B5"><span class="toc-text">12.编译阶段和执行阶段</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-%E4%BF%9D%E5%AD%98canvas%E4%B8%BA%E5%9B%BE%E7%89%87"><span class="toc-text">13.保存canvas为图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93%E7%BB%99canvas%E4%BD%BF%E7%94%A8"><span class="toc-text">14.设置自定义字体给canvas使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-window-devicePixelRatio%E8%A7%A3%E5%86%B3canvas%E6%A8%A1%E7%B3%8A%E9%97%AE%E9%A2%98"><span class="toc-text">15.window.devicePixelRatio解决canvas模糊问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-canvas%E6%B8%85%E9%99%A4%E7%94%BB%E5%B8%83%E9%97%AE%E9%A2%98"><span class="toc-text">16.canvas清除画布问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#17-%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81"><span class="toc-text">17.防抖和节流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#18-%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B"><span class="toc-text">18.异步编程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#18-1%E4%B8%B2%E8%A1%8C"><span class="toc-text">18.1串行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18-2%E5%B9%B6%E8%A1%8C"><span class="toc-text">18.2并行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18-3-promise-all%E5%B9%B6%E5%8F%91%E9%99%90%E5%88%B6"><span class="toc-text">18.3.promise.all并发限制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18-4-%E4%BE%8B%E9%A2%98"><span class="toc-text">18.4.例题</span></a></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="实战经验篇一"><a href="#实战经验篇一" class="headerlink" title="实战经验篇一"></a>实战经验篇一</h1><h2 id="1-禁止页面前进和后退"><a href="#1-禁止页面前进和后退" class="headerlink" title="1.禁止页面前进和后退"></a>1.禁止页面前进和后退</h2><pre><code class="javascript">window.history.forward(-1);        
+//用于防止由下一个页面返回的。页面A（A中有这段代码）转向页面B，这时，B向A转向是被禁止。
+</code></pre>
+<h2 id="2-方法的长度"><a href="#2-方法的长度" class="headerlink" title="2.方法的长度"></a>2.方法的长度</h2><p>即方法中没有指定默认值的参数的个数</p>
+<pre><code class="javascript"> (()=&gt;&#123;&#125;).length=0
+ (function(...args) &#123;&#125;).length 
+ // 0 rest 参数也不会计入length属性。
+ (function (a = 0, b, c) &#123;&#125;).length // 0
+(function (a, b = 1, c) &#123;&#125;).length // 1
+</code></pre>
+<h2 id="3-正确求字符串的长度（超过-uFFFF的字符）"><a href="#3-正确求字符串的长度（超过-uFFFF的字符）" class="headerlink" title="3.正确求字符串的长度（超过\uFFFF的字符）"></a>3.正确求字符串的长度（超过\uFFFF的字符）</h2><p>可以避免 JavaScript 将大于<code>\uFFFF</code>的 Unicode 字符，算作两个字符的 bug。</p>
+<pre><code class="javascript">[...str].length
+Array.from(str).length
+for(let a of str)&#123;console.log(a);&#125;//正确识别每个字符
+</code></pre>
+<ul>
+<li></li>
+</ul>
+<h2 id="4-Math-round-方法"><a href="#4-Math-round-方法" class="headerlink" title="4.Math.round()方法"></a>4.<code>Math.round()</code>方法</h2><ul>
+<li>当小数部分&gt;0.5，四舍五入到相邻的绝对值更大的整数</li>
+<li>当小数部分&lt;0.5，四舍五入到相邻的绝对值更小的整数</li>
+<li>当小数部分等于0.5，四舍五入到相邻的在正无穷方向上的整数</li>
+</ul>
+<p>比如</p>
+<pre><code class="javascript">let x=Math.round(-2019.5) //-2019
+</code></pre>
+<h2 id="5-e-target和e-currenttarget"><a href="#5-e-target和e-currenttarget" class="headerlink" title="5.e.target和e.currenttarget"></a>5.<code>e.target</code>和<code>e.currenttarget</code></h2><p><code>e.target</code>：标识事件发生的元素，即实际点击的元素</p>
+<p><code>e.currenttarget</code>：是事件当前绑定的元素</p>
+<h2 id="6-函数前加！和"><a href="#6-函数前加！和" class="headerlink" title="6. 函数前加！和;"></a>6. 函数前加<code>！</code>和<code>;</code></h2><p>js可以用**<u>换行分隔代码</u><strong>，但是合并压缩多个js文件之后，</strong>换行符一般会被删掉<strong>，所以连在一起可能会出错。而使用</strong>分号<code>;</code>来分隔代码**不会出现这个问题</p>
+<p>一般立即执行函数是采用<code>括号()</code>来将函数体转成表达式的，也可以使用<code>~ + -  ||  ！</code>等一元操作符</p>
+<pre><code class="javascript">1.(function() &#123;&#125;)()
+2.! function()&#123;&#125;() //使用!比使用()更简单，并且节省了1个字节
+3.+ function()&#123;&#125;()
+4.- function()&#123;&#125;()
+5.|| function()&#123;&#125;()
+6.~ function()&#123;&#125;()
+</code></pre>
+<h2 id="7-获取CSS预定义的样式属性"><a href="#7-获取CSS预定义的样式属性" class="headerlink" title="7.获取CSS预定义的样式属性"></a>7.获取CSS预定义的样式属性</h2><pre><code class="javascript">      var style = document.body.style //预定义的样式
+      if (name in style) return name //name是预定义的
+</code></pre>
+<h2 id="8-typeof和instanceof"><a href="#8-typeof和instanceof" class="headerlink" title="8.typeof和instanceof"></a>8.typeof和instanceof</h2><p><code>typeof</code>：判断变量的数据类型，undefined/null/number/string/boolean/object/function</p>
+<p><code>instanceof</code>：判断对象是否是某个构造函数的实例，返回布尔值</p>
+<h2 id="9-获取文档的根元素"><a href="#9-获取文档的根元素" class="headerlink" title="9.获取文档的根元素"></a>9.获取文档的根元素</h2><p>对于任何非空 HTML 文档，调用 <code>document.documentElement</code> 总是会返回一个 <code>html</code> 元素，且它一定是该文档的根元素。借助这个只读属性，能方便地获取到任意文档的根元素。</p>
+<h2 id="10-DOM的原型链"><a href="#10-DOM的原型链" class="headerlink" title="10.DOM的原型链"></a>10.DOM的原型链</h2><p>以一个<code>&lt;p&gt;</code>标签元素举例，其向上寻找原型对象用过会是这样：<code>HTMLParagraphElement.prototype</code> → <code>HTMLElement.prototype</code> → <code>Element.prototype</code> → <code>Node.prototype</code> → <code>Object.prototype</code> → <code>null</code>。</p>
+<pre><code class="javascript">//给DOM元素添加自定义方法
+HTMLElement.prototype.method=function()&#123;
+    
+&#125;
+</code></pre>
+<h2 id="11-检测DOM更新"><a href="#11-检测DOM更新" class="headerlink" title="11.检测DOM更新"></a>11.检测DOM更新</h2><p><code>MutationObserver</code>是HTML5新增的属性，用于监听DOM修改事件，能够监听到节点的属性、文本内容、子节点等的改动</p>
+<p><code>Vue.nextTick</code>可以在DOM更新完毕之后执行一个回调，vue进行DOM更新内部也是调用nextTick来做异步队列控制。而当我们自己调用nextTick的时候，它就在更新DOM的那个microtask后追加了我们自己的回调函数，从而确保我们的代码在DOM更新后执行，同时也避免了setTimeout可能存在的多次执行问题。**<u>也就是说VUE是借助<code>MutationObserver</code>这一宏任务特性进行的更新回调</u>**</p>
+<h2 id="12-编译阶段和执行阶段"><a href="#12-编译阶段和执行阶段" class="headerlink" title="12.编译阶段和执行阶段"></a>12.编译阶段和执行阶段</h2><p><code>import</code>命令是在**<u>编译阶段</u><strong>执行的，因此</strong>被导入的模块会先运行<strong>。另外，被导入的模块中的变量</strong>不能在引入文件中修改**</p>
+<pre><code class="javascript">//index.js
+console.log(&quot;running index.js&quot;)
+import &#123;sum&#125; from &#39;./sum.js&#39;
+console.log(sum(1,2))
+
+//sum.js
+console.log(&quot;running sum.js&quot;)
+const sum=(a,b)=&gt;a+b
+export default sum
+
+//running sum.js
+//running index.js
+//3
+</code></pre>
+<p>commonJS中的<code>require</code>模块，是**<u>在运行代码时根据需要加载依赖项</u>**。</p>
+<h2 id="13-保存canvas为图片"><a href="#13-保存canvas为图片" class="headerlink" title="13.保存canvas为图片"></a>13.保存canvas为图片</h2><pre><code class="javascript">//fileName是要保存的图片名，运行该函数后就直接打开保存窗口
+function exportCanvasAsPNG(id, fileName) &#123;
+        var canvasElement = document.getElementById(id);
+    
+         //这里画布的颜色默认是透明的，保存后的图片在使用的使用缩放和放大会失真   
+        let ctx = canvasElement.getContext(&quot;2d&quot;);
+        ctx.strokeStyle = &quot;red&quot;;
+        ctx.strokeRect(0, 0, canvasElement.width, canvasElement.height);
+
+        var MIME_TYPE = &quot;image/png&quot;;
+
+        var imgURL = canvasElement.toDataURL(MIME_TYPE);
+
+        var dlLink = document.createElement(&quot;a&quot;);
+        dlLink.download = fileName;
+        dlLink.href = imgURL;
+        dlLink.dataset.downloadurl = [
+          MIME_TYPE,
+          dlLink.download,
+          dlLink.href,
+        ].join(&quot;:&quot;);
+
+        document.body.appendChild(dlLink);
+        dlLink.click();
+        document.body.removeChild(dlLink);
+      &#125;
+</code></pre>
+<h2 id="14-设置自定义字体给canvas使用"><a href="#14-设置自定义字体给canvas使用" class="headerlink" title="14.设置自定义字体给canvas使用"></a>14.设置自定义字体给canvas使用</h2><ul>
+<li>方法1：借助<code>FontFace </code>API，但是有webpack打包的时候，可能会存在文件路径问题</li>
+</ul>
+<pre><code class="javascript">//设置字体并添加到文档中  fonts.js
+
+let InconsolataRegular = new FontFace(&#39;Inconsolata&#39;, &#39;url(assets/fonts/InconsolataGo-Regular.ttf)&#39;, &#123;
+    style: &#39;normal&#39;,  //表示该字体规则为常规体规则，只有在应用此规则字体的元素中设置了`font-style:normal`时应用该规则
+    weight: &#39;normal&#39;,  //表示改字体规则为常规体规则，只有在应用此规则字体的元素中设置了`font-weight:normal`时应用改规则
+    display: &#39;swap&#39;
+&#125;)
+
+InconsolataRegular.load().then(
+    function (loadFace) &#123;
+        document.fonts.add(loadFace)
+    &#125;,
+    function (error) &#123;
+        // failure
+        console.log(error)
+    &#125;)
+
+
+let InconsolataBold = new FontFace(&#39;Inconsolata&#39;, &#39;url(assets/fonts/InconsolataGo-Bold.ttf)&#39;, &#123;
+    style: &#39;normal&#39;,  //表示该字体规则为常规体规则，只有在应用此规则字体的元素中设置了`font-style:normal`时应用该规则
+    weight: &#39;bold&#39;,  //表示改字体规则为粗体规则，只有在应用此规则字体的元素中设置了`font-weight:700|bold`时应用改规则
+    display: &#39;swap&#39;
+&#125;)
+
+InconsolataBold.load().then(
+    function (loadFace) &#123;
+        document.fonts.add(loadFace)
+    &#125;,
+    function (error) &#123;
+        // failure
+        console.log(error)
+    &#125;)
+</code></pre>
+<pre><code class="javascript">import &#39;fonts.js&#39;
+//处理context
+</code></pre>
+<ul>
+<li><strong>方法2：</strong>写在CSS里，用<code>webpack</code>打包借助<code>url-loader</code>，注意文件路径</li>
+</ul>
+<pre><code class="css">//style.css
+
+@font-face &#123;
+  font-family: &quot;Inconsolata&quot;;
+  src: url(&quot;assets/fonts/InconsolataGo-Regular.ttf&quot;);
+  font-weight: normal;
+  font-style: normal;
+&#125;
+@font-face &#123;
+  font-family: &quot;Inconsolata&quot;;
+  src: url(&quot;assets/fonts/InconsolataGo-Bold.ttf&quot;);
+  font-weight: bold;
+  font-style: normal;
+&#125;
+</code></pre>
+<pre><code class="javascript">import &#39;style.css&#39;
+//处理context
+</code></pre>
+<h2 id="15-window-devicePixelRatio解决canvas模糊问题"><a href="#15-window-devicePixelRatio解决canvas模糊问题" class="headerlink" title="15.window.devicePixelRatio解决canvas模糊问题"></a>15.<code>window.devicePixelRatio</code>解决canvas模糊问题</h2><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window"><code>Window</code></a> 接口的<code>devicePixelRatio</code>返回当前显示设备的<em>物理像素</em>分辨率与<em>CSS像素</em>分辨率之比。它告诉浏览器应使用多少屏幕实际像素来绘制单个CSS像素。<br>$$<br>物理像素=CSS像素*devicePixelRatio<br>$$</p>
+<pre><code class="javascript">var canvas = document.getElementById(&#39;canvas&#39;);
+var ctx = canvas.getContext(&#39;2d&#39;);
+
+// Set display size (css pixels).
+var size = 200;
+canvas.style.width = size + &quot;px&quot;;
+canvas.style.height = size + &quot;px&quot;;
+
+// Set actual size in memory (scaled to account for extra pixel density).
+var scale = window.devicePixelRatio; // Change to 1 on retina screens to see blurry canvas.
+canvas.width = Math.floor(size * scale);
+canvas.height = Math.floor(size * scale);
+
+// Normalize coordinate system to use css pixels.
+ctx.scale(scale, scale);
+
+ctx.fillStyle = &quot;#bada55&quot;;
+ctx.fillRect(10, 10, 300, 300);
+ctx.fillStyle = &quot;#ffffff&quot;;
+ctx.font = &#39;18px Arial&#39;;
+ctx.textAlign = &#39;center&#39;;
+ctx.textBaseline = &#39;middle&#39;;
+
+var x = size / 2;
+var y = size / 2;
+
+var textString = &quot;I love MDN&quot;;
+ctx.fillText(textString, x, y);
+</code></pre>
+<h2 id="16-canvas清除画布问题"><a href="#16-canvas清除画布问题" class="headerlink" title="16.canvas清除画布问题"></a>16.canvas清除画布问题</h2><p>一般采用<code>clearRect</code>的方法直接清除画布，但是当我在实际使用时发现定时去清除的时候，这个方法对于画布的边缘总是清不干净。采用以下方法可以解决：</p>
+<pre><code class="javascript">let width=canvas.width
+canvas.width=0
+canvas.width=width
+ctx.clearRect(0,0,canvas.width+1,canvas.height+1)
+</code></pre>
+<h2 id="17-防抖和节流"><a href="#17-防抖和节流" class="headerlink" title="17.防抖和节流"></a>17.<a target="_blank" rel="noopener" href="https://github.com/mqyqingfeng/Blog/issues/22">防抖和节流</a></h2><p><strong>解决频繁的事件触发带来的卡顿问题</strong></p>
+<p><u>防抖:</u></p>
+<ol>
+<li>动作绑定事件，<strong>触发完事件后 n 秒内不再触发事件</strong>，事件处理程序才执行。要不然就又重新开始计时，始终以最新的触发为准</li>
+</ol>
+<pre><code class="js">function getUserAction (e) &#123;
+    console.log(e)
+    container.innerHTML = count++
+    console.log(this);//this应该指向事件操作的元素
+&#125;;
+function debounce (func, wait) &#123;
+    var timeout
+
+    return function () &#123;
+        var context = this //指向container
+        var arg = arguments //指向事件处理对象
+        clearTimeout(timeout) 
+ //如果在wait时间内又触发了事件，则把上一次的定时清除，然后重新计时
+ //事件触发的时间至少要间隔wait时间，才会去执行相应的程序
+        timeout = setTimeout(function () &#123;
+            func.apply(context, arg)
+        &#125;, wait)
+    &#125;
+&#125;
+var count = 1
+var container = document.getElementById(&#39;container&#39;)
+container.onmousemove = debounce(getUserAction, 1000)
+</code></pre>
+<p>​        2.<strong>触发事件就立即执行函数</strong>，但是要间隔wait时间才会重新触发</p>
+<pre><code class="js">//传入immediate=true
+function debounce(func, wait, immediate) &#123;
+
+    var timeout, result;
+
+    return function () &#123;
+        var context = this;
+        var args = arguments;
+
+        if (timeout) clearTimeout(timeout);//清除定时，timeout为定时器ID，这个不会改变
+        if (immediate) &#123;
+            // 如果已经执行过，不再执行
+            var callNow = !timeout;
+            timeout = setTimeout(function()&#123;
+                timeout = null; 
+                //定时到将id置位null，如果定时还没结束又触发了事件，会执行clearTimeout清除定时，callNow为false
+            &#125;, wait)
+            if (callNow) result = func.apply(context, args) //立即执行了处理函数
+        &#125;
+        else &#123;
+            timeout = setTimeout(function()&#123;
+                func.apply(context, args)
+            &#125;, wait);
+        &#125;
+        return result;
+    &#125;
+&#125;
+</code></pre>
+<p>​        3.通过按钮暂时取消防抖</p>
+<pre><code class="js">function debounce(func, wait, immediate) &#123;
+
+    var timeout, result;
+
+    var debounced = function () &#123;
+        var context = this;
+        var args = arguments;
+
+        if (timeout) clearTimeout(timeout);
+        if (immediate) &#123;
+            // 如果已经执行过，不再执行
+            var callNow = !timeout;
+            timeout = setTimeout(function()&#123;
+                timeout = null;
+            &#125;, wait)
+            if (callNow) result = func.apply(context, args)
+        &#125;
+        else &#123;
+            timeout = setTimeout(function()&#123;
+                func.apply(context, args)
+            &#125;, wait);
+        &#125;
+        return result;
+    &#125;;
+
+    debounced.cancel = function() &#123;
+        clearTimeout(timeout); //先清除计时，只是暂时清除防抖，下一次触发仍然有计时限制；如果没有这个，timeout将一直为null
+        timeout = null; //点击后callnow为True，所以可以立即执行
+    &#125;;
+
+    return debounced;
+&#125;
+</code></pre>
+<p><u>节流:每隔一段时间，执行一次事件处理程序</u></p>
+<ol>
+<li>时间戳，比较当前触发时间和上一次执行事件处理程序的时间</li>
+</ol>
+<pre><code class="js">function throttle(func, wait) &#123;
+    var context, args;
+    var previous = 0; // 上一次事件处理程序执行的时间戳
+
+    return function() &#123;
+        var now = +new Date(); // 当前事件触发时的时间戳
+        context = this;
+        args = arguments;
+        if (now - previous &gt; wait) &#123;
+            func.apply(context, args);
+            previous = now;
+        &#125;
+    &#125;
+&#125;
+// 鼠标移入时立即执行，鼠标移出时不再执行，中间鼠标不断移动，间隔wait时间执行一次函数
+</code></pre>
+<p>​        2.定时器：</p>
+<pre><code class="js">function throttle(func, wait) &#123;
+    var timeout;
+    return function() &#123;
+        context = this;
+        args = arguments;
+        if (!timeout) &#123;
+            timeout = setTimeout(function()&#123;
+                timeout = null;
+                func.apply(context, args)
+            &#125;, wait)
+        &#125;
+    &#125;
+&#125;
+// 鼠标移入时延时了wait才执行函数；间隔wait时间执行函数；如果定时已经开启时不触发事件，也会过一段时间后执行一次函数
+</code></pre>
+<p>​        3.鼠标移入能立刻执行，停止触发的时候还能再执行一次</p>
+<pre><code class="js">function throttle(func, wait) &#123;
+    var timeout, context, args, result;
+    var previous = 0; // 保存上一次事件处理程序的时间戳
+
+    var later = function() &#123;
+        previous = +new Date();
+        // 保存上一次事件处理程序的时间戳
+        timeout = null;
+        func.apply(context, args)
+    &#125;;
+
+    var throttled = function() &#123;
+        var now = +new Date(); // 当前触发的时间戳
+        //下次触发 func 剩余的时间
+        var remaining = wait - (now - previous);
+        context = this;
+        args = arguments;
+         // 如果没有剩余的时间了或者你改了系统时间
+        if (remaining &lt;= 0 || remaining &gt; wait) &#123;
+            if (timeout) &#123;
+                clearTimeout(timeout);
+                timeout = null;
+            &#125;
+            previous = now;// 保存上一次事件处理程序的时间戳
+            func.apply(context, args);
+        &#125; else if (!timeout) &#123;
+            timeout = setTimeout(later, remaining);
+            // 延时剩下的时间去触发
+        &#125;
+    &#125;;
+    return throttled;
+&#125;
+</code></pre>
+<p>区别：防抖是虽然事件持续触发，但只有等事件<strong>停止触发后 n 秒</strong>才执行函数，节流是<strong>持续触发的时候</strong>，每 n 秒执行一次函数</p>
+<h2 id="18-异步编程"><a href="#18-异步编程" class="headerlink" title="18.异步编程"></a>18.异步编程</h2><h3 id="18-1串行"><a href="#18-1串行" class="headerlink" title="18.1串行"></a>18.1串行</h3><p>前一个异步执行完，才能执行后一个异步</p>
+<p>比如下面的代码，还有generator函数每个yield后面只跟一个异步操作</p>
+<pre><code class="javascript">var p = function () &#123;
+  return new Promise(function (resolve, reject) &#123;
+    setTimeout(() =&gt; &#123;
+      console.log(&#39;1000&#39;)
+      resolve()
+    &#125;, 1000)
+  &#125;)
+&#125;
+var p1 = function () &#123;
+  return new Promise(function (resolve, reject) &#123;
+    setTimeout(() =&gt; &#123;
+      console.log(&#39;2000&#39;)
+      resolve()
+    &#125;, 2000)
+  &#125;)
+&#125;
+var p2 = function () &#123;
+  return new Promise(function (resolve, reject) &#123;
+    setTimeout(() =&gt; &#123;
+      console.log(&#39;3000&#39;)
+      resolve()
+    &#125;, 3000)
+  &#125;)
+&#125;
+
+/*  第一种情况  属于串行*/
+p().then(() =&gt; &#123;//这是p的resolve回调
+  return p1()
+&#125;).then(() =&gt; &#123;//这是p1的resolve回调
+  return p2()
+&#125;).then(() =&gt; &#123;//这是p2的resolve回调
+  console.log(&#39;end&#39;)
+&#125;)
+//1000
+//2000
+//3000
+//end
+
+/*第二种情况*/
+p().then(() =&gt; &#123;//这是p的resolve回调
+     p1()
+&#125;).then(() =&gt; &#123;//这是 新的promise对象的resolve回调
+       p2()
+&#125;).then(() =&gt; &#123;//这是 新的promise对象的resolve回调
+  console.log(&#39;end&#39;)
+&#125;)//2000ms定时到  //3000ms定时到
+
+//1000
+//end
+//2000
+//3000
+</code></pre>
+<pre><code class="javascript">const fs = require(&#39;fs&#39;);
+var co=require(&quot;co&quot;);
+
+const readFile = function (fileName) &#123;
+  return new Promise(function (resolve, reject) &#123;
+    fs.readFile(fileName, function(error, data) &#123;
+      if (error) return reject(error);
+      resolve(data);
+    &#125;);
+  &#125;);
+&#125;;
+
+const gen = function* () &#123;
+  const f1 = yield readFile(&#39;/etc/fstab&#39;);//串行
+  const f2 = yield readFile(&#39;/etc/shells&#39;);//串行
+  console.log(f1.toString());
+  console.log(f2.toString());
+&#125;;
+co(gen);//按流程处理
+</code></pre>
+<h3 id="18-2并行"><a href="#18-2并行" class="headerlink" title="18.2并行"></a>18.2并行</h3><p><code>Promise.all</code>可以保证，promises数组中所有promise对象都达到resolve状态，才执行then回调</p>
+<pre><code class="javascript">Promise.all(promises: []).then(fun: function);
+</code></pre>
+<pre><code class="javascript">var promises = function () &#123;
+
+  return [1000, 2000, 3000].map(current =&gt; &#123;
+
+    return new Promise(function (resolve, reject) &#123;
+
+      setTimeout(() =&gt; &#123;
+
+        console.log(current)
+
+        resolve()//这里不写resolve，promise实例是不能到达resolved状态
+
+      &#125;, current)
+
+    &#125;)
+
+  &#125;)
+
+&#125;
+
+
+
+Promise.all(promises()).then(() =&gt; &#123;//执行promises()，几乎同时触发了异步操作，最多3秒就可以打印end
+
+  console.log(&#39;end&#39;)
+
+&#125;)
+</code></pre>
+<pre><code class="javascript">//co 支持并发的异步操作，即允许某些操作同时进行，等到它们全部完成，才进行下一步。
+var co=require(&quot;co&quot;);
+
+// 数组的写法
+co(function* () &#123;
+  var res = yield [
+    Promise.resolve(1),
+    Promise.resolve(2)
+  ];
+  console.log(res);
+&#125;).catch(onerror);
+
+// 对象的写法
+co(function* () &#123;
+  var res = yield &#123;
+    1: Promise.resolve(1),
+    2: Promise.resolve(2),
+  &#125;;
+  console.log(res);
+&#125;).catch(onerror);
+</code></pre>
+<h3 id="18-3-promise-all并发限制"><a href="#18-3-promise-all并发限制" class="headerlink" title="18.3.promise.all并发限制"></a>18.3.<code>promise.all</code>并发限制</h3><p>在瞬间发出几十万个http请求，这样很有可能导致堆积了无数调用栈导致内存溢出。</p>
+<p>Promise.all并发限制指的是，每个时刻并发执行的promise数量是固定的，最终的执行结果还是保持与原来的Promise.all一致。</p>
+<h3 id="18-4-例题"><a href="#18-4-例题" class="headerlink" title="18.4.例题"></a>18.4.例题</h3><p>实现一个批量请求函数 multiRequest(urls, maxNum)，要求如下：<br>• 要求最大并发数 maxNum<br>• 每当有一个请求返回，就留下一个空位，可以增加新的请求<br>• 所有请求完成后，结果按照 urls 里面的顺序依次打出</p>
+<pre><code class="javascript">function multiRequest(urls = [], maxNum) &#123;
+  // 请求总数量
+  const len = urls.length;
+  // 根据请求数量创建一个数组来保存请求的结果
+  const result = new Array(len).fill(false);
+  // 当前完成的数量
+  let count = 0;
+
+  return new Promise((resolve, reject) =&gt; &#123;
+    // 请求maxNum个
+    while (count &lt; maxNum) &#123;
+      next();
+    &#125;
+    function next() &#123;
+      let current = count++;
+      // 处理边界条件
+      if (current &gt;= len) &#123;
+        // 请求全部完成就将promise置为成功状态, 然后将result作为promise值返回
+        !result.includes(false) &amp;&amp; resolve(result);
+        return;
+      &#125;
+      const url = urls[current];
+      console.log(`开始 $&#123;current&#125;`, new Date().toLocaleString());
+      fetch(url)//触发异步操作后，程序会继续往下执行，连续调用maxNum个next后，即同时触发了maxnum个异步操作，然后前面完成的操作会通知下一个触发新的异步
+        .then((res) =&gt; &#123;
+          // 保存请求结果
+          result[current] = res;
+          console.log(`完成 $&#123;current&#125;`, new Date().toLocaleString());
+          // 请求没有全部完成, 就递归
+          if (current &lt; len) &#123;
+            next();
+          &#125;
+        &#125;)
+        .catch((err) =&gt; &#123;
+          console.log(`结束 $&#123;current&#125;`, new Date().toLocaleString());
+          result[current] = err;
+          // 请求没有全部完成, 就递归
+          if (current &lt; len) &#123;
+            next();
+          &#125;
+        &#125;);
+    &#125;
+  &#125;);
+&#125;
+</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 18800379282@163.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '03a6ca2b5a66493eb1f9',
+            clientSecret: '1a0ff8296171ad77c3312782e8ca5bfd346d1ede',
+            repo: 'AuroraVee.github.io',
+            owner: 'AuroraVee',
+            admin: ['AuroraVee'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2021-至今 AuroraVee
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().trim().split('\n').length, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

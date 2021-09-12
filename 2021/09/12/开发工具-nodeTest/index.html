@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>about | 前端学习笔记</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="about | 前端学习笔记">
+  <title>nodeTest | 前端学习笔记</title>
+  <meta name="keywords" content=" Node测试 ">
+  <meta name="description" content="nodeTest | 前端学习笔记">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于个人简介吴家秀（AuroraVee），目前是上海大学的专硕。由于后面的学业项目涉及到web端的开发，从2020年12月开始逐步学习前端编程。当然，在这之前，我也是有编程经验的，本科的时候主要用过C++&#x2F;C&#x2F;Python&#x2F;Java做过一些课程项目，但是呢都学得不是很深。进入研究生后，对于以后从事的岗位迷茫过，不知道该找哪门语言的工作。刚好，企业导师给我安排的项目是前端方向的，意味着整个研究生的时">
 <meta property="og:type" content="website">
@@ -581,24 +581,43 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-开发工具-nodeTest" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">about</h1>
+        <h1 class="article-title">nodeTest</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="前端">前端</a> > 
+            
+            <a  data-rel="前端&lt;---&gt;javascript">javascript</a> > 
+            
+            <a  data-rel="前端&lt;---&gt;javascript&lt;---&gt;开发工具">开发工具</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color2">Node测试</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-09-12 14:17:37'>2021-09-12 14:01</time>
+            发布时间 : <time class="date" title='最后更新: 2021-09-12 20:54:18'>2021-09-12 20:53</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:330</span>
+        <span>字数:866</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -628,7 +647,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E"><span class="toc-text">关于</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B"><span class="toc-text">个人简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="toc-text">联系方式</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#node%E9%A1%B9%E7%9B%AE%E6%B5%8B%E8%AF%95"><span class="toc-text">node项目测试</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%9E%8B"><span class="toc-text">1.测试类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Mocha%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6"><span class="toc-text">2.Mocha测试框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Istanbul%E6%B5%8B%E8%AF%95%E8%A6%86%E7%9B%96%E7%8E%87"><span class="toc-text">3.Istanbul测试覆盖率</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95"><span class="toc-text">4.功能测试</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -644,8 +663,123 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h1><h3 id="个人简介"><a href="#个人简介" class="headerlink" title="个人简介"></a>个人简介</h3><p><strong>吴家秀（AuroraVee）</strong>，目前是上海大学的专硕。由于后面的学业项目涉及到web端的开发，从2020年12月开始逐步学习前端编程。<br>当然，在这之前，我也是有编程经验的，本科的时候主要用过C++/C/Python/Java做过一些课程项目，但是呢都学得不是很深。进入研究生后，对于以后从事的岗位迷茫过，不知道该找哪门语言的工作。刚好，企业导师给我安排的项目是前端方向的，意味着整个研究生的时间都将是做这个类型的项目，那我可以在这个过程中把前端的知识学透，同时也有相关的项目经验。所以从去年的12月开始我就开始了整个学习之旅，在这个学习过程中我看了基本经典的书，自己也跟着写过一些代码。知识总是会随着学习的深入淡忘掉，所以我想用博客的方式把一些难点和实际操作中遇到的问题记录下来，这样以后可以随时复习巩固。   </p>
-<h3 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h3><p> QQ：2374628298<br> 邮箱：<a href="mailto:&#x31;&#56;&#56;&#x30;&#48;&#51;&#55;&#57;&#x32;&#56;&#x32;&#x40;&#x31;&#54;&#51;&#46;&#x63;&#111;&#109;">&#x31;&#56;&#56;&#x30;&#48;&#51;&#55;&#57;&#x32;&#56;&#x32;&#x40;&#x31;&#54;&#51;&#46;&#x63;&#111;&#109;</a></p>
+        <h1 id="node项目测试"><a href="#node项目测试" class="headerlink" title="node项目测试"></a>node项目测试</h1><h2 id="1-测试类型"><a href="#1-测试类型" class="headerlink" title="1.测试类型"></a>1.测试类型</h2><ol>
+<li><strong>单元测试</strong>：测试驱动开发（TDD）和行为驱动开发（BDD）</li>
+</ol>
+<blockquote>
+<p>TDD：在开发功能代码之前，先编写单元测试用例，测试代码确定需要编写什么产品代码。</p>
+<p>BDD：通过与利益相关者的讨论取得对预期软件的行为的清醒认识。它通过用自然语言书写非程序员可读的测试用例扩展了测试驱动开发行为。</p>
+</blockquote>
+<ol start="2">
+<li><strong>验收测试</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>测试类型</th>
+<th>分类</th>
+<th>工具</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>单元测试</td>
+<td>TDD</td>
+<td>Mocha/Jasmine/Node 中的 assert 模块/Chai</td>
+<td><strong>测试程序逻辑</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>BDD</td>
+<td>Mocha/Vows/Chai/Should.js</td>
+<td></td>
+</tr>
+<tr>
+<td>验收测试</td>
+<td>浏览器</td>
+<td>WebdriverIO/Selenium</td>
+<td><strong>测试程序界面和功能</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>无头</td>
+<td>WebdriverIO/Phantom/Zombie.js</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="2-Mocha测试框架"><a href="#2-Mocha测试框架" class="headerlink" title="2.Mocha测试框架"></a>2.Mocha测试框架</h2><p> Mocha <strong>默认是 BDD 风格</strong>的。但也可以用在 TDD 风格的测试中。Mocha 具有很多特性，包括<strong>全局变量泄露检测和客户端测试</strong>。</p>
+<ol>
+<li>BDD风格主要函数</li>
+</ol>
+<ul>
+<li>describe：<strong>测试套件</strong>，表示一组相关的测试，它是一个函数：<strong>第一个参数是测试套件的名称，第二个参数是实际执行的函数</strong></li>
+<li>it：<strong>测试用例，表示一个单独的测试</strong>，是测试的最小单位。也是一个函数：第一个参数是测试用例的名字，第二个参数是实际执行的函数。所有的测试用例都应该有一句或多句</li>
+<li>before：接受回调，可以用来定义设置和清理逻辑</li>
+<li>after：接受回调，可以用来定义设置和清理逻辑</li>
+<li>beforeEach：接受回调，可以用来定义设置和清理逻辑</li>
+<li>afterEach：接受回调，可以用来定义设置和清理逻辑</li>
+<li>done：测试完一个样例需要传递done类表明测试样例结束</li>
+<li>assert：判断样例是否正确</li>
+<li>注意：describe可以嵌套</li>
+</ul>
+<pre><code class="javascript">var assert = require(&#39;assert&#39;);
+
+var calc = require(&#39;./calc.js&#39;);
+
+describe(&#39;Calculator Tests&#39;, function() &#123;
+    describe(&#39;Addition Tests&#39;, function() &#123; //测试集
+        it(&#39;returns 1 + 1 = 2&#39;, function(done) &#123; //测试用例
+            assert.equal(calc.add(1, 1), 2);
+            done();
+        &#125;);
+
+        it(&#39;returns 1 + -1 = 0&#39;, function(done) &#123; //测试用例
+            assert.equal(calc.add(1, -1), 0);
+            done();
+        &#125;);
+    &#125;);
+
+    describe(&#39;Multiplication Tests&#39;, function() &#123;
+        it(&#39;returns 2 * 2 = 4&#39;, function(done) &#123;
+            assert.equal(calc.mul(2, 2), 4);
+            done();
+        &#125;);
+
+        it(&#39;returns 0 * 4 = 4&#39;, function(done) &#123;
+            assert.equal(calc.mul(2, 2), 4);
+            done();
+        &#125;);
+    &#125;);
+&#125;);
+</code></pre>
+<p>Mocha的<strong>测试不是并行测试的</strong>，而是一个接一个地测试。一个测试默认<strong>不超过</strong> <strong>2000毫秒</strong>，超过这个时长会被当做失败的测试。如果有运行时间长的测试，可以用<code>--timeout</code>指定一个更大的数值。</p>
+<ol start="2">
+<li>TDD风格</li>
+</ol>
+<ul>
+<li>suit</li>
+<li>test</li>
+<li>setup</li>
+<li>teardown</li>
+</ul>
+<pre><code class="javascript">module.exports = &#123;
+    &#39;memdb&#39;:&#123;
+        &#39;.saveSync(doc)&#39;:&#123;
+            &#39;should save the document&#39;:()=&gt;&#123;
+                
+            &#125;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="3-Istanbul测试覆盖率"><a href="#3-Istanbul测试覆盖率" class="headerlink" title="3.Istanbul测试覆盖率"></a>3.Istanbul测试覆盖率</h2><p>覆盖率说明</p>
+<ul>
+<li>语句覆盖(StatementCoverage)：度量被测代码中<strong>每个可执行语句</strong>是否被执行到了</li>
+<li>判定覆盖(DecisionCoverage)：度量程序中<strong>每一个判定的分支</strong>是否都被测试到了</li>
+<li>条件覆盖(ConditionCoverage)：度量判定中的<strong>每个子表达式结果true和false</strong>是否被测试到了</li>
+<li>路径覆盖(PathCoverage)：度量了<strong>是否函数的每一个分支都被执行</strong>了</li>
+</ul>
+<h2 id="4-功能测试"><a href="#4-功能测试" class="headerlink" title="4.功能测试"></a>4.功能测试</h2><p>在大多数 Web 项目的开发中，进行功能测试的办法都是<strong>按用户指定的需求列表驱动浏览器执行操作，然后检查各种 DOM 变化</strong>。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 18800379282@163.com </span>

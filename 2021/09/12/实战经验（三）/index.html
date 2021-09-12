@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>实战经验（三） | 前端学习笔记</title>
+  <meta name="keywords" content=" 数组 , 对象 ">
+  <meta name="description" content="实战经验（三） | 前端学习笔记">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="关于个人简介吴家秀（AuroraVee），目前是上海大学的专硕。由于后面的学业项目涉及到web端的开发，从2020年12月开始逐步学习前端编程。当然，在这之前，我也是有编程经验的，本科的时候主要用过C++&#x2F;C&#x2F;Python&#x2F;Java做过一些课程项目，但是呢都学得不是很深。进入研究生后，对于以后从事的岗位迷茫过，不知道该找哪门语言的工作。刚好，企业导师给我安排的项目是前端方向的，意味着整个研究生的时">
+<meta property="og:type" content="website">
+<meta property="og:title" content="about">
+<meta property="og:url" content="http://example.com/about/index.html">
+<meta property="og:site_name" content="前端学习笔记">
+<meta property="og:description" content="关于个人简介吴家秀（AuroraVee），目前是上海大学的专硕。由于后面的学业项目涉及到web端的开发，从2020年12月开始逐步学习前端编程。当然，在这之前，我也是有编程经验的，本科的时候主要用过C++&#x2F;C&#x2F;Python&#x2F;Java做过一些课程项目，但是呢都学得不是很深。进入研究生后，对于以后从事的岗位迷茫过，不知道该找哪门语言的工作。刚好，企业导师给我安排的项目是前端方向的，意味着整个研究生的时">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-09-12T06:01:01.000Z">
+<meta property="article:modified_time" content="2021-09-12T06:17:37.098Z">
+<meta property="article:author" content="AuroraVee">
+<meta property="article:tag" content="javascript&#x2F;CSS&#x2F;HTML&#x2F;Node&#x2F;Webpack">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/wulala.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-dark.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/wulala.jpg"/>
+</a>
+<div class="author">
+    <span>AuroraVee</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+            <a title="github"
+               href="https://github.com/AuroraVee"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:18800379282@163.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=2374628298&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(15)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="前端">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        前端
+                        <small>(15)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="前端<--->javascript">
+                                        <i class="fold iconfont icon-right"></i>
+                                        
+                                        javascript
+                                        
+                                            <small>(15
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                        <ul class="sub hide">
+                                            
+                                                <li>
+                                                    <div data-rel="前端<--->javascript基础知识">
+                                                        
+                                                        基础知识
+                                                        
+                                                            <small>(5)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="前端<--->javascript开发工具">
+                                                        
+                                                        开发工具
+                                                        
+                                                            <small>(6)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="前端<--->javascript实战经验">
+                                                        
+                                                        实战经验
+                                                        
+                                                            <small>(4)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="15">
+<input type="hidden" id="yelog_site_word_count" value="35.2k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://github.com/AuroraVee">乌拉拉</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>闭包</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>单线程</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>对象</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>惰性函数</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>防抖</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>负载均衡</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>函数调用</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>函数声明</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>节流</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>柯里化</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>跨域</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>类数组对象</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>偏函数</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>事件轮询</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>数据存储</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>数组</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>同步</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>行为委托</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>异步</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>原型链</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>canvas</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>cookie</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>DOM</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Fetch</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>File协议</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Git</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>HTTP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>iterator</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Mock</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Node测试</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>nodeJS</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>this</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>vue</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>web worker</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>webpack</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="全部文章 前端 javascript 开发工具 "
+           href="/2021/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7-%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/"
+           data-tag="HTTP,cookie,负载均衡"
+           data-author="" >
+            <span class="post-title" title="网站建设">网站建设</span>
+            <span class="post-date" title="2021-09-12 20:54:57">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 开发工具 "
+           href="/2021/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7-nodeTest/"
+           data-tag="Node测试"
+           data-author="" >
+            <span class="post-title" title="nodeTest">nodeTest</span>
+            <span class="post-date" title="2021-09-12 20:53:21">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 开发工具 "
+           href="/2021/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7-git/"
+           data-tag="Git"
+           data-author="" >
+            <span class="post-title" title="git">git</span>
+            <span class="post-date" title="2021-09-12 20:48:52">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 开发工具 "
+           href="/2021/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7-vue/"
+           data-tag="vue"
+           data-author="" >
+            <span class="post-title" title="vue">vue</span>
+            <span class="post-date" title="2021-09-12 20:48:28">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 开发工具 "
+           href="/2021/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7-webpack/"
+           data-tag="webpack"
+           data-author="" >
+            <span class="post-title" title="webpack">webpack</span>
+            <span class="post-date" title="2021-09-12 20:48:19">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 开发工具 "
+           href="/2021/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7-%E6%80%BB%E8%BF%B0/"
+           data-tag="webpack,nodeJS,Mock,vue"
+           data-author="" >
+            <span class="post-title" title="开发工具总述">开发工具总述</span>
+            <span class="post-date" title="2021-09-12 20:44:58">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 基础知识 "
+           href="/2021/09/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%88%E4%BA%94%EF%BC%89/"
+           data-tag="canvas"
+           data-author="" >
+            <span class="post-title" title="基础知识（五）">基础知识（五）</span>
+            <span class="post-date" title="2021-09-12 20:42:29">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 实战经验 "
+           href="/2021/09/12/%E5%AE%9E%E6%88%98%E7%BB%8F%E9%AA%8C%EF%BC%88%E5%9B%9B%EF%BC%89/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="实战经验（四）">实战经验（四）</span>
+            <span class="post-date" title="2021-09-12 20:20:15">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 实战经验 "
+           href="/2021/09/12/%E5%AE%9E%E6%88%98%E7%BB%8F%E9%AA%8C%EF%BC%88%E4%B8%89%EF%BC%89/"
+           data-tag="数组,对象"
+           data-author="" >
+            <span class="post-title" title="实战经验（三）">实战经验（三）</span>
+            <span class="post-date" title="2021-09-12 20:19:57">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 实战经验 "
+           href="/2021/09/12/%E5%AE%9E%E6%88%98%E7%BB%8F%E9%AA%8C%EF%BC%88%E4%BA%8C%EF%BC%89/"
+           data-tag="跨域,Fetch,web worker,File协议"
+           data-author="" >
+            <span class="post-title" title="实战经验（二）">实战经验（二）</span>
+            <span class="post-date" title="2021-09-12 20:09:09">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 实战经验 "
+           href="/2021/09/12/%E5%AE%9E%E6%88%98%E7%BB%8F%E9%AA%8C%EF%BC%88%E4%B8%80%EF%BC%89/"
+           data-tag="canvas,防抖,节流,DOM"
+           data-author="" >
+            <span class="post-title" title="实战经验（一）">实战经验（一）</span>
+            <span class="post-date" title="2021-09-12 20:03:35">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 基础知识 "
+           href="/2021/09/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%88%E5%9B%9B%EF%BC%89/"
+           data-tag="this,柯里化,偏函数,惰性函数"
+           data-author="" >
+            <span class="post-title" title="基础知识（四）">基础知识（四）</span>
+            <span class="post-date" title="2021-09-12 19:58:30">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 基础知识 "
+           href="/2021/09/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%88%E4%B8%89%EF%BC%89/"
+           data-tag="函数声明,原型链,闭包,函数调用"
+           data-author="" >
+            <span class="post-title" title="基础知识（三）">基础知识（三）</span>
+            <span class="post-date" title="2021-09-12 19:48:58">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 基础知识 "
+           href="/2021/09/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%88%E4%BA%8C%EF%BC%89/"
+           data-tag="同步,异步,事件轮询,单线程"
+           data-author="" >
+            <span class="post-title" title="基础知识（二）">基础知识（二）</span>
+            <span class="post-date" title="2021-09-12 19:23:23">2021/09/12</span>
+        </a>
+        
+        <a  class="全部文章 前端 javascript 基础知识 "
+           href="/2021/09/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%88%E4%B8%80%EF%BC%89/"
+           data-tag="类数组对象,数据存储,行为委托,iterator"
+           data-author="" >
+            <span class="post-title" title="基础知识（一）">基础知识（一）</span>
+            <span class="post-date" title="2021-09-12 15:14:33">2021/09/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-实战经验（三）" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">实战经验（三）</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="前端">前端</a> > 
+            
+            <a  data-rel="前端&lt;---&gt;javascript">javascript</a> > 
+            
+            <a  data-rel="前端&lt;---&gt;javascript&lt;---&gt;实战经验">实战经验</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color3">数组</a>
+            
+            <a class="color3">对象</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2021-09-12 20:41:24'>2021-09-12 20:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:3.4k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E6%88%98%E7%BB%8F%E9%AA%8C%E2%80%94%E2%80%94%E5%AF%B9%E8%B1%A1%E5%92%8C%E6%95%B0%E7%BB%84"><span class="toc-text">实战经验——对象和数组</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%AF%94%E8%BE%83"><span class="toc-text">1.对象的比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.对象的属性类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%B1%9E%E6%80%A7%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.1 属性类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E8%8E%B7%E5%8F%96%E5%92%8C%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7%E6%8F%8F%E8%BF%B0%E7%AC%A6"><span class="toc-text">2.2 获取和配置属性描述符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E5%B8%B8%E8%A7%81%E4%BD%BF%E7%94%A8"><span class="toc-text">2.3 常见使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-1-%E5%B8%B8%E9%87%8F%E5%B1%9E%E6%80%A7"><span class="toc-text">2.3.1 常量属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-2-%E7%A6%81%E6%AD%A2%E6%89%A9%E5%B1%95"><span class="toc-text">2.3.2 禁止扩展</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-3-%E5%AF%86%E5%B0%81%E5%AF%B9%E8%B1%A1"><span class="toc-text">2.3.3 密封对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-4-%E5%86%BB%E7%BB%93%E5%AF%B9%E8%B1%A1"><span class="toc-text">2.3.4 冻结对象</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%88%A4%E6%96%AD%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">3.判断数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E6%AF%94%E8%BE%83%E5%B8%B8%E8%A7%81%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%88%A4%E6%96%AD"><span class="toc-text">3.1 比较常见的数据类型判断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E7%B1%BB%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1%E5%88%A4%E6%96%AD"><span class="toc-text">3.2 类数组对象判断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-window%E5%AF%B9%E8%B1%A1"><span class="toc-text">3.3 window对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-DOM-%E5%85%83%E7%B4%A0%E5%AF%B9%E8%B1%A1"><span class="toc-text">3.4 DOM 元素对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-plainObject"><span class="toc-text">3.5 plainObject</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%8B%B7%E8%B4%9D"><span class="toc-text">4.拷贝</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E6%95%B0%E7%BB%84%E7%9A%84%E6%8B%B7%E8%B4%9D"><span class="toc-text">4.1 数组的拷贝</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E6%95%B0%E7%BB%84%E6%88%96%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%8B%B7%E8%B4%9D"><span class="toc-text">4.2 数组或对象的拷贝</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-1%E6%B5%85%E6%8B%B7%E8%B4%9D"><span class="toc-text">4.2.1浅拷贝</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-2-%E6%B7%B1%E6%8B%B7%E8%B4%9D"><span class="toc-text">4.2.2 深拷贝</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95"><span class="toc-text">5.对象的扩展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1%E6%B5%85%E6%89%A9%E5%B1%95"><span class="toc-text">5.1浅扩展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2%E6%80%BB%E4%BB%A3%E7%A0%81"><span class="toc-text">5.2总代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-null%E5%92%8Cundefined"><span class="toc-text">6.null和undefined</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E5%AF%BB%E6%89%BE%E5%8F%98%E9%87%8F%E5%92%8C%E8%AE%BF%E9%97%AE%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7%E7%9A%84%E4%B8%8D%E5%90%8C"><span class="toc-text">7.寻找变量和访问对象属性的不同</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E6%A3%80%E6%B5%8B%E6%9F%90%E4%B8%AA%E5%B1%9E%E6%80%A7%E6%98%AF%E5%90%A6%E5%9C%A8%E5%AF%B9%E8%B1%A1%E9%87%8C"><span class="toc-text">8.检测某个属性是否在对象里</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E6%A3%80%E6%B5%8B%E6%9F%90%E4%B8%AA%E5%B1%9E%E6%80%A7%E6%98%AF%E5%90%A6%E5%8F%AF%E4%BB%A5%E6%9E%9A%E4%B8%BE"><span class="toc-text">9.检测某个属性是否可以枚举</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%E5%8F%8A%E5%85%B6%E5%B1%9E%E6%80%A7%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8"><span class="toc-text">10.判断一个对象及其属性是否存在</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-%E5%BD%93%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7%E4%B8%8D%E5%AD%98%E5%9C%A8%E6%97%B6%E6%8C%87%E5%AE%9A%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="toc-text">11.当对象属性不存在时指定默认值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E6%95%B0%E7%BB%84%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">12.数组的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-%E6%95%B0%E7%BB%84%E7%A9%BA%E4%BD%8D%E7%9A%84%E5%A4%84%E7%90%86"><span class="toc-text">13.数组空位的处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-%E6%9F%A5%E6%89%BE%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84NaN"><span class="toc-text">14.查找数组中的NaN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-Number-isNaN%E5%92%8CisNaN"><span class="toc-text">15.Number.isNaN和isNaN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-%E5%B0%86%E6%95%B0%E7%BB%84%E6%8B%89%E5%B9%B3%E4%B8%80%E5%B1%82"><span class="toc-text">16.将数组拉平一层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text"></span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="实战经验——对象和数组"><a href="#实战经验——对象和数组" class="headerlink" title="实战经验——对象和数组"></a>实战经验——对象和数组</h1><h2 id="1-对象的比较"><a href="#1-对象的比较" class="headerlink" title="1.对象的比较"></a>1.对象的比较</h2><p>在比较相等性，<strong>原始类型比较它们的值</strong>。<strong>对象是比较它们的地址</strong>是否一样。</p>
+<pre><code class="javascript">&#123;age:10&#125;===&#123;age:10&#125; //false
+&#123;age:10&#125;==&#123;age:10&#125; //false
+</code></pre>
+<h2 id="2-对象的属性类型"><a href="#2-对象的属性类型" class="headerlink" title="2.对象的属性类型"></a>2.对象的属性类型</h2><h3 id="2-1-属性类型"><a href="#2-1-属性类型" class="headerlink" title="2.1 属性类型"></a>2.1 属性类型</h3><ol>
+<li>数据属性</li>
+</ol>
+<ul>
+<li><code>configurable</code>：设置为false，**<u>不能</u><strong>再用<code>Object.defineProperty</code>配置属性的对象描述符，也</strong><u>不能删除</u>**这个属性</li>
+<li><code>enumerable</code>：属性是否出现在对象的<strong>枚举属性</strong>中，比如使用<code>for ... in ...</code></li>
+<li><code>writable</code>：是否可以修改这个属性的值</li>
+<li><code>value</code></li>
+</ul>
+<ol start="2">
+<li>访问器属性</li>
+</ol>
+<ul>
+<li><code>get</code></li>
+<li><code>set</code></li>
+<li><code>configurable</code></li>
+<li><code>enumerable</code></li>
+</ul>
+<h3 id="2-2-获取和配置属性描述符"><a href="#2-2-获取和配置属性描述符" class="headerlink" title="2.2 获取和配置属性描述符"></a>2.2 获取和配置属性描述符</h3><p>获取属性的对象描述符：<code>Object.getOwnPropertyDescriptors</code>和<code>Object.getOwnPropertyDescriptor</code></p>
+<p>配置属性的对象描述符：<code>Object.defineProperty</code></p>
+<pre><code class="javascript">const obj = &#123;
+  foo: 123,
+  get bar() &#123; return &#39;abc&#39; &#125; //bar是obj的属性
+&#125;;
+
+Object.getOwnPropertyDescriptors(obj)
+// &#123; foo:
+//    &#123; value: 123,
+//      writable: true,
+//      enumerable: true,
+//      configurable: true &#125;,
+//   bar:
+//    &#123; get: [Function: get bar],
+//      set: undefined,
+//      enumerable: true,
+//      configurable: true &#125; &#125;
+</code></pre>
+<pre><code class="javascript">let obj=&#123;age:1&#125;;
+Object.getOwnPropertyDescriptor(obj,&quot;age&quot;);
+//&#123;value: 1, writable: true, enumerable: true, configurable: true&#125;
+//需要显示的为属性设置get和set函数
+</code></pre>
+<p>设置属性的getter和setter函数：</p>
+<pre><code class="javascript">//文字表示法
+let obj=&#123;
+    //给a设置了get函数
+    get a()&#123;
+        return this._temp_; //get时把这个属性再返回回去
+    &#125;,
+    //给a设置setter函数
+    set a(val) &#123; 
+         this._temp_ = val * 2; //把计算完的结果保存在obj的_temp_属性中
+     &#125;
+&#125;
+
+//显示设置
+Object.defineProperty(obj,b,&#123;
+    get()&#123;
+        return 2
+&#125;
+&#125;)
+</code></pre>
+<h3 id="2-3-常见使用"><a href="#2-3-常见使用" class="headerlink" title="2.3 常见使用"></a>2.3 常见使用</h3><h4 id="2-3-1-常量属性"><a href="#2-3-1-常量属性" class="headerlink" title="2.3.1 常量属性"></a>2.3.1 常量属性</h4><p>不可修改、不能删除、不能重定义</p>
+<pre><code class="javascript">var myObject = &#123;&#125;; 
+Object.defineProperty( myObject, &quot;FAVORITE_NUMBER&quot;, &#123; 
+ value: 42, 
+ writable: false, 
+ configurable: false 
+&#125; );
+</code></pre>
+<h4 id="2-3-2-禁止扩展"><a href="#2-3-2-禁止扩展" class="headerlink" title="2.3.2 禁止扩展"></a>2.3.2 禁止扩展</h4><p>禁止添加新的属性：<code>Object.preventExtensions(obj)</code></p>
+<h4 id="2-3-3-密封对象"><a href="#2-3-3-密封对象" class="headerlink" title="2.3.3 密封对象"></a>2.3.3 密封对象</h4><p><code>Object.seal(obj)</code>：禁止添加新的属性、不能删除和重新配置，但是可以修改现有的属性</p>
+<h4 id="2-3-4-冻结对象"><a href="#2-3-4-冻结对象" class="headerlink" title="2.3.4 冻结对象"></a>2.3.4 冻结对象</h4><p><code>Object.free(obj)</code>：在<code>seal</code>的基础上，所有属性的<code>writable:false</code>。但是如果属性的值是<strong>引用类型</strong>，还是可以修改这个<strong>引用类型的属性</strong>，但不能直接修改属性</p>
+<pre><code class="javascript">let obj=&#123;name:&quot;wjx&quot;,books:[1,2,3]&#125;
+Object.freeze(obj)
+obj.name=1
+obj//&#123;name:&quot;wjx&quot;,books:[1,2,3]&#125;
+obj.books=1 //&#123;name:&quot;wjx&quot;,books:[1,2,3]&#125;
+obj.books[0]=10 //&#123;name:&quot;wjx&quot;,books:[10,2,3]&#125;
+</code></pre>
+<h2 id="3-判断数据类型"><a href="#3-判断数据类型" class="headerlink" title="3.判断数据类型"></a>3.判断数据类型</h2><h3 id="3-1-比较常见的数据类型判断"><a href="#3-1-比较常见的数据类型判断" class="headerlink" title="3.1 比较常见的数据类型判断"></a>3.1 比较常见的数据类型判断</h3><ul>
+<li><code>typeof</code>能够检测的数据类型：undefined/null/number/string/boolean/object/function</li>
+<li><code>Object.prototype.toString</code>：会返回一个由 <strong><u>“[object “ 和 class 和 “]”</u></strong> 组成的字符串，可以识别至少 14 种类型</li>
+</ul>
+<pre><code class="javascript">// 常见的数据类型判断
+// Boolean Number String Function Array Date RegExp Object Error null undefined
+var class2type = &#123;&#125;;
+
+// 生成class2type映射
+&quot;Boolean Number String Function Array Date RegExp Object Error&quot;.split(&quot; &quot;).map(function(item, index) &#123;
+    class2type[&quot;[object &quot; + item + &quot;]&quot;] = item.toLowerCase();
+&#125;)
+
+function type(obj) &#123;
+    // 一箭双雕
+    if (obj == null) &#123;
+        return obj + &quot;&quot;;
+    &#125;
+    return typeof obj === &quot;object&quot; || typeof obj === &quot;function&quot; ?
+        class2type[Object.prototype.toString.call(obj)] || &quot;object&quot; :
+        typeof obj;
+&#125;
+</code></pre>
+<h3 id="3-2-类数组对象判断"><a href="#3-2-类数组对象判断" class="headerlink" title="3.2 类数组对象判断"></a>3.2 类数组对象判断</h3><p>如果 isArrayLike 返回true，至少要满足三个条件之一：</p>
+<ol>
+<li>是数组</li>
+<li>长度为 0</li>
+<li>lengths 属性是大于 0 的数字类型，并且obj[length - 1]必须存在</li>
+</ol>
+<p><u><strong>注：符合条件的类数组对象是一定存在最后一个元素的</strong></u></p>
+<pre><code class="javascript">function isArrayLike(obj) &#123;
+
+    // obj 必须有 length属性
+    var length = !!obj &amp;&amp; &quot;length&quot; in obj &amp;&amp; obj.length;
+    var typeRes = type(obj);
+
+    // 排除掉函数和 Window 对象
+    if (typeRes === &quot;function&quot; || isWindow(obj)) &#123;
+        return false;
+    &#125;
+
+    return typeRes === &quot;array&quot; || length === 0 ||
+        typeof length === &quot;number&quot; &amp;&amp; length &gt; 0 &amp;&amp; (length - 1) in obj;
+&#125;
+</code></pre>
+<pre><code class="javascript">var arr = [1,,]; //arr=[1, empty]
+console.log(arr.length) // 2 长度为2
+//当我们在数组中用逗号直接跳过的时候，我们认为该元素是不存在的，类数组对象中也就不用写这个元素，但是最后一个元素是一定要写的，要不然 length 的长度就不会是最后一个元素的 key 值加 1。
+</code></pre>
+<h3 id="3-3-window对象"><a href="#3-3-window对象" class="headerlink" title="3.3 window对象"></a>3.3 window对象</h3><pre><code class="javascript">function isWindow( obj ) &#123;
+    return obj != null &amp;&amp; obj === obj.window;
+&#125;
+</code></pre>
+<h3 id="3-4-DOM-元素对象"><a href="#3-4-DOM-元素对象" class="headerlink" title="3.4 DOM 元素对象"></a>3.4 DOM 元素对象</h3><pre><code class="javascript">isElement = function(obj) &#123;
+    return !!(obj &amp;&amp; obj.nodeType === 1);
+&#125;;
+</code></pre>
+<h3 id="3-5-plainObject"><a href="#3-5-plainObject" class="headerlink" title="3.5 plainObject"></a>3.5 plainObject</h3><p>plainObject 来自于 jQuery，可以翻译成纯粹的对象，所谓”纯粹的对象”，就是**<u>该对象是通过 “{}” 或 “new Object” 创建的或者没有原型的对象，该对象含有零个或者多个键值对。</u>**跟其他的 JavaScript对象如 null，数组，宿主对象（documents）等作区分，因为这些用 typeof 都会返回object。</p>
+<pre><code class="javascript">console.log($.isPlainObject(&#123;&#125;)) // true
+
+console.log($.isPlainObject(new Object)) // true
+
+console.log($.isPlainObject(Object.create(null))); // true 没有原型对象
+
+console.log($.isPlainObject(Object.assign(&#123;a: 1&#125;, &#123;b: 2&#125;))); // true
+
+console.log($.isPlainObject(new Person(&#39;yayu&#39;))); // false
+
+console.log($.isPlainObject(Object.create(&#123;&#125;))); // false 有原型对象所以是false
+</code></pre>
+<pre><code class="javascript">// 上节中写 type 函数时，用来存放 toString 映射结果的对象
+var class2type = &#123;&#125;;
+
+// 相当于 Object.prototype.toString
+var toString = class2type.toString;
+
+// 相当于 Object.prototype.hasOwnProperty
+var hasOwn = class2type.hasOwnProperty;
+
+function isPlainObject(obj) &#123;
+    var proto, Ctor;
+
+    // 排除掉明显不是obj的以及一些宿主对象如Window
+    if (!obj || toString.call(obj) !== &quot;[object Object]&quot;) &#123;
+        return false;
+    &#125;
+
+    /**
+     * getPrototypeOf es5 方法，获取 obj 的原型
+     * 以 new Object 创建的对象为例的话
+     * obj.__proto__ === Object.prototype
+     */
+    proto = Object.getPrototypeOf(obj);
+
+    // 没有原型的对象是纯粹的，Object.create(null) 就在这里返回 true
+    if (!proto) &#123;
+        return true;
+    &#125;
+
+    /**
+     * 以下判断通过 new Object 方式创建的对象
+     * 判断 proto 是否有 constructor 属性，如果有就让 Ctor 的值为 proto.constructor
+     * 如果是 Object 函数创建的对象，Ctor 在这里就等于 Object 构造函数
+     */
+    Ctor = hasOwn.call(proto, &quot;constructor&quot;) &amp;&amp; proto.constructor;
+
+    // 在这里判断 Ctor 构造函数是不是 Object 构造函数，用于区分自定义构造函数和 Object 构造函数
+    return typeof Ctor === &quot;function&quot; &amp;&amp; hasOwn.toString.call(Ctor) === hasOwn.toString.call(Object);
+&#125;
+</code></pre>
+<pre><code class="javascript">console.log(Object.prototype.hasOwnProperty.toString.call(Ctor)); 
+// Function.prototype.toString
+// function Object() &#123; [native code] &#125;
+console.log(Object.prototype.toString.call(Ctor)); // [object Function]
+</code></pre>
+<p> <strong><u>注：Function 对象覆盖了从 Object 继承来的 Object.prototype.toString 方法。函数的 toString 方法会返回一个表示函数源代码的字符串。具体来说，包括 function关键字，形参列表，大括号，以及函数体中的内容。</u></strong></p>
+<h2 id="4-拷贝"><a href="#4-拷贝" class="headerlink" title="4.拷贝"></a>4.拷贝</h2><h3 id="4-1-数组的拷贝"><a href="#4-1-数组的拷贝" class="headerlink" title="4.1 数组的拷贝"></a>4.1 数组的拷贝</h3><p>数组的<code>concat</code>和<code>slice</code>会返回新的数组：如果数组元素是**<u>基本类型</u><strong>，就会拷贝一份，</strong>互不影响<strong>；而如果是</strong>对象或者数组<strong>，就会只</strong><u>拷贝对象和数组的引用</u><strong>，这样我们无论在新旧数组进行了修改，</strong>两者都会发生变化<strong>。<code>concat</code>和<code>slice</code>只是</strong><u>浅拷贝</u>**</p>
+<p>**<u>深拷贝</u>**就是指完全的拷贝一个对象，即使嵌套了对象，两者也相互分离，修改一个对象的属性，也不会影响另一个。</p>
+<p><strong><u>数组元素为数组或对象时的深拷贝：</u></strong></p>
+<pre><code class="javascript">var arr = [&#39;old&#39;, 1, true, [&#39;old1&#39;, &#39;old2&#39;], &#123;old: 1&#125;]
+
+var new_arr = JSON.parse( JSON.stringify(arr) );
+//但是数组元素为函数时就不行，比如
+//   var arr = [function()&#123;
+//    console.log(a)
+//    &#125;, &#123;
+//    b: function()&#123;
+ //       console.log(b)
+ //   &#125;
+//    &#125;]
+
+console.log(new_arr);
+</code></pre>
+<h3 id="4-2-数组或对象的拷贝"><a href="#4-2-数组或对象的拷贝" class="headerlink" title="4.2 数组或对象的拷贝"></a>4.2 数组或对象的拷贝</h3><h4 id="4-2-1浅拷贝"><a href="#4-2-1浅拷贝" class="headerlink" title="4.2.1浅拷贝"></a>4.2.1浅拷贝</h4><p><code>Object.assign</code>是浅拷贝</p>
+<pre><code class="javascript">var shallowCopy = function(obj) &#123;
+    // 只拷贝对象
+    if (typeof obj !== &#39;object&#39;) return;
+    // 根据obj的类型判断是新建一个数组还是对象
+    var newObj = obj instanceof Array ? [] : &#123;&#125;;
+    // 遍历obj，并且判断是obj的属性才拷贝
+    for (var key in obj) &#123;//元素在数组中的位置
+        if (obj.hasOwnProperty(key)) &#123;//只遍历自己的键
+            newObj[key] = obj[key];
+        &#125;
+    &#125;
+    return newObj;
+&#125;
+</code></pre>
+<h4 id="4-2-2-深拷贝"><a href="#4-2-2-深拷贝" class="headerlink" title="4.2.2 深拷贝"></a>4.2.2 深拷贝</h4><p>在拷贝的时候判断一下属性值的类型，如果是对象，我们递归调用深拷贝函数</p>
+<pre><code class="javascript">var deepCopy = function(obj) &#123;
+    if (typeof obj !== &#39;object&#39;) return;
+    var newObj = obj instanceof Array ? [] : &#123;&#125;;
+    for (var key in obj) &#123;
+        if (obj.hasOwnProperty(key)) &#123;
+            newObj[key] = typeof obj[key] === &#39;object&#39; ? deepCopy(obj[key]) : obj[key];
+        &#125;
+    &#125;
+    return newObj;
+&#125;
+</code></pre>
+<pre><code class="javascript">function deepClone (obj) &#123;
+  if (Array.isArray(obj)) &#123;
+    return obj.map(deepClone)
+  &#125; else if (obj &amp;&amp; typeof obj === &#39;object&#39;) &#123;
+    var cloned = &#123;&#125;
+    var keys = Object.keys(obj)
+    for (var i = 0, l = keys.length; i &lt; l; i++) &#123;
+      var key = keys[i]
+      cloned[key] = deepClone(obj[key])
+    &#125;
+    return cloned
+  &#125; else &#123;
+    return obj
+  &#125;
+&#125;
+</code></pre>
+<h2 id="5-对象的扩展"><a href="#5-对象的扩展" class="headerlink" title="5.对象的扩展"></a>5.对象的扩展</h2><p>比如JQuery的<code>extend</code>可以合并两个或者更多的对象的内容到第一个对象中，扩展的时候如果有相同的属性，**<u>后面的会覆盖前面的。根据覆盖的层级不同分为浅扩展和深扩展</u>**</p>
+<h3 id="5-1浅扩展"><a href="#5-1浅扩展" class="headerlink" title="5.1浅扩展"></a>5.1浅扩展</h3><p>ES6自带的<code>Object.assign</code><strong>是浅拷贝</strong></p>
+<pre><code class="javascript">// 第一版
+function extend() &#123;
+    var name, options, copy;
+    var length = arguments.length;
+    var i = 1;
+    var target = arguments[0];
+
+    for (; i &lt; length; i++) &#123;
+        options = arguments[i];
+        if (options != null) &#123;
+            for (name in options) &#123;
+                copy = options[name];
+                if (copy !== undefined)&#123;
+                    target[name] = copy;
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+
+    return target;
+&#125;;
+</code></pre>
+<p>使用效果：</p>
+<pre><code class="javascript">var obj1 = &#123;
+    a: 1,
+    b: &#123; b1: 1, b2: 2 &#125;
+&#125;;
+
+var obj2 = &#123;
+    b: &#123; b1: 3, b3: 4 &#125;,
+    c: 3
+&#125;;
+
+var obj3 = &#123;
+    d: 4
+&#125;
+
+extend(obj1,obj2,obj3)
+// &#123;
+//    a: 1,
+//    b: &#123; b1: 3, b3: 4 &#125;,
+//    c: 3,
+//    d: 4
+// &#125;
+</code></pre>
+<h3 id="5-2总代码"><a href="#5-2总代码" class="headerlink" title="5.2总代码"></a>5.2总代码</h3><pre><code class="javascript">// isPlainObject 函数来自于  [JavaScript专题之类型判断(下) ](https://github.com/mqyqingfeng/Blog/issues/30)
+var class2type = &#123;&#125;;
+var toString = class2type.toString;
+var hasOwn = class2type.hasOwnProperty;
+
+function isPlainObject(obj) &#123;
+    var proto, Ctor;
+    if (!obj || toString.call(obj) !== &quot;[object Object]&quot;) &#123;
+        return false;
+    &#125;
+    proto = Object.getPrototypeOf(obj);
+    if (!proto) &#123;
+        return true;
+    &#125;
+    Ctor = hasOwn.call(proto, &quot;constructor&quot;) &amp;&amp; proto.constructor;
+    return typeof Ctor === &quot;function&quot; &amp;&amp; hasOwn.toString.call(Ctor) === hasOwn.toString.call(Object);
+&#125;
+
+
+function extend() &#123;
+    // 默认不进行深拷贝
+    var deep = false;
+    var name, options, src, copy, clone, copyIsArray;
+    var length = arguments.length;
+    // 记录要开始复制的对象的下标
+    var i = 1;
+    // 第一个参数不传布尔值的情况下，target 默认是第一个参数
+    var target = arguments[0] || &#123;&#125;;
+    // 如果第一个参数是布尔值，第二个参数是 target
+    if (typeof target == &#39;boolean&#39;) &#123;
+        deep = target;
+        target = arguments[i] || &#123;&#125;;
+        i++;
+    &#125;
+    // 如果target不是对象，我们是无法进行复制的，所以设为 &#123;&#125;
+    if (typeof target !== &quot;object&quot; &amp;&amp; !isFunction(target)) &#123;
+        target = &#123;&#125;;
+    &#125;
+
+    // 循环遍历要复制的对象们
+    for (; i &lt; length; i++) &#123;
+        // 获取当前对象
+        options = arguments[i];
+        // 要求不能为空 避免 extend(a,,b) 这种情况
+        if (options != null) &#123;
+            for (name in options) &#123;
+                // 目标属性值
+                src = target[name];
+                // 要复制的对象的属性值
+                copy = options[name];
+
+                // 解决循环引用
+                if (target === copy) &#123;
+                    continue;
+                &#125;
+
+                // 要递归的对象必须是 plainObject 或者数组
+                if (deep &amp;&amp; copy &amp;&amp; (isPlainObject(copy) ||
+                        (copyIsArray = Array.isArray(copy)))) &#123;
+                    // 要复制的对象属性值类型需要与目标属性值相同
+                    if (copyIsArray) &#123;
+                        copyIsArray = false;
+                        clone = src &amp;&amp; Array.isArray(src) ? src : [];
+
+                    &#125; else &#123;
+                        clone = src &amp;&amp; isPlainObject(src) ? src : &#123;&#125;;
+                    &#125;
+
+                    target[name] = extend(deep, clone, copy);
+
+                &#125; else if (copy !== undefined) &#123;
+                    target[name] = copy;
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+
+    return target;
+&#125;;
+</code></pre>
+<h2 id="6-null和undefined"><a href="#6-null和undefined" class="headerlink" title="6.null和undefined"></a>6.null和undefined</h2><p>如果使用<strong>普通相等</strong>判断的话，**<u>使用null更好</u>**，因为低版本的浏览器的undefined可以被修改</p>
+<h2 id="7-寻找变量和访问对象属性的不同"><a href="#7-寻找变量和访问对象属性的不同" class="headerlink" title="7.寻找变量和访问对象属性的不同"></a>7.寻找变量和访问对象属性的不同</h2><p>如果在词法作用域中没有找到该变量，会返回<code>ReferenceError</code>;</p>
+<p>如果一个对象不存在该属性，会在原型链里查找，如果也没有，会返回<code>undefined</code></p>
+<h2 id="8-检测某个属性是否在对象里"><a href="#8-检测某个属性是否在对象里" class="headerlink" title="8.检测某个属性是否在对象里"></a>8.检测某个属性是否在对象里</h2><pre><code class="javascript">//in 是检查该对象以及原型链上是否存在该属性
+// 4 in [1,2,3]  false
+属性 in obj
+
+//只检查该对象是否有这个属性
+obj.hasOwnProperty(属性)
+Object.prototype.hasOwnProperty.call(obj,属性)//对于由Object.create(null)创建的对象可以采用这种方法
+//Object.create(null)创建的对象没有__proto__属性
+//let p=&#123;&#125; 是有__proto__属性的
+</code></pre>
+<h2 id="9-检测某个属性是否可以枚举"><a href="#9-检测某个属性是否可以枚举" class="headerlink" title="9.检测某个属性是否可以枚举"></a>9.检测某个属性是否可以枚举</h2><pre><code class="javascript">//检测该属性是否直接存在于该对象里并且enumerable
+myObject.propertyIsEnumerable( &quot;a&quot; );
+
+//返回数组，包含该对象直接有的所有可枚举的属性
+Object.keys()
+
+//返回该对象自己的所有属性
+Object.getOwnPropertyNames(..)
+</code></pre>
+<h2 id="10-判断一个对象及其属性是否存在"><a href="#10-判断一个对象及其属性是否存在" class="headerlink" title="10.判断一个对象及其属性是否存在"></a>10.判断一个对象及其属性是否存在</h2><ul>
+<li>方法一</li>
+</ul>
+<pre><code class="javascript">// 要读取`message.body.user.firstName`
+const firstName = (message
+  &amp;&amp; message.body
+  &amp;&amp; message.body.user
+  &amp;&amp; message.body.user.firstName) || &#39;default&#39;;
+</code></pre>
+<ul>
+<li>方法二：<code>?:</code></li>
+</ul>
+<pre><code class="javascript">const fooInput = myForm.querySelector(&#39;input[name=foo]&#39;)
+const fooValue = fooInput ? fooInput.value : undefined
+</code></pre>
+<ul>
+<li>方法三：链判断运算符<code>?.</code> </li>
+</ul>
+<pre><code class="javascript">//前者不是null或undefined会向右执行
+const firstName = message?.body?.user?.firstName || &#39;default&#39;;
+const fooValue = myForm.querySelector(&#39;input[name=foo]&#39;)?.value
+if (myForm.checkValidity?.() === false) &#123;//方法不存在返回undefined
+  // 表单校验失败
+  return;
+&#125;
+</code></pre>
+<h2 id="11-当对象属性不存在时指定默认值"><a href="#11-当对象属性不存在时指定默认值" class="headerlink" title="11.当对象属性不存在时指定默认值"></a>11.当对象属性不存在时指定默认值</h2><ul>
+<li>方法一：<code>||</code>逻辑运算符</li>
+</ul>
+<pre><code class="javascript">//当属性为null、undefined、“”、0，默认值会生效
+const showSplashScreen = response.settings.showSplashScreen || true;
+</code></pre>
+<ul>
+<li>方法二：<code>??</code>运算符</li>
+</ul>
+<pre><code class="javascript">//只有当属性为null、undefined的时候才生效
+const headerText = response.settings.headerText ?? &#39;Hello, world!&#39;;
+</code></pre>
+<h2 id="12-数组的方法"><a href="#12-数组的方法" class="headerlink" title="12.数组的方法"></a>12.数组的方法</h2><ul>
+<li><strong>会改变</strong>原数组的方法：push/pop/shift/unshift/splice/sort/reverse/forEach</li>
+<li><strong>不会改变</strong>原数组的方法：filter/map/concat/slice</li>
+</ul>
+<h2 id="13-数组空位的处理"><a href="#13-数组空位的处理" class="headerlink" title="13.数组空位的处理"></a>13.数组空位的处理</h2><p>ES6 则是明确将空位转为<code>undefined</code>。</p>
+<p>ES5 对空位的处理，已经很不一致了，大多数情况下会忽略空位。</p>
+<ul>
+<li><code>forEach()</code>, <code>filter()</code>, <code>reduce()</code>, <code>every()</code> 和<code>some()</code>都会跳过空位。</li>
+<li><code>map()</code>会跳过空位，但会保留这个值</li>
+<li><code>join()</code>和<code>toString()</code>会将空位视为<code>undefined</code>，而<code>undefined</code>和<code>null</code>会被处理成空字符串。</li>
+</ul>
+<h2 id="14-查找数组中的NaN"><a href="#14-查找数组中的NaN" class="headerlink" title="14.查找数组中的NaN"></a>14.查找数组中的NaN</h2><pre><code class="javascript">[NaN].findIndex(function(y)&#123;return Object.is(NaN,y);&#125;);//0
+[NaN].indexOf(NaN)//-1
+[NaN].includes(NaN)//true
+</code></pre>
+<p>数组中涉及到位置都是左闭右开</p>
+<ul>
+<li></li>
+</ul>
+<h2 id="15-Number-isNaN和isNaN"><a href="#15-Number-isNaN和isNaN" class="headerlink" title="15.Number.isNaN和isNaN"></a>15.<code>Number.isNaN</code>和<code>isNaN</code></h2><p><code>Number.isNaN</code>:检查是否是数字且是否是NAN</p>
+<pre><code class="javascript">Number.isNaN(&quot;this&quot;) // false
+Number.isNaN(12) // false
+</code></pre>
+<p><code>isNaN</code>:是数字返回false，不是数字返回true</p>
+<pre><code class="javascript">isNaN(12) //false
+isNaN(&quot;s&quot;) //true
+</code></pre>
+<h2 id="16-将数组拉平一层"><a href="#16-将数组拉平一层" class="headerlink" title="16.将数组拉平一层"></a>16.将数组拉平一层</h2><pre><code class="javascript">//method one
+let a=[1,2,[3,4,[5]]];
+let b=Array.prototype.concat.apply([],a);
+//[1, 2, 3, 4, Array(1)]
+
+//method two
+Array.prototype.flat.apply(a);
+</code></pre>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 18800379282@163.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '03a6ca2b5a66493eb1f9',
+            clientSecret: '1a0ff8296171ad77c3312782e8ca5bfd346d1ede',
+            repo: 'AuroraVee.github.io',
+            owner: 'AuroraVee',
+            admin: ['AuroraVee'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2021-至今 AuroraVee
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().trim().split('\n').length, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

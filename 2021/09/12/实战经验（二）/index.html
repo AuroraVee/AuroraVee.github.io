@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>about | 前端学习笔记</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="about | 前端学习笔记">
+  <title>实战经验（二） | 前端学习笔记</title>
+  <meta name="keywords" content=" 跨域 , Fetch , web worker , File协议 ">
+  <meta name="description" content="实战经验（二） | 前端学习笔记">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于个人简介吴家秀（AuroraVee），目前是上海大学的专硕。由于后面的学业项目涉及到web端的开发，从2020年12月开始逐步学习前端编程。当然，在这之前，我也是有编程经验的，本科的时候主要用过C++&#x2F;C&#x2F;Python&#x2F;Java做过一些课程项目，但是呢都学得不是很深。进入研究生后，对于以后从事的岗位迷茫过，不知道该找哪门语言的工作。刚好，企业导师给我安排的项目是前端方向的，意味着整个研究生的时">
 <meta property="og:type" content="website">
@@ -581,24 +581,49 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-实战经验（二）" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">about</h1>
+        <h1 class="article-title">实战经验（二）</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="前端">前端</a> > 
+            
+            <a  data-rel="前端&lt;---&gt;javascript">javascript</a> > 
+            
+            <a  data-rel="前端&lt;---&gt;javascript&lt;---&gt;实战经验">实战经验</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color3">跨域</a>
+            
+            <a class="color1">Fetch</a>
+            
+            <a class="color1">web worker</a>
+            
+            <a class="color2">File协议</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-09-12 14:17:37'>2021-09-12 14:01</time>
+            发布时间 : <time class="date" title='最后更新: 2021-09-12 20:41:08'>2021-09-12 20:09</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:330</span>
+        <span>字数:2.4k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -628,7 +653,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E"><span class="toc-text">关于</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B"><span class="toc-text">个人简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="toc-text">联系方式</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E6%88%98%E7%BB%8F%E9%AA%8C%E7%AF%87%E4%BA%8C"><span class="toc-text">实战经验篇二</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BB%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="toc-text">1.从服务器获取数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%B7%A8%E5%9F%9F"><span class="toc-text">2.跨域</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E8%B7%A8%E5%9F%9F%E7%9A%84%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5"><span class="toc-text">2.1 跨域的相关概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E8%B7%A8%E5%9F%9F%E6%96%B9%E5%BC%8F"><span class="toc-text">2.2 跨域方式</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -644,8 +669,298 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h1><h3 id="个人简介"><a href="#个人简介" class="headerlink" title="个人简介"></a>个人简介</h3><p><strong>吴家秀（AuroraVee）</strong>，目前是上海大学的专硕。由于后面的学业项目涉及到web端的开发，从2020年12月开始逐步学习前端编程。<br>当然，在这之前，我也是有编程经验的，本科的时候主要用过C++/C/Python/Java做过一些课程项目，但是呢都学得不是很深。进入研究生后，对于以后从事的岗位迷茫过，不知道该找哪门语言的工作。刚好，企业导师给我安排的项目是前端方向的，意味着整个研究生的时间都将是做这个类型的项目，那我可以在这个过程中把前端的知识学透，同时也有相关的项目经验。所以从去年的12月开始我就开始了整个学习之旅，在这个学习过程中我看了基本经典的书，自己也跟着写过一些代码。知识总是会随着学习的深入淡忘掉，所以我想用博客的方式把一些难点和实际操作中遇到的问题记录下来，这样以后可以随时复习巩固。   </p>
-<h3 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h3><p> QQ：2374628298<br> 邮箱：<a href="mailto:&#x31;&#56;&#56;&#x30;&#48;&#51;&#55;&#57;&#x32;&#56;&#x32;&#x40;&#x31;&#54;&#51;&#46;&#x63;&#111;&#109;">&#x31;&#56;&#56;&#x30;&#48;&#51;&#55;&#57;&#x32;&#56;&#x32;&#x40;&#x31;&#54;&#51;&#46;&#x63;&#111;&#109;</a></p>
+        <h1 id="实战经验篇二"><a href="#实战经验篇二" class="headerlink" title="实战经验篇二"></a>实战经验篇二</h1><h2 id="1-从服务器获取数据"><a href="#1-从服务器获取数据" class="headerlink" title="1.从服务器获取数据"></a>1.从服务器获取数据</h2><p><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2020/12/fetch-tutorial.html">Fetch API</a>、<a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2018/07/web-worker.html">Web Worker</a></p>
+<h2 id="2-跨域"><a href="#2-跨域" class="headerlink" title="2.跨域"></a>2.跨域</h2><h3 id="2-1-跨域的相关概念"><a href="#2-1-跨域的相关概念" class="headerlink" title="2.1 跨域的相关概念"></a>2.1 <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/d43e73efefe1">跨域的相关概念</a></h3><ul>
+<li>域名：网域名称系统（<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/DNS">DNS</a>）将域名和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/IP%E5%9C%B0%E5%9D%80">IP地址</a>相互映射，”主机名.域名”称为**完全限定域名(FQDN)**。一个域名下可以有多个主机，域名全球唯一。</li>
+</ul>
+<pre><code>&quot;www.sina.com.cn&quot;是一个域名，但从严格意义上讲，&quot;sina.com.cn&quot;才被称为域名(全球唯一)，而&quot;www&quot;是主机名。
+</code></pre>
+<ul>
+<li><p>源：如果两个页面（接口）的<strong>协议</strong>，<strong>端口</strong>或者<strong>域名</strong>都相同，那么两个页面就有相同的源。</p>
+</li>
+<li><p>同源策略：是浏览器的一个安全限制，从<strong>一个源加载的文档或者脚本默认不能访问另一个源的资源</strong>，是浏览器对JavaScript实施的安全限制。例如<code>a.com/111/html</code>页面不能访问<code>b.com/person</code>这种接口，因为他们是不用的源。</p>
+</li>
+<li><p>非同源限制</p>
+<ol>
+<li>无法读取非同源网页的 Cookie、LocalStorage 和 IndexedDB</li>
+<li>无法接触非同源网页的 DOM</li>
+<li>无法向非同源地址发送 AJAX 请求</li>
+</ol>
+</li>
+</ul>
+<h3 id="2-2-跨域方式"><a href="#2-2-跨域方式" class="headerlink" title="2.2 跨域方式"></a>2.2 跨域方式</h3><ol>
+<li>jsonp请求</li>
+</ol>
+<blockquote>
+<p>jsonp的原理是利用<script>标签的跨域特性，可以不受限制地从其他域中加载资源，类似的标签还有<img>.</p>
+</blockquote>
+<ol start="2">
+<li>document.domain;</li>
+</ol>
+<blockquote>
+<p>这种方式用在主域名相同子域名不同的跨域访问中</p>
+</blockquote>
+<ol start="3">
+<li>window.name</li>
+</ol>
+<blockquote>
+<p>window的name属性有个特征:在一个窗口(window)的生命周期内,窗口载入的所有的页面都是共享一个window.name的， 每个页面对window.name都有读写的权限，window.name是持久存在一-个窗口载入过的所有页面中的，并不会因新页面的载入而进行重置</p>
+</blockquote>
+<ol start="4">
+<li>window.postMessage </li>
+</ol>
+<blockquote>
+<p>是html5中实现跨域访问的一种新方式，可以使用它来向其它的window对象发送消息，无论这个window对象是属于同源或不同源。</p>
+</blockquote>
+<ol start="5">
+<li>CORS</li>
+</ol>
+<blockquote>
+<p>CORS背后的基本思想，就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是应该失败。</p>
+</blockquote>
+<ol start="6">
+<li>Web Sockets</li>
+</ol>
+<blockquote>
+<p>在JS创建了web socket之后，会有一个HTTP请求发送到浏览器以发起连接。取得服务器响应后，建立的连接会使用HTTP升级从HTTP协议交换为web sockt协议。</p>
+</blockquote>
+<ol start="7">
+<li>代理服务器</li>
+</ol>
+<blockquote>
+<p>通过代理服务器（<strong>Nginx</strong>）解决跨域问题，请求都发给代理服务器，代理服务器再向后端服务器请求就可以规避跨域的问题。</p>
+</blockquote>
+<h3 id="2-3-跨域代码实现"><a href="#2-3-跨域代码实现" class="headerlink" title="2.3 跨域代码实现"></a>2.3 <a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html">跨域代码实现</a></h3><h4 id="2-3-1-postMessage"><a href="#2-3-1-postMessage" class="headerlink" title="2.3.1 postMessage"></a>2.3.1 postMessage</h4><pre><code class="html">&lt;!-- 主页面的HTML--&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;样式应用于非目标标签时&lt;/title&gt;
+    &lt;script src=&quot;test.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;iframe id=&quot;child&quot; src=&quot;http://192.168.1.112/js.html&quot;&gt; child&lt;/iframe&gt;
+    &lt;div id=&quot;div&quot;&gt;&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="js">//主页面的js
+window.onload = function () &#123;//这里一定要放在onload中才可以获取到DOM
+
+    const child = document.getElementById(&quot;child&quot;).contentWindow
+    const data=&quot;chile111111111111111111111111111&quot;
+    const origin=&quot;http://192.168.1.112&quot;
+    child.postMessage(data,origin)//在主页面下向child窗口发现数据data，origin是child窗口所在的域
+    window.onmessage = function (event) &#123;
+        if (event.origin == origin) &#123;//监听发来消息的是是否是想要的child的域
+            console.log(&quot;主窗口接收的信息&quot; + event.data)
+            console.log(event.origin)
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<pre><code class="html">&lt;!--子窗口child的HTML--&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;样式应用于非目标标签时&lt;/title&gt;
+    &lt;script src=&quot;a.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;child content&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="js">//子窗口的js
+
+window.onload = function () &#123;
+    window.onmessage = function (event) &#123;
+        console.log(event.data)//console写在这里，内容会打印到父窗口的控制台下
+        event.source.postMessage(&quot;hihi&quot;, event.origin)//event.source发来消息的窗口，event.origin发来消息窗口所在的源
+    &#125;
+&#125;
+</code></pre>
+<h4 id="2-3-2-片段标识符"><a href="#2-3-2-片段标识符" class="headerlink" title="2.3.2 片段标识符"></a>2.3.2 片段标识符</h4><pre><code class="html">&lt;!--主页面HTML --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;样式应用于非目标标签时&lt;/title&gt;
+    &lt;script src=&quot;test.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+      &lt;!-- 这里src不能省略--&gt;
+    &lt;iframe id=&quot;child&quot; src=&quot;http://192.168.1.112/js.html&quot;&gt; child&lt;/iframe&gt;
+    &lt;div id=&quot;div&quot;&gt;&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="js">//主页面的js
+window.onload = function () &#123;
+    const child = document.getElementById(&quot;child&quot;)
+    data = &quot;http://192.168.1.112/js.html&quot;
+    child.src = data + &quot;#&quot; + &quot;fl&quot;//#f1就是片段标识符的内容，#后面的内容可以拿来传数据
+&#125;
+</code></pre>
+<pre><code class="js">//子页面的js
+window.onload=function()&#123;
+    window.onhashchange=function(event)&#123; 
+   var hash=window.location.hash;
+   console.log(hash); //hash=#f1
+   &#125;
+ &#125;
+</code></pre>
+<h4 id="2-3-3-JSONP"><a href="#2-3-3-JSONP" class="headerlink" title="2.3.3 JSONP"></a>2.3.3 JSONP</h4><p><strong>只能get数据</strong></p>
+<pre><code class="js">//客户端
+window.onload = function () &#123;
+    let url = &quot;http://192.168.1.112/jsonp.php?jsoncallback=foo&quot;//请求服务器jsonp.php里的数据，数据传入回调函数foo中
+    addScript(url)
+&#125;
+function foo (data) &#123;
+    console.log(data)
+&#125;
+
+function addScript (src) &#123;//动态地向脚本添加script元素，这样就不受同源的限制
+    let script = document.createElement(&quot;script&quot;)
+    script.src = src
+    script.type = &quot;text/javascript&quot;
+    document.body.appendChild(script)
+&#125;
+</code></pre>
+<pre><code class="php">//jsonp.php
+&lt;?php
+header(&#39;Content-type: application/json&#39;);
+//获取回调函数名
+$jsoncallback = htmlspecialchars($_REQUEST [&#39;jsoncallback&#39;]);
+//json数据
+$json_data = &#39;[&quot;customername1&quot;,&quot;customername2&quot;]&#39;;
+//输出jsonp格式的数据
+echo $jsoncallback . &quot;(&quot; . $json_data . &quot;)&quot;;
+?&gt;
+</code></pre>
+<h4 id="2-3-4-websocket"><a href="#2-3-4-websocket" class="headerlink" title="2.3.4 websocket"></a>2.3.4 websocket</h4><p>基于http和tcp，双向连接，持久连接来交换数据，例如网络游戏，实时交易系统等</p>
+<p><a target="_blank" rel="noopener" href="https://zh.javascript.info/websocket">https://zh.javascript.info/websocket</a></p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;4.html&lt;/title&gt;
+    &lt;!-- &lt;script src=&quot;test.js&quot;&gt;&lt;/script&gt; --&gt;
+    &lt;script src=&quot;a.js&quot;&gt;&lt;/script&gt;
+    &lt;!-- &lt;script src=&quot;jquery-1.10.2.min.js&quot;&gt;&lt;/script&gt; --&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- 消息表单 --&gt;
+    &lt;form name=&quot;publish&quot;&gt;
+      &lt;input type=&quot;text&quot; name=&quot;message&quot; /&gt;
+      &lt;input type=&quot;submit&quot; value=&quot;Send&quot; /&gt;
+    &lt;/form&gt;
+
+    &lt;!-- 带有消息的 div --&gt;
+    &lt;div id=&quot;messages&quot;&gt;&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="js">//a.js
+window.onload = function () &#123;
+    let socket = new WebSocket(&quot;ws://localhost:8080&quot;)
+
+    // 从表单发送消息
+    document.forms.publish.onsubmit = function () &#123;
+        let outgoingMessage = this.message.value
+
+        socket.send(outgoingMessage)
+        return false
+    &#125;
+
+    // 收到消息 —— 在 div#messages 中显示消息
+    socket.onmessage = function (event) &#123;
+        let message = event.data
+
+        let messageElem = document.createElement(&#39;div&#39;)
+        messageElem.textContent = message
+        document.getElementById(&#39;messages&#39;).prepend(messageElem)
+    &#125;
+&#125;
+</code></pre>
+<pre><code class="js">//server.js
+const http = require(&quot;http&quot;)
+const ws = new require(&#39;ws&#39;)
+const wss = new ws.Server(&#123; noServer: true &#125;)
+
+const clients = new Set()
+
+http.createServer((req, res) =&gt; &#123;
+    // 在这里，我们仅处理 WebSocket 连接
+    // 在实际项目中，我们在这里还会有其他代码，来处理非 WebSocket 请求
+    wss.handleUpgrade(req, req.socket, Buffer.alloc(0), onSocketConnect)
+&#125;).listen(8080)
+
+function onSocketConnect (ws) &#123;
+    clients.add(ws)
+
+    ws.on(&#39;message&#39;, function (message) &#123;
+        message = message.slice(0, 50) // message 的最大长度为 50
+
+        for (let client of clients) &#123;
+            client.send(message)
+        &#125;
+    &#125;)
+
+    ws.on(&#39;close&#39;, function () &#123;
+        clients.delete(ws)
+    &#125;)
+&#125;
+</code></pre>
+<h4 id="2-3-5-CORS"><a href="#2-3-5-CORS" class="headerlink" title="2.3.5 CORS"></a>2.3.5 CORS</h4><p>允许任何类型的请求</p>
+<p><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2016/04/cors.html">http://www.ruanyifeng.com/blog/2016/04/cors.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CORS">https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CORS</a></p>
+<pre><code class="html">&lt;!--本地主机 a.html--&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;script src=&quot;test.js&quot;&gt;&lt;/script&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+      .outer &#123;
+        width: 400px;
+        height: 600px;
+        background: red;
+      &#125;
+
+      .inner &#123;
+        box-sizing: content-box;
+        width: 50%;
+        padding-bottom: 50%;
+        background: blue;
+      &#125;
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class=&quot;outer&quot;&gt;
+      &lt;div class=&quot;inner&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="js">//本地主机 用liverserver开启的http服务：http://127.0.0.1:5500
+async function f()&#123;
+    let response=await fetch(&quot;http://192.168.1.106:8080/JS1.html&quot;)//访问的是本地主机开启的IIS服务，需要设置IIS响应头为“Access-Control-Allow-Origin”：“http://127.0.0.1:5500”
+    return await response.text();
+&#125;
+f().then(console.log).catch(console.log);
+</code></pre>
+<p><img src="%E5%AE%9E%E6%88%98%E7%BB%8F%E9%AA%8C%EF%BC%88%E4%BA%8C%EF%BC%89.assets/image-20210321143012064.png" alt="image-20210321143012064"></p>
+<h4 id="2-3-6-JWT"><a href="#2-3-6-JWT" class="headerlink" title="2.3.6 JWT"></a>2.3.6 JWT</h4><p><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2018/07/json_web_token-tutorial.html">http://www.ruanyifeng.com/blog/2018/07/json_web_token-tutorial.html</a></p>
+<h2 id="3-跨域、跨站点的区别"><a href="#3-跨域、跨站点的区别" class="headerlink" title="3.跨域、跨站点的区别"></a>3.跨域、跨站点的区别</h2><p>首先要理解的一点就是跨站和跨域是不同的。<strong>同站(same-site)/跨站(cross-site)」和第一方(first-party)/第三方(third-party)是等价的</strong>。但是与浏览器同源策略（SOP）中的「同源(same-origin)/跨域(cross-origin)」是完全不同的概念。</p>
+<p>同源策略的同源是指两个 URL 的协议/主机名/端口一致。例如，<a target="_blank" rel="noopener" href="https://www.taobao.com/pages/...%EF%BC%8C%E5%AE%83%E7%9A%84%E5%8D%8F%E8%AE%AE%E6%98%AF">https://www.taobao.com/pages/...，它的协议是</a> https，主机名是 <a target="_blank" rel="noopener" href="http://www.taobao.com,端口是/">www.taobao.com，端口是</a> 443。</p>
+<p>同源策略作为浏览器的安全基石，其「同源」判断是比较严格的，相对而言，Cookie中的「同站」判断就比较宽松：<strong>只要两个 URL 的 eTLD+1 相同即可，不需要考虑协议和端口</strong>。其中，eTLD 表示有效顶级域名，注册于 Mozilla 维护的公共后缀列表（Public Suffix List）中，例如，.com、.co.uk、.github.io 等。eTLD+1 则表示，有效顶级域名+二级域名，例如 taobao.com 等。</p>
+<p>举几个例子，<a target="_blank" rel="noopener" href="http://www.taobao.com/">www.taobao.com</a> 和 <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a> 是跨站，<a target="_blank" rel="noopener" href="http://www.a.taobao.com/">www.a.taobao.com</a> 和 <a target="_blank" rel="noopener" href="http://www.b.taobao.com/">www.b.taobao.com</a> 是同站，a.github.io 和 b.github.io 是跨站(注意是跨站)。</p>
+<h2 id="4-file协议和http协议"><a href="#4-file协议和http协议" class="headerlink" title="4.file协议和http协议"></a>4.file协议和http协议</h2><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1534714">https://cloud.tencent.com/developer/article/1534714</a></p>
+<p>直接双击打开浏览器采用的是<code>file协议</code>，它不支持跨域，然后如果代码里引用的JS都是<strong>模块文件</strong>，要加载就必须要跨域。如果所有的JS都改成传统的type=”javaScript”来实现就可以，比如用webpack打包后的JS文件。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 18800379282@163.com </span>

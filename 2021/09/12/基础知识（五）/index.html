@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>about | 前端学习笔记</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="about | 前端学习笔记">
+  <title>基础知识（五） | 前端学习笔记</title>
+  <meta name="keywords" content=" canvas ">
+  <meta name="description" content="基础知识（五） | 前端学习笔记">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于个人简介吴家秀（AuroraVee），目前是上海大学的专硕。由于后面的学业项目涉及到web端的开发，从2020年12月开始逐步学习前端编程。当然，在这之前，我也是有编程经验的，本科的时候主要用过C++&#x2F;C&#x2F;Python&#x2F;Java做过一些课程项目，但是呢都学得不是很深。进入研究生后，对于以后从事的岗位迷茫过，不知道该找哪门语言的工作。刚好，企业导师给我安排的项目是前端方向的，意味着整个研究生的时">
 <meta property="og:type" content="website">
@@ -581,24 +581,43 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-基础知识（五）" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">about</h1>
+        <h1 class="article-title">基础知识（五）</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="前端">前端</a> > 
+            
+            <a  data-rel="前端&lt;---&gt;javascript">javascript</a> > 
+            
+            <a  data-rel="前端&lt;---&gt;javascript&lt;---&gt;基础知识">基础知识</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color2">canvas</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-09-12 14:17:37'>2021-09-12 14:01</time>
+            发布时间 : <time class="date" title='最后更新: 2021-09-12 21:01:03'>2021-09-12 20:42</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:330</span>
+        <span>字数:2.7k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -628,7 +647,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E"><span class="toc-text">关于</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B"><span class="toc-text">个人简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="toc-text">联系方式</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#canvas"><span class="toc-text">canvas</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%8F%98%E5%BD%A2%E6%93%8D%E4%BD%9C%EF%BC%9A%E5%8F%98%E5%BD%A2%E5%90%8E%E8%BF%9B%E8%A1%8C%E9%87%8D%E7%BB%98%E5%9D%90%E6%A0%87%E4%B8%8D%E5%8F%98"><span class="toc-text">一、变形操作：变形后进行重绘坐标不变</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81canvas%E8%B7%AF%E5%BE%84"><span class="toc-text">二、canvas路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81canvas%E7%8A%B6%E6%80%81"><span class="toc-text">三、canvas状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81canvas%E5%B1%9E%E6%80%A7"><span class="toc-text">四、canvas属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81canvas%E4%BA%8B%E4%BB%B6"><span class="toc-text">五、canvas事件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6"><span class="toc-text">1、鼠标事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E9%94%AE%E7%9B%98%E4%BA%8B%E4%BB%B6"><span class="toc-text">2、键盘事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E5%BE%AA%E7%8E%AF%E4%BA%8B%E4%BB%B6"><span class="toc-text">3、循环事件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1requestAnimationFrame%E8%AE%BE%E7%BD%AE%E5%8A%A8%E7%94%BB"><span class="toc-text">3.1requestAnimationFrame设置动画</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2setInterval%E5%AE%9E%E7%8E%B0%E5%8A%A8%E7%94%BB"><span class="toc-text">3.2setInterval实现动画</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3%E5%8F%8C%E7%BC%93%E5%86%B2%E5%AE%9E%E7%8E%B0"><span class="toc-text">3.3双缓冲实现</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E7%89%A9%E7%90%86%E5%8A%A8%E7%94%BB"><span class="toc-text">六、物理动画</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0"><span class="toc-text">1.三角函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E4%B8%A4%E7%82%B9%E4%B9%8B%E9%97%B4%E8%B7%9D%E7%A6%BB"><span class="toc-text">1.1 两点之间距离</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2%E5%9C%86%E5%91%A8%E8%BF%90%E5%8A%A8"><span class="toc-text">1.2圆周运动</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-2-1-%E6%AD%A3%E5%9C%86%E8%BF%90%E5%8A%A8"><span class="toc-text">1.2.1 正圆运动</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-2-2-%E6%A4%AD%E5%9C%86%E8%BF%90%E5%8A%A8"><span class="toc-text">1.2.2 椭圆运动</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3%E6%B3%A2%E5%BD%A2%E8%BF%90%E5%8A%A8"><span class="toc-text">1.3波形运动</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-1%E4%BD%9C%E7%94%A8%E4%BA%8EX%E8%BD%B4"><span class="toc-text">1.3.1作用于X轴</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-2%E4%BD%9C%E7%94%A8%E4%BA%8EY%E8%BD%B4"><span class="toc-text">1.3.2作用于Y轴</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-3-%E4%BD%9C%E7%94%A8%E4%BA%8E%E7%BC%A9%E6%94%BE%E5%B1%9E%E6%80%A7scaleX%E6%88%96scaleY"><span class="toc-text">1.3.3 作用于缩放属性scaleX或scaleY</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%8C%80%E9%80%9F%E8%BF%90%E5%8A%A8"><span class="toc-text">2.匀速运动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8A%A0%E9%80%9F%E8%BF%90%E5%8A%A8"><span class="toc-text">3.加速运动</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1%E5%8C%80%E5%8A%A0%E9%80%9F"><span class="toc-text">3.1匀加速</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E9%87%8D%E5%8A%9B%E5%8A%A0%E9%80%9F%E5%BA%A6"><span class="toc-text">3.2 重力加速度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-%E6%91%A9%E6%93%A6%E5%8A%9B"><span class="toc-text">3.3 摩擦力</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%BE%B9%E7%95%8C%E6%A3%80%E6%B5%8B"><span class="toc-text">4.边界检测</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E8%BE%B9%E7%95%8C%E9%99%90%E5%88%B6"><span class="toc-text">4.1 边界限制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E8%BE%B9%E7%95%8C%E7%8E%AF%E7%BB%95"><span class="toc-text">4.2 边界环绕</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-%E8%BE%B9%E7%95%8C%E7%94%9F%E6%88%90"><span class="toc-text">4.3 边界生成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-%E8%BE%B9%E7%95%8C%E5%8F%8D%E5%BC%B9"><span class="toc-text">4.4 边界反弹</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B"><span class="toc-text">5.碰撞检测</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -644,9 +663,298 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h1><h3 id="个人简介"><a href="#个人简介" class="headerlink" title="个人简介"></a>个人简介</h3><p><strong>吴家秀（AuroraVee）</strong>，目前是上海大学的专硕。由于后面的学业项目涉及到web端的开发，从2020年12月开始逐步学习前端编程。<br>当然，在这之前，我也是有编程经验的，本科的时候主要用过C++/C/Python/Java做过一些课程项目，但是呢都学得不是很深。进入研究生后，对于以后从事的岗位迷茫过，不知道该找哪门语言的工作。刚好，企业导师给我安排的项目是前端方向的，意味着整个研究生的时间都将是做这个类型的项目，那我可以在这个过程中把前端的知识学透，同时也有相关的项目经验。所以从去年的12月开始我就开始了整个学习之旅，在这个学习过程中我看了基本经典的书，自己也跟着写过一些代码。知识总是会随着学习的深入淡忘掉，所以我想用博客的方式把一些难点和实际操作中遇到的问题记录下来，这样以后可以随时复习巩固。   </p>
-<h3 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h3><p> QQ：2374628298<br> 邮箱：<a href="mailto:&#x31;&#56;&#56;&#x30;&#48;&#51;&#55;&#57;&#x32;&#56;&#x32;&#x40;&#x31;&#54;&#51;&#46;&#x63;&#111;&#109;">&#x31;&#56;&#56;&#x30;&#48;&#51;&#55;&#57;&#x32;&#56;&#x32;&#x40;&#x31;&#54;&#51;&#46;&#x63;&#111;&#109;</a></p>
+        <h1 id="canvas"><a href="#canvas" class="headerlink" title="canvas"></a>canvas</h1><p><strong><u>context的默认单位都是像素</u></strong></p>
+<h2 id="一、变形操作：变形后进行重绘坐标不变"><a href="#一、变形操作：变形后进行重绘坐标不变" class="headerlink" title="一、变形操作：变形后进行重绘坐标不变"></a>一、变形操作：变形后进行重绘坐标不变</h2><p>1.<code>ctx.translate</code>：实现平移，然后重绘，但是坐标不变。相对上一次的位置进行移动。**<u>移动的是整个坐标系，之后的坐标都是相对新坐标系的值</u>**</p>
+<pre><code class="javascript">ctx.fillRect(30,30,50,50)
+ctx.translate(50,50)
+ctx.fillRect(30,30,50,50)//重绘
+</code></pre>
+<p>默认情况下，canvas会把所有绘制的图形保留下来。<strong>如果不想保留之前绘制的图形，需要在重绘前清空整个canvas，</strong></p>
+<pre><code class="javascript">cxt.cleraRect(0,0,canvas.width,canvas.height)
+//用于清空整个canvas
+</code></pre>
+<p>2.<code>ctx.scale(1.5,1.5)</code>:放大x轴和y轴，但是也会把<u><strong>左上角的坐标</strong>、<strong>线条宽度</strong></u>放大或缩小相应的倍数。</p>
+<pre><code class="javascript">      context.fillStyle = &#39;red&#39;
+      context.fillRect(30, 30, 50, 50)
+      context.scale(2, 2)
+      context.translate(-20, -20)//30-2*30=-30
+      context.fillStyle = &#39;blue&#39;
+      context.fillRect(30, 30, 50, 50)
+</code></pre>
+<p>3.<code>ctx.rotate(angle):[-PI/2,PI/2]</code>，默认以原点为旋转中心，可以先translate再旋转来修改旋转中心。**<u>顺时针为正，逆时针为负</u>**</p>
+<p>4.<code>ctx.transform()</code>和<code>ctx.setTransform()</code></p>
+<pre><code class="javascript">ctx.transform()//会在上一次变换后的基础上进行变换
+ctx.setTransform()//先把图像重置为原始位置，再进行变换
+</code></pre>
+<h2 id="二、canvas路径"><a href="#二、canvas路径" class="headerlink" title="二、canvas路径"></a>二、canvas路径</h2><table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>beginpath</td>
+<td><strong>结束路径，开始新的路径</strong>，可以使用不同的绘制样式</td>
+</tr>
+<tr>
+<td>closePath</td>
+<td><strong>关闭路径</strong>，将同一个路径的起点和终点连接起来，<strong>形成封闭的路径</strong>，不一定要和beginPath配对使用。用line来封闭图形会在lineWidth很大时出现缺口，应该在stroke()之前使用closePath来关闭</td>
+</tr>
+<tr>
+<td>isPointInPath</td>
+<td>判断某个点是否在某个图形内，<strong>只支持rect方法，不支持strokeRect和fillRect</strong></td>
+</tr>
+</tbody></table>
+<p>Canvas是基于状态绘制图形的，每一个绘制（<code>stroke()和fill()</code>），canvas会检测整个程序定义的所有状态，比如<code>fillstyle</code>、<code>linewidth</code>等。当状态值没有被改变时，Canvas就会使用最初的值，如果改变了但是<strong>没有使用<code>beginPath()</code>则所有的绘制都是在同一路径上</strong>，<strong>后面的绘制样式会覆盖前面的</strong></p>
+<pre><code class="javascript">      context.moveTo(0, 0)
+      context.lineTo(100, 100)
+      context.strokeStyle = &#39;red&#39;
+      context.stroke()
 
+      context.moveTo(100, 0)
+      context.lineTo(200, 200)
+      context.strokeStyle = &#39;blue&#39;
+      context.stroke()
+      //最终两条直线的颜色都是蓝色，因为它们是同一路径
+</code></pre>
+<p>**<u>如果采用了<code>beginPath()</code>，则开始了一个新的路径</u>**，在不同路径里可以使用不同的绘制样式</p>
+<pre><code class="javascript">      context.beginPath()//开始新路径
+      context.moveTo(0, 0)
+      context.lineTo(100, 100)
+      context.strokeStyle = &#39;red&#39;
+      context.stroke()
+
+      context.beginPath()//开始新路径
+      context.moveTo(100, 0)
+      context.lineTo(200, 200)
+      context.strokeStyle = &#39;blue&#39;
+      context.stroke()
+</code></pre>
+<h2 id="三、canvas状态"><a href="#三、canvas状态" class="headerlink" title="三、canvas状态"></a>三、canvas状态</h2><p>两个操作状态的方法：**<code>save()</code>和<code>restore()</code>**。</p>
+<p><strong><u>注：保存状态只是保存的<code>context</code>当时的一些绘制属性，但是上一次的最后一个绘制结束点对当前还是会有影响</u><strong>，需要</strong><u>结合<code>context.beginPath()</code>来消除</u></strong></p>
+<blockquote>
+<p>save：用于保存当前状态，restore用户恢复之前保存的状态，<strong>一般情况下是成对使用的</strong>。</p>
+<p>使用场景：<strong>图形或图片的剪切、图形或图片的变形、绘制样式发生改变</strong>。</p>
+<p>可以保存的状态：剪切状态、变形状态（一般指变换矩阵）、绘图状态，不能保存路径状态和图形</p>
+</blockquote>
+<p><u><strong><code>clip()</code>:<strong>将一个基本图形变成裁剪区域，后面绘制的图形如果超出了这个剪切区域，则超出的部分不会被显示</u>。</strong>该方法不支持<code>strokeRect()</code>和<code>fillRect()</code>，需要用<code>rect()</code>代替。</strong></p>
+<p>如果后面需要**<u>取消剪切区域</u><strong>，可通过<code>save()和restore()</code>方法。如果不使用这两个方法，</strong>即使清空画布，之前的剪切区域还是存在的。**</p>
+<pre><code class="javascript">      let canvas = document.getElementById(&#39;canvas&#39;)
+      let context = canvas.getContext(&#39;2d&#39;)
+
+      context.save()//保存状态
+      context.beginPath()
+      context.arc(70, 70, 50, 0, (360 * Math.PI) / 180, true)
+      context.closePath()
+      context.stroke()
+      context.clip()//绘制圆形剪切区域
+
+      var image = new Image()
+      image.src = &#39;1.jpg&#39;
+      image.onload = function() &#123;
+        context.drawImage(image, 10, 20)
+      &#125;
+
+      var button = document.getElementById(&#39;button&#39;)
+      button.onclick = function() &#123;
+        context.restore() //恢复之前保存的状态，其实是空状态（没有剪切区域），但是之前绘制的圆还是在的
+        context.clearRect(0, 0, canvas.width, canvas.height) //清空画布，清除之前的圆
+
+        var image = new Image()
+        image.src = &#39;2.jpg&#39;
+        image.onload = function() &#123;
+          context.drawImage(image, 10, 20)
+        &#125;
+      &#125;
+</code></pre>
+<h2 id="四、canvas属性"><a href="#四、canvas属性" class="headerlink" title="四、canvas属性"></a>四、canvas属性</h2><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>width</td>
+<td>宽</td>
+</tr>
+<tr>
+<td>height</td>
+<td>高</td>
+</tr>
+<tr>
+<td>getContext</td>
+<td>获取上下文环境</td>
+</tr>
+<tr>
+<td>toDataURL</td>
+<td>把画布转成图片保存</td>
+</tr>
+<tr>
+<td>globalAlpha</td>
+<td>设置画布的透明度</td>
+</tr>
+<tr>
+<td>globalCompositeOperation</td>
+<td><u><strong>交叉图形的显示方式</strong></u></td>
+</tr>
+</tbody></table>
+<p>正常情况下，浏览器按照图形的绘制顺序依次显示每个图形，后面绘制的会覆盖前面绘制的，更改交叉图形显示方式可以使用<code>globalCompositeOperation</code>属性</p>
+<h2 id="五、canvas事件"><a href="#五、canvas事件" class="headerlink" title="五、canvas事件"></a>五、canvas事件</h2><h3 id="1、鼠标事件"><a href="#1、鼠标事件" class="headerlink" title="1、鼠标事件"></a>1、鼠标事件</h3><p><code>mousedown、mouseup、mousemove</code></p>
+<h3 id="2、键盘事件"><a href="#2、键盘事件" class="headerlink" title="2、键盘事件"></a>2、键盘事件</h3><p>canvas本身不支持键盘事件，可以借助window对象来实现，<code>keyup和keydown</code></p>
+<h3 id="3、循环事件"><a href="#3、循环事件" class="headerlink" title="3、循环事件"></a>3、循环事件</h3><p>canvas中动画循环中的注意事项：</p>
+<ol>
+<li>对于需要不断改变的变量，一般在<strong>动画循环之前定义</strong></li>
+<li>对于需要不断改变的变量，一般在<strong>动画循环中图形绘制之后才递增或递减</strong></li>
+</ol>
+<h4 id="3-1requestAnimationFrame设置动画"><a href="#3-1requestAnimationFrame设置动画" class="headerlink" title="3.1requestAnimationFrame设置动画"></a>3.1<code>requestAnimationFrame</code>设置动画</h4><p>不需要手动设置间隔时间，<strong>会根据浏览器绘制的帧率自动进行调整，效果上比较顺滑。</strong></p>
+<pre><code class="javascript">        (function drawFrame() &#123;
+          window.requestAnimationFrame(drawFrame);
+          cxt.clearRect(0, 0, cnv.width, cnv.height);
+            //绘制相关图形
+              //
+        &#125;)();
+</code></pre>
+<h4 id="3-2setInterval实现动画"><a href="#3-2setInterval实现动画" class="headerlink" title="3.2setInterval实现动画"></a>3.2<code>setInterval</code>实现动画</h4><p>存在一定的性能问题，可以一次全部重绘来减小卡顿的情况。</p>
+<pre><code class="javascript">setInterval(function()&#123;    //绘制图形&#125;,10)
+</code></pre>
+<h4 id="3-3双缓冲实现"><a href="#3-3双缓冲实现" class="headerlink" title="3.3双缓冲实现"></a>3.3双缓冲实现</h4><p>先将所有内容绘制到缓冲<code>canvas</code>上，然后把<strong>缓冲<code>canvas</code>绘制到DOM元素<code>canvas</code>上，可以解决闪屏</strong></p>
+<pre><code class="javascript">    var canvas = document.getElementById(&#39;air-speed&#39;)
+    var context = canvas.getContext(&#39;2d&#39;)
+
+    var bufferCanvas = document.createElement(&#39;canvas&#39;)
+    bufferCanvas.width = canvas.width
+    bufferCanvas.height = canvas.height
+    var bufferContext = bufferCanvas.getContext(&#39;2d&#39;)
+
+    bufferContext.fillStyle = &quot;red&quot;
+    bufferContext.fillRect(0, 0, 100, 100)
+
+    context.drawImage(bufferCanvas, 0, 0,                             bufferCanvas.width, bufferCanvas.height, 0, 0, canvas.width, canvas.height)
+</code></pre>
+<h2 id="六、物理动画"><a href="#六、物理动画" class="headerlink" title="六、物理动画"></a>六、物理动画</h2><h3 id="1-三角函数"><a href="#1-三角函数" class="headerlink" title="1.三角函数"></a>1.三角函数</h3><p>用途：求两点之间的距离、圆周运动、波形运动</p>
+<p><u>注：<code>Math.atan2(y,x)</code>可以求出<strong>两条边的角度</strong>并准确判断<strong>该度数对应的是哪一个夹角</strong>，y和x要区分<strong>正负</strong></u></p>
+<h4 id="1-1-两点之间距离"><a href="#1-1-两点之间距离" class="headerlink" title="1.1 两点之间距离"></a>1.1 两点之间距离</h4><p>$$<br>d=Math.sqrt(pow(x1-x2,2)+pow(y1-y1,2))<br>$$</p>
+<h4 id="1-2圆周运动"><a href="#1-2圆周运动" class="headerlink" title="1.2圆周运动"></a>1.2圆周运动</h4><h5 id="1-2-1-正圆运动"><a href="#1-2-1-正圆运动" class="headerlink" title="1.2.1 正圆运动"></a>1.2.1 正圆运动</h5><p>圆上某个点的坐标为<br>$$<br>x=centerX + Math.cos(angle) * radius;<br>$$</p>
+<p>$$<br>y=centerY + Math.sin(angle) * radius;<br>$$</p>
+<p>其中centerX、centerY为圆心坐标，angle是弧度制角度，radius为圆半径</p>
+<h5 id="1-2-2-椭圆运动"><a href="#1-2-2-椭圆运动" class="headerlink" title="1.2.2 椭圆运动"></a>1.2.2 椭圆运动</h5><p>椭圆上某个点的坐标为<br>$$<br>x=centerX + Math.cos(angle) * radiusX;<br>$$</p>
+<p>$$<br>y=centerY + Math.sin(angle) * radiusY;<br>$$</p>
+<p>其中radiusX为椭圆X轴方向的半径，radiusY为Y轴半径</p>
+<h4 id="1-3波形运动"><a href="#1-3波形运动" class="headerlink" title="1.3波形运动"></a>1.3波形运动</h4><h5 id="1-3-1作用于X轴"><a href="#1-3-1作用于X轴" class="headerlink" title="1.3.1作用于X轴"></a>1.3.1作用于X轴</h5><p>当正弦函数作用于物体的X坐标，物体会<strong>左右摇摆</strong><br>$$<br>x = centerX + Math.sin(angle) * range;<br>$$</p>
+<p>$$<br>angle+=speed<br>$$</p>
+<p>其中centerX为物体中心坐标，angle是弧度制角度，range是振幅，speed是角度变化大小</p>
+<h5 id="1-3-2作用于Y轴"><a href="#1-3-2作用于Y轴" class="headerlink" title="1.3.2作用于Y轴"></a>1.3.2作用于Y轴</h5><p>物体的运动轨迹刚好就是sin函数的波形<br>$$<br>y = centerY + Math.sin(angle) * range;<br>$$</p>
+<p>$$<br>angle+=speed<br>$$</p>
+<p>$$<br>x+=1<br>$$</p>
+<p>注：需要配合x改变才能是函数波形</p>
+<h5 id="1-3-3-作用于缩放属性scaleX或scaleY"><a href="#1-3-3-作用于缩放属性scaleX或scaleY" class="headerlink" title="1.3.3 作用于缩放属性scaleX或scaleY"></a>1.3.3 作用于缩放属性<code>scaleX</code>或<code>scaleY</code></h5><p>物体会不断地放大然后缩小，呈现一种<strong>脉冲动画</strong>的效果</p>
+<pre><code class="javascript">scaleX = 1 + Math.sin(angle) * range;
+scaleY = 1 + Math.sin(angle) * range;
+angle+=speed
+</code></pre>
+<h3 id="2-匀速运动"><a href="#2-匀速运动" class="headerlink" title="2.匀速运动"></a>2.匀速运动</h3><p>每次循环改变量都相同，vx为x方向的速度，vy为y方向的速度。vx为负，向X负轴运动；为正时，向x正轴运动</p>
+<pre><code class="javascript">x += vx;//或y+=vy;
+</code></pre>
+<p>如果已知任意一个方向angle的速度为speed，则对它进行分解有</p>
+<pre><code class="javascript">            //速度方向与X轴正方向角度为angle
+            var vx = speed * Math.cos(angle * Math.PI / 180);
+            var vy = speed * Math.sin(angle * Math.PI / 180);
+</code></pre>
+<h3 id="3-加速运动"><a href="#3-加速运动" class="headerlink" title="3.加速运动"></a>3.加速运动</h3><h4 id="3-1匀加速"><a href="#3-1匀加速" class="headerlink" title="3.1匀加速"></a>3.1匀加速</h4><pre><code class="javascript">vx+=ax
+vy+=ay//ax为x方向加速度，为0是匀速。加速度方向与速度方向相同则是匀加速x+=vxy+=vy
+</code></pre>
+<p>如果已知某个方向angle的加速度为a，则对加速度分解</p>
+<pre><code class="javascript">//对加速度分解
+ax=a * Math.cos(angle * Math.PI / 180);
+ay=a * Math.sin(angle * Math.PI / 180);
+
+vx+=ax
+vy+=ay
+//ax为x方向加速度，为0是匀速。加速度方向与速度方向相同则是匀加速
+x+=vx
+y+=vy
+</code></pre>
+<h4 id="3-2-重力加速度"><a href="#3-2-重力加速度" class="headerlink" title="3.2 重力加速度"></a>3.2 重力加速度</h4><p>对于重力引起的运动，可以看成是沿着<strong>Y轴正方向的加速运动</strong></p>
+<p>对于小球地面反弹的情况，需要将运动速度乘以<strong>反弹系数（-1,0）</strong>。</p>
+<h4 id="3-3-摩擦力"><a href="#3-3-摩擦力" class="headerlink" title="3.3 摩擦力"></a>3.3 摩擦力</h4><p><strong>只能将物体的速度降至0</strong>，但不能让物体向相反的方向运动</p>
+<pre><code class="javascript">vx *= friction;//friction为摩擦系数，[0,1]x  +=vx
+</code></pre>
+<h3 id="4-边界检测"><a href="#4-边界检测" class="headerlink" title="4.边界检测"></a>4.边界检测</h3><p><strong>先判断边界，再进行绘制</strong></p>
+<h4 id="4-1-边界限制"><a href="#4-1-边界限制" class="headerlink" title="4.1 边界限制"></a>4.1 边界限制</h4><p>通过检测边界来限制物体的运动范围，<strong>使其无法超出这个运动范围</strong></p>
+<pre><code class="javascript">            //定义边界检测函数
+            function checkBorder() &#123;
+                //当小球碰到上边界时
+                if (ball.y &lt; ball.radius) &#123;
+                    ball.y = ball.radius;
+                    //当小球碰到下边界时
+                &#125; else if (ball.y &gt; cnv.height - ball.radius) &#123;
+                    ball.y = cnv.height - ball.radius;
+                &#125;
+                //当小球碰到左边界时
+                if (ball.x &lt; ball.radius) &#123;
+                    ball.x = ball.radius;
+                    //当小球碰到右边界时
+                &#125; else if (ball.x &gt; cnv.width - ball.radius) &#123;
+                    ball.x = cnv.width - ball.radius;
+                &#125;
+            &#125;
+</code></pre>
+<h4 id="4-2-边界环绕"><a href="#4-2-边界环绕" class="headerlink" title="4.2 边界环绕"></a>4.2 边界环绕</h4><p>物体从左边界消失后从右边界出来；从上边界消失，从下边界出</p>
+<pre><code class="javascript">                //完全超出边界
+                //检测上边界
+                if (ball.y &lt; -ball.radius) &#123;
+                  ball.y = cnv.height + ball.radius;
+                &#125;
+                //检测下边界
+                if (ball.y &gt; cnv.height + ball.radius) &#123;
+                  ball.y = -ball.radius;
+                &#125;
+                   //检测左边界
+                if (ball.x &lt; -ball.radius) &#123;
+                  ball.x = cnv.width + ball.radius;
+                &#125;
+                //检测右边界
+                if (ball.x &gt; cnv.width + ball.radius) &#123;
+                  ball.x = -ball.radius;
+                &#125;
+</code></pre>
+<h4 id="4-3-边界生成"><a href="#4-3-边界生成" class="headerlink" title="4.3 边界生成"></a>4.3 边界生成</h4><p>当物体完全超出边界之后，会<strong>在最开始的位置重新生成</strong>。可以源源不断地为canvas提供运动物体</p>
+<pre><code class="javascript">                    //边界检测，使得小球完全移出画布后会在中心位置重新生成
+                    if (ball.x &lt; -ball.radius ||
+                      ball.x &gt; cnv.width + ball.radius ||
+                      ball.y &lt; -ball.radius ||
+                      ball.y &gt; cnv.height + ball.radius) 
+                    &#123;
+                        ball.x = cnv.width / 2;
+                        ball.y = cnv.height / 2;
+                        ball.vx = Math.random() * 2 - 1;
+                        ball.vy = Math.random() * 2 - 1;
+                    &#125;
+</code></pre>
+<h4 id="4-4-边界反弹"><a href="#4-4-边界反弹" class="headerlink" title="4.4 边界反弹"></a>4.4 边界反弹</h4><p>碰到边界后，保持位置不变，改变速度向量。<strong>碰到左边界或者右边界</strong>，<strong>就对vx取反</strong>，vy不变；碰到<strong>上边界或下边界</strong>，对<strong>vy取反</strong>，vx不变。</p>
+<pre><code class="javascript">//边界检测
+                //碰到左边界
+                if (ball.x &lt; ball.radius) &#123;
+                    ball.x = ball.radius;
+                    vx = -vx;
+                    //碰到右边界
+                &#125; else if (ball.x &gt; canvas.width - ball.radius) &#123;
+                    ball.x = canvas.width - ball.radius;
+                    vx = -vx;
+                &#125;
+                //碰到上边界
+                if (ball.y &lt; ball.radius) &#123;
+                    ball.y = ball.radius;
+                    vy = -vy;
+                    //碰到下边界
+                &#125; else if (ball.y &gt; canvas.height - ball.radius) &#123;
+                    ball.y = canvas.height - ball.radius;
+                    vy = -vy;
+                &#125;
+</code></pre>
+<h3 id="5-碰撞检测"><a href="#5-碰撞检测" class="headerlink" title="5.碰撞检测"></a>5.碰撞检测</h3>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 18800379282@163.com </span>
     </div>

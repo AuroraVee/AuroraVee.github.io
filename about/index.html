@@ -179,7 +179,7 @@
                                                         
                                                         基础知识
                                                         
-                                                            <small>(5)</small>
+                                                            <small>(4)</small>
                                                         
                                                     </div>
                                                 </li>
@@ -547,7 +547,7 @@
             <span class="post-date" title="2021-09-12 19:48:58">2021/09/12</span>
         </a>
         
-        <a  class="全部文章 前端 javascript 基础知识 "
+        <a  class="全部文章 前端 javascript "
            href="/2021/09/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%88%E4%BA%8C%EF%BC%89/"
            data-tag="同步,异步,事件轮询,单线程"
            data-author="" >
@@ -645,7 +645,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h1><h3 id="个人简介"><a href="#个人简介" class="headerlink" title="个人简介"></a>个人简介</h3><p><strong>吴家秀（AuroraVee）</strong>，目前是上海大学的专硕。由于后面的学业项目涉及到web端的开发，从2020年12月开始逐步学习前端编程。<br>当然，在这之前，我也是有编程经验的，本科的时候主要用过C++/C/Python/Java做过一些课程项目，但是呢都学得不是很深。进入研究生后，对于以后从事的岗位迷茫过，不知道该找哪门语言的工作。刚好，企业导师给我安排的项目是前端方向的，意味着整个研究生的时间都将是做这个类型的项目，那我可以在这个过程中把前端的知识学透，同时也有相关的项目经验。所以从去年的12月开始我就开始了整个学习之旅，在这个学习过程中我看了基本经典的书，自己也跟着写过一些代码。知识总是会随着学习的深入淡忘掉，所以我想用博客的方式把一些难点和实际操作中遇到的问题记录下来，这样以后可以随时复习巩固。   </p>
-<h3 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h3><p> QQ：2374628298<br> 邮箱：<a href="mailto:&#49;&#56;&#56;&#x30;&#x30;&#51;&#x37;&#x39;&#x32;&#x38;&#x32;&#x40;&#x31;&#54;&#x33;&#x2e;&#x63;&#111;&#109;">&#49;&#56;&#56;&#x30;&#x30;&#51;&#x37;&#x39;&#x32;&#x38;&#x32;&#x40;&#x31;&#54;&#x33;&#x2e;&#x63;&#111;&#109;</a></p>
+<h3 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h3><p> QQ：2374628298<br> 邮箱：<a href="mailto:&#49;&#56;&#56;&#x30;&#48;&#51;&#55;&#x39;&#x32;&#x38;&#x32;&#x40;&#49;&#54;&#x33;&#x2e;&#x63;&#111;&#109;">&#49;&#56;&#56;&#x30;&#48;&#51;&#55;&#x39;&#x32;&#x38;&#x32;&#x40;&#49;&#54;&#x33;&#x2e;&#x63;&#111;&#109;</a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 18800379282@163.com </span>
@@ -746,20 +746,6 @@
 
         /*高亮代码块行号*/
         
-        $('pre code').each(function(){
-            var lines = $(this).text().trim().split('\n').length, widther='';
-            if (lines>99) {
-                widther = 'widther'
-            }
-            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
-            $(this).addClass('has-numbering ' + widther)
-                    .parent()
-                    .append($numbering);
-            for(var i=1;i<=lines;i++){
-                $numbering.append($('<li/>').text(i));
-            }
-        });
-        
 
         /*访问数量*/
         
@@ -784,38 +770,6 @@
 </script>
 
 <!--加入行号的高亮代码块样式-->
-
-<style>
-    pre{
-        position: relative;
-        margin-bottom: 24px;
-        border-radius: 10px;
-        border: 1px solid #e2dede;
-        background: #FFF;
-        overflow: hidden;
-    }
-    code.has-numbering{
-        margin-left: 30px;
-    }
-    code.has-numbering.widther{
-        margin-left: 35px;
-    }
-    .pre-numbering{
-        margin: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 20px;
-        padding: 0.5em 3px 0.7em 5px;
-        border-right: 1px solid #C3CCD0;
-        text-align: right;
-        color: #AAA;
-        background-color: ;
-    }
-    .pre-numbering.widther {
-        width: 35px;
-    }
-</style>
 
 <!--自定义样式设置-->
 <style>

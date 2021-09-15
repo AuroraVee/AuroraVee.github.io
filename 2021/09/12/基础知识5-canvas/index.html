@@ -713,7 +713,7 @@ ctx.setTransform()//先把图像重置为原始位置，再进行变换
 <p>使用场景：<strong>图形或图片的剪切、图形或图片的变形、绘制样式发生改变</strong>。</p>
 <p>可以保存的状态：剪切状态、变形状态（一般指变换矩阵）、绘图状态，不能保存路径状态和图形</p>
 </blockquote>
-<p><u><strong><code>clip()</code>:<strong>将一个基本图形变成裁剪区域，后面绘制的图形如果超出了这个剪切区域，则超出的部分不会被显示</u>。</strong>该方法不支持<code>strokeRect()</code>和<code>fillRect()</code>，需要用<code>rect()</code>代替。</strong></p>
+<p><u><strong><code>clip()</code>:<strong>将一个基本图形变成裁剪区域，后面绘制的图形如果超出了这个剪切区域，则超出的部分不会被显示</strong></strong></u>。该方法不支持<code>strokeRect()</code>和<code>fillRect()</code>，需要用<code>rect()</code>代替。</p>
 <p>如果后面需要**<u>取消剪切区域</u><strong>，可通过<code>save()和restore()</code>方法。如果不使用这两个方法，</strong>即使清空画布，之前的剪切区域还是存在的。**</p>
 <pre><code class="javascript">      let canvas = document.getElementById(&#39;canvas&#39;)
       let context = canvas.getContext(&#39;2d&#39;)

@@ -593,7 +593,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-09-14 18:56:02'>2021-09-12 19:23</time>
+            发布时间 : <time class="date" title='最后更新: 2021-09-15 19:16:18'>2021-09-12 19:23</time>
         
     </div>
     <div class="article-meta">
@@ -644,8 +644,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="javascript的执行机制"><a href="#javascript的执行机制" class="headerlink" title="javascript的执行机制"></a>javascript的执行机制</h1><h2 id="1-单线程"><a href="#1-单线程" class="headerlink" title="1.单线程"></a><strong>1.单线程</strong></h2><p>关于JS<a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2014/10/event-loop.html">为什么是单线程</a>，这是有我之前学习时参考的阮一峰老师的博客。<br>总的来说，JavaScript作为浏览器脚本语言，它主要用途是与用户互动，以及操作DOM。这决定了它只能是单线程，否则会带来很复杂的同步问题。<br>但是为了利用多核CPU的计算能力，HTML5提出Web Worker标准，允许JavaScript脚本创建多个线程，但是子线程完全受主线程控制，且不得操作DOM。所以，这个新标准并没有改变JavaScript单线程的本质。</p>
-<h2 id="2-异步编程"><a href="#2-异步编程" class="headerlink" title="2.异步编程"></a>2.异步编程</h2><p>前面讲到javascript是单线程，需要<strong>等上一行代码执行结束才能执行下一行代码</strong>（同步）。但是在很多情况下，浏览器是不可能一直等到前面的事情发生才去执行后面的代码，要不然页面会一直卡死。所以javascript可以实现异步，它<strong>不会阻塞</strong>同步代码的运行。<br><strong>JS可以实现的异步编程模式有</strong>：</p>
+        <h1 id="javascript的执行机制"><a href="#javascript的执行机制" class="headerlink" title="javascript的执行机制"></a>javascript的执行机制</h1><h2 id="1-单线程"><a href="#1-单线程" class="headerlink" title="1.单线程"></a><strong>1.单线程</strong></h2><p>关于JS<a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2014/10/event-loop.html">为什么是单线程</a>，这是有我之前学习时参考的阮一峰老师的博客。       </p>
+<p>总的来说，JavaScript作为浏览器脚本语言，它主要用途是与用户互动，以及操作DOM。这决定了它只能是单线程，否则会带来很复杂的同步问题。                 </p>
+<p>但是为了利用多核CPU的计算能力，HTML5提出Web Worker标准，允许JavaScript脚本创建多个线程，但是子线程完全受主线程控制，且不得操作DOM。所以，这个新标准并没有改变JavaScript单线程的本质。</p>
+<h2 id="2-异步编程"><a href="#2-异步编程" class="headerlink" title="2.异步编程"></a>2.异步编程</h2><p>前面讲到javascript是单线程，需要<strong>等上一行代码执行结束才能执行下一行代码</strong>（同步）。但是在很多情况下，浏览器是不可能一直等到前面的事情发生才去执行后面的代码，要不然页面会一直卡死。所以javascript可以实现异步，它<strong>不会阻塞</strong>同步代码的运行。   </p>
+<p><strong>JS可以实现的异步编程模式有</strong>：</p>
 <ol>
 <li>回调函数：每个任务只能指定一个回调函数</li>
 <li>事件监听：可以绑定多个事件，每个事件可以指定多个回调函数。</li>
@@ -655,15 +658,16 @@
 <h2 id="3-执行机制"><a href="#3-执行机制" class="headerlink" title="3.执行机制"></a>3.执行机制</h2><p>「参考资料:微信公众号<strong>技术漫谈</strong>」</p>
 <p>javascript可以实现异步，会<strong>另外开辟一个空间</strong>去执行这段异步代码，而<strong>这额外的空间是由JS所处的运行环境提供</strong>的（浏览器和node）</p>
 <h3 id="3-1-浏览器中的JS"><a href="#3-1-浏览器中的JS" class="headerlink" title="3.1 浏览器中的JS"></a>3.1 浏览器中的JS</h3><p>浏览器都默认提供了一个JavaScript引擎，为JS提供一个运行环境</p>
-<img src="基础知识（二）.assets/image-20210819190612308.png" alt="image-20210819190612308" style="zoom:50%;" />
+<img src="基础知识2-执行机制.assets/image-20210819190612308.png" alt="image-20210819190612308" style="zoom:80%;" />
 
 <p>内存堆<strong>heap</strong>，是浏览器为了给代码分配运行内存；图中右侧是调用栈<strong>stack</strong>，每当运行一段代码JS代码时，都会将代码压入调用栈中，然后在执行完毕以后出栈</p>
 <p><strong>（1）调用栈</strong></p>
 <p><strong>只有同步代码</strong>时，浏览器会借助调用栈依次执行</p>
 <p><strong>（2）事件轮询</strong></p>
 <p>当同时存在<strong>同步和异步代码</strong>时，也就有了多个执行空间，需要依赖<strong>事件轮询机制</strong></p>
-<p><img src="%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%88%E4%BA%8C%EF%BC%89.assets/image-20210819191346613.png" alt="image-20210819191346613"></p>
-<p>浏览器中的各种 <strong>Web API</strong> 为**<u>异步的代码提供了一个单独的运行空间</u><strong>（存放回调函数），当异步的代码运行完毕（比如定时时间到）以后，会将代码中的回调送入到 <strong>Task Queue</strong>（任务队列）中去，等到</strong>调用栈空<strong>时，再将队列中的</strong>回调函数压入调用栈**中执行，等到栈空以及任务队列也为空时，调用栈仍然会不断检测任务队列中是否有代码需要执行，这一过程就是完整的Event Loop 了</p>
+<img src="基础知识2-执行机制.assets/image-20210819191346613.png" alt="image-20210819191346613" style="zoom:67%;" />
+
+<p>浏览器中的各种 <strong>Web API</strong> 为<u><strong>异步的代码提供了一个单独的运行空间</strong></u>（存放回调函数），当异步的代码运行完毕（比如定时时间到）以后，会将代码中的回调送入到 <strong>Task Queue</strong>（任务队列）中去，等到<strong>调用栈空</strong>时，再将队列中的<strong>回调函数压入调用栈</strong>中执行，等到栈空以及任务队列也为空时，调用栈仍然会不断检测任务队列中是否有代码需要执行，这一过程就是完整的Event Loop 了</p>
 <p>浏览器中常用的宏任务和微任务</p>
 <table>
 <thead>
@@ -681,8 +685,9 @@
 <td align="left">promise 、requestAnimationFrame、MutationObserver回调</td>
 </tr>
 </tbody></table>
-<p><img src="%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%88%E4%BA%8C%EF%BC%89.assets/image-20210819192746989.png" alt="image-20210819192746989"></p>
-<p>根据相关规定，**<u>当调用栈为空时，对于这两个队列的检测情况步骤如下</u>**：</p>
+<img src="基础知识2-执行机制.assets/image-20210819192746989.png" alt="image-20210819192746989" style="zoom:67%;" />
+
+<p>根据相关规定，<u><strong>当调用栈为空时，对于这两个队列的检测情况步骤如下</strong></u>：</p>
 <ol>
 <li>检测微队列是否为空，若不为空，则取出一个微任务入栈执行，然后执行步骤1；若为空，则执行步骤2</li>
 <li>检测宏队列是否为空，若不为空，则取出一个宏任务入栈执行，然后<strong>执行步骤1</strong>；若为空，<strong>直接执行步骤1</strong></li>
@@ -698,7 +703,7 @@
 <li><strong>check：</strong> 执行setImmediate的回调</li>
 <li><strong>close callbacks：</strong> 处理关闭的回调，例如<code> socket.destroy()</code>、<code>socket.onclose</code></li>
 </ul>
-<p>以上六个阶段，我们需要重点关注的只有四个，分别是 <strong>timers</strong> 、<strong>poll</strong> 、<strong>check</strong> 、<strong>close callbacks</strong>。这四个阶段都有各自的<strong>宏队列</strong>，**<u>只有当本阶段的宏队列中的任务处理完以后，才会进入下一个阶段</u>**。</p>
+<p>以上六个阶段，我们需要重点关注的只有四个，分别是 <strong>timers</strong> 、<strong>poll</strong> 、<strong>check</strong> 、<strong>close callbacks</strong>。这四个阶段都有各自的<strong>宏队列</strong>，<u><strong>只有当本阶段的宏队列中的任务处理完以后，才会进入下一个阶段</strong></u>。</p>
 <p>Node.js也有宏任务和微任务之分，</p>
 <table>
 <thead>
@@ -717,12 +722,12 @@
 </tr>
 </tbody></table>
 <p><strong><u>注：process.nextTick优先级大于其它的微任务</u><strong>。</strong><u>事实上Node在遇到这个API时，Event Loop根本就不会继续进行，会马上停下来执行<code>process.nextTick()</code>，这个执行完后才会继续Event Loop。</u></strong></p>
-<img src="基础知识（二）.assets/image-20210819194332643.png" alt="image-20210819194332643" style="zoom:50%;" />
+<img src="基础知识2-执行机制.assets/image-20210819194332643.png" alt="image-20210819194332643" style="zoom:80%;" />
 
-<p>​                                                                                            **<u>nodeV11</u>**之后的执行顺序</p>
-<p><strong>（2）setTimeout和setImmediate</strong></p>
-<p>**<u>开启事件轮询是需要时间的，并且设置定时器的延时时间可能比实际设置的值大</u>**。</p>
-<p>所以**<u>setTimeout的回调不一定在setImmediate的回调之前</u>**。当开启事件轮询时，定时已经到了，则先执行setTimeout的回调；若开启事件轮询时，定时还没到，timers queue中为空，先执行setImmediate的回调，然后要下一次轮询的时候才能执行setTimeout的回调。</p>
+<p>​                                                                                            <u><strong>nodeV11</strong></u>之后的执行顺序</p>
+<p><strong>（2）<code>setTimeout</code>和<code>setImmediate</code></strong></p>
+<p><u><strong>开启事件轮询是需要时间的，并且设置定时器的延时时间可能比实际设置的值大</strong></u>。</p>
+<p>所以<u><strong><code>setTimeout</code>的回调不一定在<code>setImmediate</code>的回调之前</strong></u>。当开启事件轮询时，定时已经到了，则先执行<code>setTimeout</code>的回调；若开启事件轮询时，定时还没到，timers queue中为空，先执行<code>setImmediate</code>的回调，然后要下一次轮询的时候才能执行<code>setTimeout</code>的回调。</p>
 <pre><code class="javascript">//setTimeout在setImmediate之前
 setTimeout(() =&gt; &#123;
     console.log(&#39;setTimeout&#39;);

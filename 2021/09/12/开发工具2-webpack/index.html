@@ -143,7 +143,7 @@
     <li>
         <div class="all active" data-rel="全部文章">全部文章
             
-                <small>(15)</small>
+                <small>(14)</small>
             
         </div>
     </li>
@@ -155,7 +155,7 @@
                         <i class="fold iconfont icon-right"></i>
                         
                         javascript
-                        <small>(15)</small>
+                        <small>(14)</small>
                         
                     </div>
                     
@@ -235,7 +235,7 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="15">
+<input type="hidden" id="yelog_site_posts_number" value="14">
 <input type="hidden" id="yelog_site_word_count" value="36.4k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -428,14 +428,6 @@
     
     <nav id="title-list-nav">
         
-        <a  class="全部文章 javascript "
-           href="/2021/09/15/test/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="test">test</span>
-            <span class="post-date" title="2021-09-15 19:49:39">2021/09/15</span>
-        </a>
-        
         <a  class="全部文章 javascript 开发工具 "
            href="/2021/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B76-%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/"
            data-tag="HTTP,cookie,负载均衡"
@@ -595,7 +587,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-09-15 18:06:20'>2021-09-12 20:48</time>
+            发布时间 : <time class="date" title='最后更新: 2021-09-16 18:55:49'>2021-09-12 20:48</time>
         
     </div>
     <div class="article-meta">
@@ -662,7 +654,7 @@
 <p>webpack4中：</p>
 <ol>
 <li><a target="_blank" rel="noopener" href="https://github.com/webpack/webpack">webpack</a> 即 webpack 核心库。它提供了很多 <a target="_blank" rel="noopener" href="https://webpack.js.org/api/node/">API</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/webpack/webpack-cli">webpack-cli</a> 是 webpack 的命令行工具，独立于webpack，**<u>配置里不能出现serve选项</u><strong>，</strong>默认读取 webpack.config.js<strong>，编译</strong>生产**环境。需要单独安装：<code>npm install webpack-cli -D -S</code>，新版 webpack 需要<code>Node.js 的最低支持版本为 6.11.5</code></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/webpack/webpack-cli">webpack-cli</a> 是 webpack 的命令行工具，独立于webpack，<u><strong>配置里不能出现serve选项</strong></u>，<strong>默认读取 webpack.config.js</strong>，编译<strong>生产</strong>环境。需要单独安装：<code>npm install webpack-cli -D -S</code>，新版 webpack 需要<code>Node.js 的最低支持版本为 6.11.5</code></li>
 <li><a target="_blank" rel="noopener" href="https://github.com/webpack-contrib/webpack-serve">webpack-serve</a> 是 webpack 提供的用来开发调试的服务器，不需要指定配置文件，<strong>执行时需要指定配置文件</strong> ，编译<strong>开发</strong>环境</li>
 </ol>
 <p>代码自动拆分成包：如果同时满足下列条件，chunk 就会被拆分：</p>
@@ -672,8 +664,9 @@
 <li>按需加载 chunk 的并发请求数量小于等于 5 个</li>
 <li>页面初始加载时的并发请求数量小于等于 3 个</li>
 </ul>
-<p><strong><u>注：</u>****<u>不能将大部分共用的组件，但是大小又小于30kb的，拆分出来打包</u></strong></p>
-<p><img src="/2021/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B72-webpack/16513e81dfa85cbc" alt="img"></p>
+<p><u><strong>注：不能将大部分共用的组件，但是大小又小于30kb的，拆分出来打包</strong></u></p>
+<img src="/2021/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B72-webpack/16513e81dfa85cbc.jpg" alt="16513e81dfa85cbc" style="zoom:67%;">
+
 <p>实际使用时，也可以在它的基础上继续优化分包策略，<a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903652956585992">https://juejin.cn/post/6844903652956585992</a></p>
 <p>webpack3中：</p>
 <ol>

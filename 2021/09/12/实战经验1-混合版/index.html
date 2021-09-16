@@ -143,7 +143,7 @@
     <li>
         <div class="all active" data-rel="全部文章">全部文章
             
-                <small>(15)</small>
+                <small>(14)</small>
             
         </div>
     </li>
@@ -155,7 +155,7 @@
                         <i class="fold iconfont icon-right"></i>
                         
                         javascript
-                        <small>(15)</small>
+                        <small>(14)</small>
                         
                     </div>
                     
@@ -235,7 +235,7 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="15">
+<input type="hidden" id="yelog_site_posts_number" value="14">
 <input type="hidden" id="yelog_site_word_count" value="36.4k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -428,14 +428,6 @@
     
     <nav id="title-list-nav">
         
-        <a  class="全部文章 javascript "
-           href="/2021/09/15/test/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="test">test</span>
-            <span class="post-date" title="2021-09-15 19:49:39">2021/09/15</span>
-        </a>
-        
         <a  class="全部文章 javascript 开发工具 "
            href="/2021/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B76-%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/"
            data-tag="HTTP,cookie,负载均衡"
@@ -601,7 +593,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-09-15 18:27:31'>2021-09-12 20:03</time>
+            发布时间 : <time class="date" title='最后更新: 2021-09-16 18:50:14'>2021-09-12 20:03</time>
         
     </div>
     <div class="article-meta">
@@ -680,7 +672,7 @@ for(let a of str)&#123;console.log(a);&#125;//正确识别每个字符
 </code></pre>
 <h2 id="5-e-target和e-currenttarget"><a href="#5-e-target和e-currenttarget" class="headerlink" title="5.e.target和e.currenttarget"></a>5.<code>e.target</code>和<code>e.currenttarget</code></h2><p><code>e.target</code>：标识事件发生的元素，即实际点击的元素</p>
 <p><code>e.currenttarget</code>：是事件当前绑定的元素</p>
-<h2 id="6-函数前加！和"><a href="#6-函数前加！和" class="headerlink" title="6. 函数前加！和;"></a>6. 函数前加<code>！</code>和<code>;</code></h2><p>js可以用**<u>换行分隔代码</u><strong>，但是合并压缩多个js文件之后，</strong>换行符一般会被删掉<strong>，所以连在一起可能会出错。而使用</strong>分号<code>;</code>来分隔代码**不会出现这个问题</p>
+<h2 id="6-函数前加！和"><a href="#6-函数前加！和" class="headerlink" title="6. 函数前加！和;"></a>6. 函数前加<code>！</code>和<code>;</code></h2><p>js可以用<u><strong>换行分隔代码</strong></u>，但是合并压缩多个js文件之后，<strong>换行符一般会被删掉</strong>，所以连在一起可能会出错。而使用<strong>分号<code>;</code>来分隔代码</strong>不会出现这个问题</p>
 <p>一般立即执行函数是采用<code>括号()</code>来将函数体转成表达式的，也可以使用<code>~ + -  ||  ！</code>等一元操作符</p>
 <pre><code class="javascript">1.(function() &#123;&#125;)()
 2.! function()&#123;&#125;() //使用!比使用()更简单，并且节省了1个字节
@@ -702,8 +694,8 @@ HTMLElement.prototype.method=function()&#123;
 &#125;
 </code></pre>
 <h2 id="11-检测DOM更新"><a href="#11-检测DOM更新" class="headerlink" title="11.检测DOM更新"></a>11.检测DOM更新</h2><p><code>MutationObserver</code>是HTML5新增的属性，用于监听DOM修改事件，能够监听到节点的属性、文本内容、子节点等的改动</p>
-<p><code>Vue.nextTick</code>可以在DOM更新完毕之后执行一个回调，vue进行DOM更新内部也是调用nextTick来做异步队列控制。而当我们自己调用nextTick的时候，它就在更新DOM的那个microtask后追加了我们自己的回调函数，从而确保我们的代码在DOM更新后执行，同时也避免了setTimeout可能存在的多次执行问题。**<u>也就是说VUE是借助<code>MutationObserver</code>这一宏任务特性进行的更新回调</u>**</p>
-<h2 id="12-编译阶段和执行阶段"><a href="#12-编译阶段和执行阶段" class="headerlink" title="12.编译阶段和执行阶段"></a>12.编译阶段和执行阶段</h2><p><code>import</code>命令是在**<u>编译阶段</u><strong>执行的，因此</strong>被导入的模块会先运行<strong>。另外，被导入的模块中的变量</strong>不能在引入文件中修改**</p>
+<p><code>Vue.nextTick</code>可以在DOM更新完毕之后执行一个回调，vue进行DOM更新内部也是调用nextTick来做异步队列控制。而当我们自己调用nextTick的时候，它就在更新DOM的那个microtask后追加了我们自己的回调函数，从而确保我们的代码在DOM更新后执行，同时也避免了setTimeout可能存在的多次执行问题。<u><strong>也就是说VUE是借助<code>MutationObserver</code>这一宏任务特性进行的更新回调</strong></u></p>
+<h2 id="12-编译阶段和执行阶段"><a href="#12-编译阶段和执行阶段" class="headerlink" title="12.编译阶段和执行阶段"></a>12.编译阶段和执行阶段</h2><p><code>import</code>命令是在<u><strong>编译阶段</strong></u>执行的，因此<strong>被导入的模块会先运行</strong>。另外，被导入的模块中的变量<strong>不能在引入文件中修改</strong></p>
 <pre><code class="javascript">//index.js
 console.log(&quot;running index.js&quot;)
 import &#123;sum&#125; from &#39;./sum.js&#39;
@@ -718,7 +710,7 @@ export default sum
 //running index.js
 //3
 </code></pre>
-<p>commonJS中的<code>require</code>模块，是**<u>在运行代码时根据需要加载依赖项</u>**。</p>
+<p>commonJS中的<code>require</code>模块，是<u><strong>在运行代码时根据需要加载依赖项</strong></u>。</p>
 <h2 id="13-保存canvas为图片"><a href="#13-保存canvas为图片" class="headerlink" title="13.保存canvas为图片"></a>13.保存canvas为图片</h2><pre><code class="javascript">//fileName是要保存的图片名，运行该函数后就直接打开保存窗口
 function exportCanvasAsPNG(id, fileName) &#123;
         var canvasElement = document.getElementById(id);
@@ -1179,8 +1171,8 @@ co(function* () &#123;
 &#125;
 </code></pre>
 <h2 id="19-keyup、keypress、keydown事件"><a href="#19-keyup、keypress、keydown事件" class="headerlink" title="19.keyup、keypress、keydown事件"></a>19.<code>keyup</code>、<code>keypress</code>、<code>keydown</code>事件</h2><p>事件触发顺序：<code>keydown</code> -&gt; <code>keypress</code> -&gt;<code>textInput</code> -&gt;<code>keyup</code> </p>
-<p><code>keydown</code>和<code>keypress</code>事件触发在<strong>文字还没敲进文本框</strong>，这时如果在<code>keydown</code>和<code>keypress</code>事件中输出文本框中的文本，得到的是**<u>触发键盘事件前</u><strong>的文本，而<code>keyup</code>事件触发时整个键盘事件的操作已经完成，获得的是</strong><u>触发键盘事件后</u>**的文本</p>
-<p>在<code>keyup</code>事件中无法阻止浏览器默认事件，因为在<code>keypress</code>时，浏览器默认行为已经完成，即将文字输入文本框（尽管这时还没显示），这个时候不管是<code>preventDefault</code>还是<code>return false</code>，都不能阻止在文本框中输入文字的行为。**<u>如要阻止在文本框中输入文字，必须在<code>keydown</code>或<code>keypress</code>时阻止</u>**</p>
+<p><code>keydown</code>和<code>keypress</code>事件触发在<strong>文字还没敲进文本框</strong>，这时如果在<code>keydown</code>和<code>keypress</code>事件中输出文本框中的文本，得到的是<u><strong>触发键盘事件前</strong></u>的文本，而<code>keyup</code>事件触发时整个键盘事件的操作已经完成，获得的是<u><strong>触发键盘事件后</strong></u>的文本</p>
+<p>在<code>keyup</code>事件中无法阻止浏览器默认事件，因为在<code>keypress</code>时，浏览器默认行为已经完成，即将文字输入文本框（尽管这时还没显示），这个时候不管是<code>preventDefault</code>还是<code>return false</code>，都不能阻止在文本框中输入文字的行为。<u><strong>如要阻止在文本框中输入文字，必须在<code>keydown</code>或<code>keypress</code>时阻止</strong></u></p>
 <h2 id="20-AST语法树、文档树、表达式树"><a href="#20-AST语法树、文档树、表达式树" class="headerlink" title="20.AST语法树、文档树、表达式树"></a>20.AST语法树、文档树、表达式树</h2><h2 id="21-纯CSS设置滚动条位置调整在左侧或者在上方"><a href="#21-纯CSS设置滚动条位置调整在左侧或者在上方" class="headerlink" title="21.纯CSS设置滚动条位置调整在左侧或者在上方"></a>21.纯CSS设置滚动条位置调整在左侧或者在上方</h2><ul>
 <li>滚动条在左侧</li>
 </ul>

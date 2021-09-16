@@ -143,7 +143,7 @@
     <li>
         <div class="all active" data-rel="全部文章">全部文章
             
-                <small>(15)</small>
+                <small>(14)</small>
             
         </div>
     </li>
@@ -155,7 +155,7 @@
                         <i class="fold iconfont icon-right"></i>
                         
                         javascript
-                        <small>(15)</small>
+                        <small>(14)</small>
                         
                     </div>
                     
@@ -235,7 +235,7 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="15">
+<input type="hidden" id="yelog_site_posts_number" value="14">
 <input type="hidden" id="yelog_site_word_count" value="36.4k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -428,14 +428,6 @@
     
     <nav id="title-list-nav">
         
-        <a  class="全部文章 javascript "
-           href="/2021/09/15/test/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="test">test</span>
-            <span class="post-date" title="2021-09-15 19:49:39">2021/09/15</span>
-        </a>
-        
         <a  class="全部文章 javascript 开发工具 "
            href="/2021/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B76-%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/"
            data-tag="HTTP,cookie,负载均衡"
@@ -595,7 +587,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-09-14 18:54:55'>2021-09-12 20:42</time>
+            发布时间 : <time class="date" title='最后更新: 2021-09-16 18:48:11'>2021-09-12 20:42</time>
         
     </div>
     <div class="article-meta">
@@ -646,8 +638,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="canvas"><a href="#canvas" class="headerlink" title="canvas"></a>canvas</h1><p><strong><u>context的默认单位都是像素</u></strong></p>
-<h2 id="一、变形操作：变形后进行重绘坐标不变"><a href="#一、变形操作：变形后进行重绘坐标不变" class="headerlink" title="一、变形操作：变形后进行重绘坐标不变"></a>一、变形操作：变形后进行重绘坐标不变</h2><p>1.<code>ctx.translate</code>：实现平移，然后重绘，但是坐标不变。相对上一次的位置进行移动。**<u>移动的是整个坐标系，之后的坐标都是相对新坐标系的值</u>**</p>
+        <h1 id="canvas"><a href="#canvas" class="headerlink" title="canvas"></a>canvas</h1><p><u><strong>context的默认单位都是像素</strong></u></p>
+<h2 id="一、变形操作：变形后进行重绘坐标不变"><a href="#一、变形操作：变形后进行重绘坐标不变" class="headerlink" title="一、变形操作：变形后进行重绘坐标不变"></a>一、变形操作：变形后进行重绘坐标不变</h2><p>1.<code>ctx.translate</code>：实现平移，然后重绘，但是坐标不变。相对上一次的位置进行移动。<u><strong>移动的是整个坐标系，之后的坐标都是相对新坐标系的值</strong></u></p>
 <pre><code class="javascript">ctx.fillRect(30,30,50,50)
 ctx.translate(50,50)
 ctx.fillRect(30,30,50,50)//重绘
@@ -664,7 +656,7 @@ ctx.fillRect(30,30,50,50)//重绘
       context.fillStyle = &#39;blue&#39;
       context.fillRect(30, 30, 50, 50)
 </code></pre>
-<p>3.<code>ctx.rotate(angle):[-PI/2,PI/2]</code>，默认以原点为旋转中心，可以先translate再旋转来修改旋转中心。**<u>顺时针为正，逆时针为负</u>**</p>
+<p>3.<code>ctx.rotate(angle):[-PI/2,PI/2]</code>，默认以原点为旋转中心，可以先translate再旋转来修改旋转中心。<u><strong>顺时针为正，逆时针为负</strong></u></p>
 <p>4.<code>ctx.transform()</code>和<code>ctx.setTransform()</code></p>
 <pre><code class="javascript">ctx.transform()//会在上一次变换后的基础上进行变换
 ctx.setTransform()//先把图像重置为原始位置，再进行变换
@@ -701,7 +693,7 @@ ctx.setTransform()//先把图像重置为原始位置，再进行变换
       context.stroke()
       //最终两条直线的颜色都是蓝色，因为它们是同一路径
 </code></pre>
-<p>**<u>如果采用了<code>beginPath()</code>，则开始了一个新的路径</u>**，在不同路径里可以使用不同的绘制样式</p>
+<p><u><strong>如果采用了<code>beginPath()</code>，则开始了一个新的路径</strong></u>，在不同路径里可以使用不同的绘制样式</p>
 <pre><code class="javascript">      context.beginPath()//开始新路径
       context.moveTo(0, 0)
       context.lineTo(100, 100)
@@ -715,14 +707,14 @@ ctx.setTransform()//先把图像重置为原始位置，再进行变换
       context.stroke()
 </code></pre>
 <h2 id="三、canvas状态"><a href="#三、canvas状态" class="headerlink" title="三、canvas状态"></a>三、canvas状态</h2><p>两个操作状态的方法：**<code>save()</code>和<code>restore()</code>**。</p>
-<p><strong><u>注：保存状态只是保存的<code>context</code>当时的一些绘制属性，但是上一次的最后一个绘制结束点对当前还是会有影响</u><strong>，需要</strong><u>结合<code>context.beginPath()</code>来消除</u></strong></p>
+<p><u><strong>注：保存状态只是保存的<code>context</code>当时的一些绘制属性，但是上一次的最后一个绘制结束点对当前还是会有影响</strong></u>，需要<u><strong>结合<code>context.beginPath()</code>来消除</strong></u></p>
 <blockquote>
 <p>save：用于保存当前状态，restore用户恢复之前保存的状态，<strong>一般情况下是成对使用的</strong>。</p>
 <p>使用场景：<strong>图形或图片的剪切、图形或图片的变形、绘制样式发生改变</strong>。</p>
 <p>可以保存的状态：剪切状态、变形状态（一般指变换矩阵）、绘图状态，不能保存路径状态和图形</p>
 </blockquote>
 <p><u><strong><code>clip()</code>:<strong>将一个基本图形变成裁剪区域，后面绘制的图形如果超出了这个剪切区域，则超出的部分不会被显示</strong></strong></u>。该方法不支持<code>strokeRect()</code>和<code>fillRect()</code>，需要用<code>rect()</code>代替。</p>
-<p>如果后面需要**<u>取消剪切区域</u><strong>，可通过<code>save()和restore()</code>方法。如果不使用这两个方法，</strong>即使清空画布，之前的剪切区域还是存在的。**</p>
+<p>如果后面需要<u><strong>取消剪切区域</strong></u>，可通过<code>save()和restore()</code>方法。如果不使用这两个方法，<strong>即使清空画布，之前的剪切区域还是存在的。</strong></p>
 <pre><code class="javascript">      let canvas = document.getElementById(&#39;canvas&#39;)
       let context = canvas.getContext(&#39;2d&#39;)
 

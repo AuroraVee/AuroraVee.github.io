@@ -464,7 +464,7 @@
            href="/2021/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B72-webpack/"
            data-tag="webpack"
            data-author="" >
-            <span class="post-title" title="开发工具2—webpack">开发工具2—webpack</span>
+            <span class="post-title" title="开发工具2-webpack">开发工具2-webpack</span>
             <span class="post-date" title="2021-09-12 20:48:19">2021/09/12</span>
         </a>
         
@@ -592,10 +592,6 @@
 
         </article>
         
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
         
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
@@ -633,24 +629,6 @@
 
 </div>
 
-<div class="hide_box" onclick="dashangToggle()"></div>
-<div class="shang_box">
-    <a class="shang_close"  onclick="dashangToggle()">×</a>
-    <div class="shang_tit">
-        <p>喜欢就点赞,疼爱就打赏</p>
-    </div>
-    <div class="shang_payimg">
-        <div class="pay_img">
-            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
-            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
-        </div>
-    </div>
-    <div class="shang_payselect">
-        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
-    </div>
-</div>
-
-
 </body>
 <script src="/js/jquery.pjax.js?v=1.1.0" ></script>
 
@@ -664,14 +642,6 @@
         
 
         /*渲染打赏样式*/
-        
-        $("input[name=pay]").on("click", function () {
-            if($("input[name=pay]:checked").val()=="weixin"){
-                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
-            } else {
-                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
-            }
-        })
         
 
         /*高亮代码块行号*/
@@ -691,11 +661,6 @@
 
     /*打赏页面隐藏与展示*/
     
-    function dashangToggle() {
-        $(".shang_box").fadeToggle();
-        $(".hide_box").fadeToggle();
-    }
-    
 
 </script>
 
@@ -706,33 +671,33 @@
     
     
     .nav {
-        width: 542px;
+        width: 562px;
     }
     .nav.fullscreen {
-        margin-left: -542px;
+        margin-left: -562px;
     }
     .nav-left {
-        width: 120px;
+        width: 140px;
     }
     
     
     @media screen and (max-width: 1468px) {
         .nav {
-            width: 492px;
+            width: 512px;
         }
         .nav.fullscreen {
-            margin-left: -492px;
+            margin-left: -512px;
         }
         .nav-left {
-            width: 100px;
+            width: 120px;
         }
     }
     
     
     @media screen and (max-width: 1024px) {
         .nav {
-            width: 492px;
-            margin-left: -492px
+            width: 512px;
+            margin-left: -512px
         }
         .nav.fullscreen {
             margin-left: 0;

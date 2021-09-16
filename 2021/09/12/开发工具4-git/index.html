@@ -703,7 +703,7 @@
 </ul>
 <p>每一 个<code>commit</code>节点都有<strong>节点标识</strong>（很长的16进制数字，一般使用前4位），也可以设置<strong>节点标签</strong>。其中<code>HEAD</code>标签（简写为<code>@</code>）始终代表最新的一次<code>commit</code>，可以通过<code>git show HEAD</code>查看</p>
 <p>自己设置节点标签：<code>git tag tagName commit的节点标识符/标签</code>；删除节点标签：<code>git tag -d commit的节点标签</code></p>
-<img src="/.com//image-20210717175952003.png" alt="image-20210717175952003" style="zoom:67%;">
+<img src="/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B74-git/image-20210717175952003.png" alt="image-20210717175952003" style="zoom:67%;">
 
 <h3 id="4-3-删除某个已追踪的文件"><a href="#4-3-删除某个已追踪的文件" class="headerlink" title="4.3 删除某个已追踪的文件"></a>4.3 删除某个已追踪的文件</h3><ol>
 <li>先直接从文件夹下删除</li>
@@ -713,7 +713,7 @@
 <p>当前<code>commit</code>节点里这个文件被删除，但是历史版本里还是存在</p>
 <h3 id="4-4-从文档库中取文件"><a href="#4-4-从文档库中取文件" class="headerlink" title="4.4 从文档库中取文件"></a>4.4 从文档库中取文件</h3><p><code>git checkout commit节点标识符/节点标签 文件1 文件2</code>：取出的文件会把当前文件夹里的文件<strong>覆盖</strong>掉，不会修改HEAD节点</p>
 <p><u>注：<code>git checkout commit节点</code>：</u>也能让文件夹里的文件恢复到指定状态，但是会进入<strong>detachedHEAD状态，此时HEAD会指向该节点</strong>。如果此时进行了<code>git add</code>和<code>git commit</code>，会<strong>从当前节点长出无名的分支</strong>。可以通过把这个<strong>无名分支删除或者合并到原来的分支</strong>解决这种情况。</p>
-<img src="/.com//image-20210718161934700.png" alt="image-20210718161934700" style="zoom:67%;">
+<img src="/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B74-git/image-20210718161934700.png" alt="image-20210718161934700" style="zoom:67%;">
 
 <p><code>git grep (-i/-c) -e 要查找的字符串1 -e 要查找的字符串2 commit节点</code>：找出包含某一字符串的节点</p>
 <h3 id="4-5-修改文件夹-文件的名字并更新到文档库"><a href="#4-5-修改文件夹-文件的名字并更新到文档库" class="headerlink" title="4.5 修改文件夹/文件的名字并更新到文档库"></a>4.5 修改文件夹/文件的名字并更新到文档库</h3><ol>
@@ -772,12 +772,12 @@
 <h4 id="5-4-2-合并分支的两种方式"><a href="#5-4-2-合并分支的两种方式" class="headerlink" title="5.4.2 合并分支的两种方式"></a>5.4.2 合并分支的两种方式</h4><ol>
 <li>fast-forward merge：创建新的分支B后，B分支也新的commit，但是原来的分支一直没有，此时只能执行<code>git merge B</code>，<strong>合并不会产生新的<code>commit</code>节点</strong>。可以通过<code>git merge --no-ff B</code>，修改合并方式为3-way merge</li>
 </ol>
-<img src="/.com//image-20210718163747825.png" alt="image-20210718163747825" style="zoom:67%;">
+<img src="/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B74-git/image-20210718163747825.png" alt="image-20210718163747825" style="zoom:67%;">
 
 <ol start="2">
 <li>3-way merge：分支B修改的同时，原来的分支也存在<code>commit</code>，合并之后会<strong>产生新的<code>commit</code>节点</strong></li>
 </ol>
-<img src="/.com//image-20210718164037360.png" alt="image-20210718164037360" style="zoom:67%;">
+<img src="/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B74-git/image-20210718164037360.png" alt="image-20210718164037360" style="zoom:67%;">
 
 <p><u>如果没有指定合并方式，Git会自动选择</u></p>
 <h4 id="5-4-3-冲突解决"><a href="#5-4-3-冲突解决" class="headerlink" title="5.4.3 冲突解决"></a>5.4.3 冲突解决</h4><p>如果两个分支在同一文件的同一位置进行了不同内容的修改，在合并时会产生冲突</p>
@@ -787,15 +787,15 @@
 </ol>
 <h2 id="6-使用Rebase指令合并分支，简化commit图（有远程仓库时，不能使用）"><a href="#6-使用Rebase指令合并分支，简化commit图（有远程仓库时，不能使用）" class="headerlink" title="6.使用Rebase指令合并分支，简化commit图（有远程仓库时，不能使用）"></a>6.使用Rebase指令合并分支，简化commit图（有远程仓库时，不能使用）</h2><p>使用多分支进行开发时，为了<strong>让其他分支和主分支的代码保持同步</strong>，需要<strong>定时将主分支的修改合并到当前分支</strong>。如果采取前面的<code>merge</code>指令，会使得commit图变得很复杂</p>
 <p>使用Rebase指令，也可以将其他分支的代码合并到当前分支，但是可以简化commit图。</p>
-<img src="/.com//image-20210718191330660.png" alt="image-20210718191330660" style="zoom: 67%;">
+<img src="/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B74-git/image-20210718191330660.png" alt="image-20210718191330660" style="zoom: 67%;">
 
-<img src="/.com//image-20210718191441447.png" alt="image-20210718191441447" style="zoom: 67%;">
+<img src="/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B74-git/image-20210718191441447.png" alt="image-20210718191441447" style="zoom: 67%;">
 
 <p>使用方法和<code>merge</code>一样，<code>git rebase 分支</code></p>
 <p><strong>在合并完成之前</strong>，可以通过<code>git rebase --abort</code>来取消合并，回到合并之前的状态。</p>
 <p>如果已经合并，可以通过<code>git reset --hard commit节点</code>来恢复，但是需要知道<strong>合并之前HEAD所在的commit节点</strong>。这个可以通过<code>git reflog HEAD/分支名称</code>查看</p>
 <h2 id="7-远程仓库"><a href="#7-远程仓库" class="headerlink" title="7.远程仓库"></a>7.远程仓库</h2><p>之前对文件的修改都是保存在<code>.git</code>形成的本地文档库中（local repository），为了团队开发需要建立远程仓库（remote repository）</p>
-<p><img src="/.com//image-20210718194431155.png" alt="image-20210718194431155"></p>
+<p><img src="/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B74-git/image-20210718194431155.png" alt="image-20210718194431155"></p>
 <p>远程Git文档库是一个Bare类型的Git仓库，执行<code>git init --bare Git仓库的文件夹名称</code>就可以创建</p>
 <h3 id="7-1-从远程文档库复制出本地仓库"><a href="#7-1-从远程文档库复制出本地仓库" class="headerlink" title="7.1 从远程文档库复制出本地仓库"></a>7.1 从远程文档库复制出本地仓库</h3><p><code>git clone 地址</code></p>
 <h3 id="7-2-本地推送到远程"><a href="#7-2-本地推送到远程" class="headerlink" title="7.2 本地推送到远程"></a>7.2 本地推送到远程</h3><p><code>git push origin 分支名称A</code>：把<strong>指定分支的最新状态</strong>推送到远程仓库，<strong>不会在配置文件中记录</strong>本地仓库分支和远程仓库分支之间的对应关系</p>
@@ -812,11 +812,11 @@
 </li>
 </ol>
 <p>如果执行<code>git push</code>时报错，则表明此时远程仓库已被修改，执行<code>git pull</code>，相当于执行<code>git fetch，git merge 当前分支</code>，会**<u>自动拉取远程仓库当前分支的最新状态，并进行合并</u>**。合并可能存在冲突，如果修改后合并成功，再次执行<code>git push</code>就能成功上传。</p>
-<h2 id="8-fork远程仓库"><a href="#8-fork远程仓库" class="headerlink" title="8.fork远程仓库"></a>8.fork远程仓库</h2><img src="/.com//image-20210718202303484.png" alt="image-20210718202303484" style="zoom:67%;">
+<h2 id="8-fork远程仓库"><a href="#8-fork远程仓库" class="headerlink" title="8.fork远程仓库"></a>8.fork远程仓库</h2><img src="/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B74-git/image-20210718202303484.png" alt="image-20210718202303484" style="zoom:67%;">
 
 <p>branch是让程序项目分出另一个版本，fork是复制出另一个Git文档库</p>
 <p>clone复制出的文档库不会保留原来的那个文档库，而fork会记录，并且可以重新合并回去</p>
-<p><img src="/.com//image-20210718202707800.png" alt="image-20210718202707800"></p>
+<p><img src="/09/12/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B74-git/image-20210718202707800.png" alt="image-20210718202707800"></p>
 <p><code>git fetch upstream</code>：从fork过来的原始远程仓库获取新的数据</p>
 <p>合并：<code>git checkout 某个分支</code>，<code>git merge upstream/同样的分支</code></p>
 

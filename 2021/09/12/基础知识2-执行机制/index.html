@@ -666,13 +666,13 @@
 <h2 id="3-执行机制"><a href="#3-执行机制" class="headerlink" title="3.执行机制"></a>3.执行机制</h2><p>「参考资料:微信公众号<strong>技术漫谈</strong>」</p>
 <p>javascript可以实现异步，会<strong>另外开辟一个空间</strong>去执行这段异步代码，而<strong>这额外的空间是由JS所处的运行环境提供</strong>的（浏览器和node）</p>
 <h3 id="3-1-浏览器中的JS"><a href="#3-1-浏览器中的JS" class="headerlink" title="3.1 浏览器中的JS"></a>3.1 浏览器中的JS</h3><p>浏览器都默认提供了一个JavaScript引擎，为JS提供一个运行环境</p>
-<p><img src="/09/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%862-%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/image-20210819190612308.png" alt="image-20210819190612308"></p>
+<p><img src="/2021/09/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%862-%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/image-20210819190612308.png" alt="image-20210819190612308"></p>
 <p>内存堆<strong>heap</strong>，是浏览器为了给代码分配运行内存；图中右侧是调用栈<strong>stack</strong>，每当运行一段代码JS代码时，都会将代码压入调用栈中，然后在执行完毕以后出栈</p>
 <p><strong>（1）调用栈</strong></p>
 <p><strong>只有同步代码</strong>时，浏览器会借助调用栈依次执行</p>
 <p><strong>（2）事件轮询</strong></p>
 <p>当同时存在<strong>同步和异步代码</strong>时，也就有了多个执行空间，需要依赖<strong>事件轮询机制</strong></p>
-<p><img src="/09/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%862-%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/image-20210819191346613.png" alt="image-20210819191346613"></p>
+<p><img src="/2021/09/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%862-%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/image-20210819191346613.png" alt="image-20210819191346613"></p>
 <p>浏览器中的各种 <strong>Web API</strong> 为<u><strong>异步的代码提供了一个单独的运行空间</strong></u>（存放回调函数），当异步的代码运行完毕（比如定时时间到）以后，会将代码中的回调送入到 <strong>Task Queue</strong>（任务队列）中去，等到<strong>调用栈空</strong>时，再将队列中的<strong>回调函数压入调用栈</strong>中执行，等到栈空以及任务队列也为空时，调用栈仍然会不断检测任务队列中是否有代码需要执行，这一过程就是完整的Event Loop 了</p>
 <p>浏览器中常用的宏任务和微任务</p>
 <table>
@@ -691,7 +691,7 @@
 <td align="left">promise 、requestAnimationFrame、MutationObserver回调</td>
 </tr>
 </tbody></table>
-<p><img src="/09/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%862-%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/image-20210819192746989.png" alt="image-20210819192746989"></p>
+<p><img src="/2021/09/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%862-%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/image-20210819192746989.png" alt="image-20210819192746989"></p>
 <p>根据相关规定，<u><strong>当调用栈为空时，对于这两个队列的检测情况步骤如下</strong></u>：</p>
 <ol>
 <li>检测微队列是否为空，若不为空，则取出一个微任务入栈执行，然后执行步骤1；若为空，则执行步骤2</li>
@@ -727,7 +727,7 @@
 </tr>
 </tbody></table>
 <p><strong><u>注：process.nextTick优先级大于其它的微任务</u><strong>。</strong><u>事实上Node在遇到这个API时，Event Loop根本就不会继续进行，会马上停下来执行<code>process.nextTick()</code>，这个执行完后才会继续Event Loop。</u></strong></p>
-<p><img src="/09/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%862-%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/image-20210819194332643.png" alt="image-20210819194332643"></p>
+<p><img src="/2021/09/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%862-%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/image-20210819194332643.png" alt="image-20210819194332643"></p>
 <p>​                                                                                            <u><strong>nodeV11</strong></u>之后的执行顺序</p>
 <p><strong>（2）<code>setTimeout</code>和<code>setImmediate</code></strong></p>
 <p><u><strong>开启事件轮询是需要时间的，并且设置定时器的延时时间可能比实际设置的值大</strong></u>。</p>
